@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery – VerifAI</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+<!-- NAVBAR -->
+<nav>
+    <a class="nav-logo" href="index.html">
+        Verif<span>AI</span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about/about.html">About</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="index.html#topics">Topics</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero reveal">
+    <div class="gallery-grid-bg"></div>
+    <div class="gallery-glow"></div>
+    <div class="hero-content">
+        <h1>Gallery<span>.</span></h1>
+        <p>Explore real and AI-generated media examples. Develop visual literacy to identify deepfakes, synthetic images, and manipulated content in the wild.</p>
+    </div>
+</section>
+
+<!-- GALLERY CONTROLS -->
+<section class="gallery-controls reveal">
+    <h2>Filter by Category</h2>
+    <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="videos">Videos</button>
+        <button class="filter-btn" data-filter="images">Images</button>
+        <button class="filter-btn" data-filter="audio">Audio</button>
+        <button class="filter-btn" data-filter="text">Text</button>
+    </div>
+</section>
+
+<!-- GALLERY GRID -->
+<section class="gallery-grid reveal">
+    <div class="grid">
+        <!-- Gallery Item 1 -->
+        <div class="gallery-item reveal" data-category="videos">
+            <div class="gallery-item-image">📹
+                <div class="gallery-item-overlay">
+                    <div class="gallery-item-content" style="background: transparent; padding: 0;">
+                        <div class="overlay-text">
+                            <h3>Deepfake Video Analysis</h3>
+                            <p>Real vs AI-generated celebrity video</p>
+                            <div class="overlay-tag">Videos</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item-content">
+                <h3>Deepfake Video Analysis</h3>
+                <p>Learn how to spot facial inconsistencies and unnatural movements in video deepfakes.</p>
+            </div>
+        </div>
+
+        <!-- Gallery Item 2 -->
+        <div class="gallery-item" data-category="images">
+            <div class="gallery-item-image">🖼️
+                <div class="gallery-item-overlay">
+                    <div class="gallery-item-content" style="background: transparent; padding: 0;">
+                        <div class="overlay-text">
+                            <h3>AI-Generated Portraits</h3>
+                            <p>Synthetic faces created with GANs</p>
+                            <div class="overlay-tag">Images</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item-content">
+                <h3>AI-Generated Portraits</h3>
+                <p>Examine digital fingerprints and artifacts visible in GAN-generated portraits.</p>
+            </div>
+        </div>
+
+        <!-- Gallery Item 3 -->
+        <div class="gallery-item" data-category="audio">
+            <div class="gallery-item-image">🔊
+                <div class="gallery-item-overlay">
+                    <div class="gallery-item-content" style="background: transparent; padding: 0;">
+                        <div class="overlay-text">
+                            <h3>Voice Cloning Analysis</h3>
+                            <p>Synthetic speech vs authentic voices</p>
+                            <div class="overlay-tag">Audio</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item-content">
+                <h3>Voice Cloning Analysis</h3>
+                <p>Detect robotic artifacts and prosody issues in AI-cloned voices.</p>
+            </div>
+        </div>
+
+        <!-- Gallery Item 4 -->
+        <div class="gallery-item" data-category="images">
+            <div class="gallery-item-image">🎨
+                <div class="gallery-item-overlay">
+                    <div class="gallery-item-content" style="background: transparent; padding: 0;">
+                        <div class="overlay-text">
+                            <h3>AI Art Comparison</h3>
+                            <p>Digital art styles and generation methods</p>
+                            <div class="overlay-tag">Images</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item-content">
+                <h3>AI Art Comparison</h3>
+                <p>Learn the differences between human art and AI-generated artwork.</p>
+            </div>
+        </div>
+
+        <!-- Gallery Item 5 -->
+        <div class="gallery-item" data-category="text">
+            <div class="gallery-item-image">📝
+                <div class="gallery-item-overlay">
+                    <div class="gallery-item-content" style="background: transparent; padding: 0;">
+                        <div class="overlay-text">
+                            <h3>AI Text Detection</h3>
+                            <p>Generated vs human-written content</p>
+                            <div class="overlay-tag">Text</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item-content">
+                <h3>AI Text Detection</h3>
+                <p>Identify patterns and linguistic markers unique to AI language models.</p>
+            </div>
+        </div>
+
+        <!-- Gallery Item 6 -->
+        <div class="gallery-item" data-category="videos">
+            <div class="gallery-item-image">🎬
+                <div class="gallery-item-overlay">
+                    <div class="gallery-item-content" style="background: transparent; padding: 0;">
+                        <div class="overlay-text">
+                            <h3>Lip Sync Deepfakes</h3>
+                            <p>AI-synchronized mouth movements analysis</p>
+                            <div class="overlay-tag">Videos</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item-content">
+                <h3>Lip Sync Deepfakes</h3>
+                <p>Techniques to detect misalignments and timing issues in lip-sync deepfakes.</p>
+            </div>
+        </div>
+
+        <!-- Gallery Item 7 -->
+        <div class="gallery-item" data-category="images">
+            <div class="gallery-item-image">🌆
+                <div class="gallery-item-overlay">
+                    <div class="gallery-item-content" style="background: transparent; padding: 0;">
+                        <div class="overlay-text">
+                            <h3>Scene Generation</h3>
+                            <p>AI-created landscapes and environments</p>
+                            <div class="overlay-tag">Images</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item-content">
+                <h3>Scene Generation</h3>
+                <p>Spot impossible physics and reality inconsistencies in generated scenes.</p>
+            </div>
+        </div>
+
+        <!-- Gallery Item 8 -->
+        <div class="gallery-item" data-category="audio">
+            <div class="gallery-item-image">🎵
+                <div class="gallery-item-overlay">
+                    <div class="gallery-item-content" style="background: transparent; padding: 0;">
+                        <div class="overlay-text">
+                            <h3>AI Music Synthesis</h3>
+                            <p>Computer-generated music samples</p>
+                            <div class="overlay-tag">Audio</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gallery-item-content">
+                <h3>AI Music Synthesis</h3>
+                <p>Understand how to identify artificial patterns in machine-generated music.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner reveal">
+    <h2>Ready to become a media verification expert?</h2>
+    <a href="index.html#contact" class="btn-white">GET STARTED</a>
+</section>
+
+<!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="nav-logo" href="../index.html">Verif<span>AI</span></a>
+        <p>Educating the public on how to identify AI-generated media. Stay informed, stay critical, stay real.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about/about.html">About</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+ 
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#topics">Topics</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links footer-social">
+        <h4>Follow Us</h4>
+        <a href="https://www.facebook.com/Verif-AI" target="_blank" rel="noopener">
+          <span class="fb-icon">f</span>
+          Verif-AI on Facebook
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 VerifAI. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="../index.html">Home</a>
+        <a href="../about/about.html">About</a>
+        <a href="#contact">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+    
+    <<script>
+        // Scroll reveal logic
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    observer.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        reveals.forEach(el => observer.observe(el));
+
+        // Navbar scroll effect
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            nav.style.boxShadow = window.scrollY > 40
+                ? '0 4px 30px rgba(0,22,92,0.6)'
+                : '0 2px 30px rgba(0,22,92,0.35)';
+        });
+        // Still fixing the filtering effect(not working properly)
+        //Filtering logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filterValue = this.getAttribute('data-filter');
+
+                    // Set active button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    galleryItems.forEach(item => {
+                        const category = item.getAttribute('data-category');
+
+                        if (filterValue === 'all' || category === filterValue) {
+                            // Show item and make it take up space again
+                            item.style.display = 'block'; 
+                            
+                            requestAnimationFrame(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'scale(1)';
+                                item.style.pointerEvents = 'auto';
+                            });
+                        } else {
+                           
+                            item.style.opacity = '0';
+                            item.style.transform = 'scale(0.95)';
+                            item.style.pointerEvents = 'none';
+
+                            setTimeout(() => {
+                                if (item.style.opacity === '0') {
+                                    item.style.display = 'none';
+                                }
+                            }, 300);
+                            
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
