@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Topics – VerifAI</title>
+    <link rel="stylesheet" href="topics.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav>
+      <a class="nav-logo" href="../index.html">Verif<span>AI</span></a>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="topics.html" class="active">Topics</a></li>
+        <li><a href="../gallery/gallery.html">Gallery</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="hero-grid"></div>
+      <div class="hero-glow"></div>
+      <div class="page-hero-content">
+        <div class="breadcrumb">
+          <a href="../index.html">Home</a>
+          <span>›</span>
+          Topics
+        </div>
+        <span class="page-hero-eyebrow">Educational Topics</span>
+        <h1>Browse All <span>Topics</span></h1>
+        <p>
+          Everything you need to identify AI-generated media — from beginner
+          guides to advanced forensic techniques. Explore every category below.
+        </p>
+      </div>
+    </section>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+      <button class="filter-tab active" data-filter="all">All Topics</button>
+      <button class="filter-tab" data-filter="video">Video & Film</button>
+      <button class="filter-tab" data-filter="image">Images</button>
+      <button class="filter-tab" data-filter="audio">Audio & Voice</button>
+      <button class="filter-tab" data-filter="text">Text & Writing</button>
+      <button class="filter-tab" data-filter="tools">Detection Tools</button>
+      <button class="filter-tab" data-filter="society">Society & Ethics</button>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="search-wrap">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search topics…"
+          autocomplete="off"
+        />
+      </div>
+      <span class="results-count"
+        ><strong id="countNum">14</strong> topics</span
+      >
+    </div>
+
+    <!-- TOPICS -->
+    <section class="topics-section">
+      <!-- VIDEO & FILM -->
+      <div class="category-group reveal" data-group="video">
+        <div class="category-group-header">
+          <div class="cat-group-icon">🎥</div>
+          <div>
+            <div class="cat-group-label">Category</div>
+            <div class="cat-group-title">Video & Film</div>
+          </div>
+          <span class="cat-group-count">3 topics</span>
+        </div>
+        <div class="topic-cards">
+          <a
+            class="topic-card featured"
+            href="#"
+            data-category="video"
+            data-title="How to Detect Deepfake Videos"
+          >
+            <div class="topic-card-accent"></div>
+            <div class="topic-card-thumb">
+              <span class="thumb-emoji">🎭</span>
+              <span class="difficulty-badge intermediate">Intermediate</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Video & Film</div>
+              <div class="topic-card-title">
+                How to Detect Deepfake Videos: A Complete Guide
+              </div>
+              <div class="topic-card-desc">
+                Deepfakes have become alarmingly convincing. Learn the
+                frame-by-frame analysis techniques professionals use to catch
+                synthetic faces — from facial boundary artifacts to unnatural
+                blinking patterns.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-meta">12 min · Intermediate</span>
+                <span class="topic-card-arrow">→</span>
+              </div>
+            </div>
+          </a>
+          <a
+            class="topic-card"
+            href="#"
+            data-category="video"
+            data-title="Face Swapping in the Wild"
+          >
+            <div class="topic-card-accent"></div>
+            <div class="topic-card-thumb">
+              <span class="thumb-emoji">👤</span>
+              <span class="difficulty-badge beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Video & Film</div>
+              <div class="topic-card-title">Face Swapping in the Wild</div>
+              <div class="topic-card-desc">
+                How face-swap apps work, where they spread, and the visual clues
+                that give them away even at a casual glance.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-meta">6 min · Beginner</span>
+                <span class="topic-card-arrow">→</span>
+              </div>
+            </div>
+          </a>
+          <a
+            class="topic-card"
+            href="#"
+            data-category="video"
+            data-title="AI Video in Political Campaigns"
+          >
+            <div class="topic-card-accent"></div>
+            <div class="topic-card-thumb">
+              <span class="thumb-emoji">🗳️</span>
+              <span class="difficulty-badge advanced">Advanced</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Video & Film</div>
+              <div class="topic-card-title">
+                AI Video in Political Campaigns
+              </div>
+              <div class="topic-card-desc">
+                Documenting how synthetic video has been deployed in elections
+                worldwide — and what voters can do to protect themselves from
+                manipulation.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-meta">10 min · Advanced</span>
+                <span class="topic-card-arrow">→</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- IMAGES -->
+      <div class="category-group reveal" data-group="image">
+        <div class="category-group-header">
+          <div class="cat-group-icon">🖼️</div>
+          <div>
+            <div class="cat-group-label">Category</div>
+            <div class="cat-group-title">AI-Generated Images</div>
+          </div>
+          <span class="cat-group-count">3 topics</span>
+        </div>
+        <div class="topic-cards">
+          <a
+            class="topic-card featured"
+            href="#"
+            data-category="image"
+            data-title="How to Spot AI-Generated Images"
+          >
+            <div class="topic-card-accent"></div>
+            <div class="topic-card-thumb">
+              <span class="thumb-emoji">🔍</span>
+              <span class="difficulty-badge beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">AI-Generated Images</div>
+              <div class="topic-card-title">
+                How to Spot AI-Generated Images
+              </div>
+              <div class="topic-card-desc">
+                Our most popular guide. Walk through the six most reliable
+                visual clues — from impossible hands and plastic teeth to
+                background text that spells nothing — and learn the verification
+                tools professionals trust.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-meta">8 min · Beginner</span>
+                <span class="topic-card-arrow">→</span>
+              </div>
+            </div>
+          </a>
+          <a
+            class="topic-card"
+            href="#"
+            data-category="image"
+            data-title="AI Art vs Real Photography"
+          >
+            <div class="topic-card-accent"></div>
+            <div class="topic-card-thumb">
+              <span class="thumb-emoji">🎨</span>
+              <span class="difficulty-badge beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">AI-Generated Images</div>
+              <div class="topic-card-title">AI Art vs. Real Photography</div>
+              <div class="topic-card-desc">
+                When does a synthetic image cross from art into deception?
+                Explore the aesthetic and ethical boundary between AI art and
+                fabricated photographic evidence.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-meta">7 min · Beginner</span>
+                <span class="topic-card-arrow">→</span>
+              </div>
+            </div>
+          </a>
+          <a
+            class="topic-card"
+            href="#"
+            data-category="image"
+            data-title="AI Images in Social Media"
+          >
+            <div class="topic-card-accent"></div>
+            <div class="topic-card-thumb">
+              <span class="thumb-emoji">📱</span>
+              <span class="difficulty-badge intermediate">Intermediate</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">AI-Generated Images</div>
+              <div class="topic-card-title">AI Images in Social Media</div>
+              <div class="topic-card-desc">
+                How AI-generated images spread through social platforms, why
+                algorithms amplify them, and practical habits to protect
+                yourself while scrolling.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-meta">5 min · Intermediate</span>
+                <span class="topic-card-arrow">→</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- AUDIO & VOICE -->
+      <div class="category-group reveal" data-group="audio">
+        <div class="category-group-header">
+          <div class="cat-group-icon">🎙️</div>
+          <div>
+            <div class="cat-group-label">Category</div>
+            <div class="cat-group-title">Audio & Voice Cloning</div>
+          </div>
+          <span class="cat-group-count">2 topics</span>
+        </div>
+        <div class="topic-cards">
+          <a
+            class="topic-card featured"
+            href="#"
+            data-category="audio"
+            data-title="When You Cant Trust Your Ears"
+          >
+            <div class="topic-card-accent"></div>
+            <div class="topic-card-thumb">
+              <span class="thumb-emoji">👂</span>
+              <span class="difficulty-badge intermediate">Intermediate</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Audio & Voice Cloning</div>
+              <div class="topic-card-title">
+                When You Can't Trust Your Ears: Voice Clone Detection
+              </div>
+              <div class="topic-card-desc">
+                Modern voice cloning tools can replicate a person's voice from
+                just a few seconds of audio. Learn the acoustic tells —
+                unnatural breath patterns, robotic consonants, timing
+                irregularities — that reveal a synthetic voice.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-meta">9 min · Intermediate</span>
+                <span class="topic-card-arrow">→</span>
+              </div>
+            </div>
+          </a>
+          <a
+            class="topic-card"
+            href="#"
+            data-category="audio"
+            data-title="AI Audio in Scams and Fraud"
+          >
+            <div class="topic-card-accent"></div>
+            <div class="topic-card-thumb">
+              <span class="thumb-emoji">⚠️</span>
+              <span class="difficulty-badge beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Audio & Voice Cloning</div>
+              <div class="topic-card-title">AI Audio in Scams and Fraud</div>
+              <div class="topic-card-desc">
+                Criminals are using cloned voices to impersonate family members,
+                executives, and officials. Real-world case studies and how to
+                protect yourself from audio-based deception.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-meta">6 min · Beginner</span>
+                <span class="topic-card-arrow">→</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- TEXT & WRITING -->
+      <div class="category-group reveal" data-group="text">
+        <div class="category-group-header">
+          <div class="cat-group-icon">✍️</div>
+          <div>
+            <div class="cat-group-label">Category</div>
+            <div class="cat-group-title">Synthetic Text & Writing</div>
+          </div>
+          <span class="cat-group-count">2 topics</span>
+        </div>
+        <div class="topic-cards">
+          <a
+            class="topic-card featured"
+            href="#"
+            data-category="text"
+            data-title="AI-Written Articles Spotting the Patterns"
+          >
+            <div class="topic-card-accent"></div>
+            <div class="topic-card-thumb">
+              <span class="thumb-emoji">📰</span>
+              <span class="difficulty-badge intermediate">Intermediate</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Synthetic Text & Writing</div>
+              <div class="topic-card-title">
+                AI-Written Articles: Spotting the Patterns
+              </div>
+              <div class="topic-card-desc">
+                AI text generators produce prose that is statistically plausible
+                but stylistically hollow. Learn to recognise the signs: hedging
+                language, structural predictability, and the absence of genuine
+                expertise.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-meta">8 min · Intermediate</span>
+                <span class="topic-card-arrow">→</span>
+              </div>
+            </div>
+          </a>
+          <a
+            class="topic-card"
+            href="#"
+            data-category="text"
+            data-title="AI and Journalism Newsrooms Fighting Back"
+          >
+            <div class="topic-card-accent"></div>
+            <div class="topic-card-thumb">
+              <span class="thumb-emoji">📋</span>
+              <span class="difficulty-badge advanced">Advanced</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Synthetic Text & Writing</div>
+              <div class="topic-card-title">
+                AI & Journalism: How Newsrooms Are Fighting Back
+              </div>
+              <div class="topic-card-desc">
+                How leading publications are developing editorial protocols to
+                detect and combat AI-generated content entering their pipelines
+                — from contributor submissions to wire services.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-meta">11 min · Advanced</span>
+                <span class="topic-card-arrow">→</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- DETECTION TOOLS -->
+      <div class="category-group reveal" data-group="tools">
+        <div class="category-group-header">
+          <div class="cat-group-icon">🛠️</div>
+          <div>
+            <div class="cat-group-label">Category</div>
+            <div class="cat-group-title">
+              Media Verification & Detection Tools
+            </div>
+          </div>
+          <span class="cat-group-count">2 topics</span>
+        </div>
+        <div class="topic-cards">
+          <a
+            class="topic-card featured"
+            href="#"
+            data-category="tools"
+            data-title="The Best Free Tools for Verifying Digital Media"
+          >
+            <div class="topic-card-accent"></div>
+            <div class="topic-card-thumb">
+              <span class="thumb-emoji">🔬</span>
+              <span class="difficulty-badge beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Media Verification Tools</div>
+              <div class="topic-card-title">
+                The Best Free Tools for Verifying Digital Media
+              </div>
+              <div class="topic-card-desc">
+                A practical, regularly updated directory of the best free tools
+                for verifying images, videos, and text — including reverse image
+                search, EXIF readers, AI classifiers, and provenance checkers.
+                No technical background required.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-meta">7 min · Beginner</span>
+                <span class="topic-card-arrow">→</span>
+              </div>
+            </div>
+          </a>
+          <a
+            class="topic-card"
+            href="#"
+            data-category="tools"
+            data-title="Digital Forensics for Beginners"
+          >
+            <div class="topic-card-accent"></div>
+            <div class="topic-card-thumb">
+              <span class="thumb-emoji">🧪</span>
+              <span class="difficulty-badge intermediate">Intermediate</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Digital Forensics</div>
+              <div class="topic-card-title">
+                Digital Forensics for Beginners
+              </div>
+              <div class="topic-card-desc">
+                An introduction to the techniques digital forensic analysts use
+                to examine media authenticity — including metadata analysis,
+                error-level analysis, and hash verification.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-meta">9 min · Intermediate</span>
+                <span class="topic-card-arrow">→</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- SOCIETY & ETHICS -->
+      <div class="category-group reveal" data-group="society">
+        <div class="category-group-header">
+          <div class="cat-group-icon">⚖️</div>
+          <div>
+            <div class="cat-group-label">Category</div>
+            <div class="cat-group-title">Society, Ethics & Policy</div>
+          </div>
+          <span class="cat-group-count">2 topics</span>
+        </div>
+        <div class="topic-cards">
+          <a
+            class="topic-card featured"
+            href="#"
+            data-category="society"
+            data-title="The Ethics of AI-Generated Media"
+          >
+            <div class="topic-card-accent"></div>
+            <div class="topic-card-thumb">
+              <span class="thumb-emoji">🌐</span>
+              <span class="difficulty-badge intermediate">Intermediate</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Ethics of AI Media</div>
+              <div class="topic-card-title">
+                The Ethics of AI-Generated Media
+              </div>
+              <div class="topic-card-desc">
+                Who is responsible when synthetic media causes harm? An
+                exploration of consent, creator liability, platform
+                accountability, and the emerging legal landscape around
+                AI-generated content.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-meta">13 min · Intermediate</span>
+                <span class="topic-card-arrow">→</span>
+              </div>
+            </div>
+          </a>
+          <a
+            class="topic-card"
+            href="#"
+            data-category="society"
+            data-title="Political Manipulation and AI Media"
+          >
+            <div class="topic-card-accent"></div>
+            <div class="topic-card-thumb">
+              <span class="thumb-emoji">🏛️</span>
+              <span class="difficulty-badge advanced">Advanced</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Political Manipulation</div>
+              <div class="topic-card-title">
+                Political Manipulation and AI Media
+              </div>
+              <div class="topic-card-desc">
+                How state and non-state actors are using synthetic media to
+                influence public opinion, undermine trust in institutions, and
+                destabilise democratic discourse at scale.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-meta">14 min · Advanced</span>
+                <span class="topic-card-arrow">→</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Empty state -->
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">🔍</div>
+        <p>No topics match your search. Try a different keyword.</p>
+      </div>
+    </section>
+
+    <!-- STATS ROW -->
+    <div class="stats-row">
+      <div class="stat-item">
+        <div class="stat-num">6<span>+</span></div>
+        <div class="stat-label">Topic Categories</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">14<span>+</span></div>
+        <div class="stat-label">In-Depth Articles</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Difficulty Levels</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100<span>%</span></div>
+        <div class="stat-label">Free to Read</div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <section class="cta-banner">
+      <h2>Want to see real examples side by side?</h2>
+      <a href="../gallery/gallery.html" class="btn-white">Visit the Gallery</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="nav-logo" href="../index.html">Verif<span>AI</span></a>
+          <p>
+            Educating the public on how to identify AI-generated media. Stay
+            informed, stay critical, stay real.
+          </p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../gallery/gallery.html">Gallery</a></li>
+            <li><a href="topics.html">Topics</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-links footer-social">
+          <h4>Follow Us</h4>
+          <a
+            href="https://www.facebook.com/profile.php?id=61582741020706"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="fb-icon">f</span>
+            Verif-AI on Facebook
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 VerifAI. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#about">About</a>
+          <a href="../index.html#contact">Contact Us</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Scroll reveal
+      const reveals = document.querySelectorAll(".reveal");
+      const revObs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              revObs.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.08 },
+      );
+      reveals.forEach((el) => revObs.observe(el));
+
+      // Navbar scroll shadow
+      const navEl = document.querySelector("nav");
+      window.addEventListener("scroll", () => {
+        navEl.style.boxShadow =
+          window.scrollY > 40
+            ? "0 4px 30px rgba(0,22,92,0.6)"
+            : "0 2px 30px rgba(0,22,92,0.35)";
+      });
+
+      // Filter tabs
+      const tabs = document.querySelectorAll(".filter-tab");
+      const groups = document.querySelectorAll(".category-group");
+
+      function countVisible() {
+        let n = 0;
+        document.querySelectorAll(".topic-card").forEach((c) => {
+          if (c.style.display !== "none") n++;
+        });
+        return n;
+      }
+
+      function applyFilter(filter) {
+        tabs.forEach((t) =>
+          t.classList.toggle("active", t.dataset.filter === filter),
+        );
+        groups.forEach((g) => {
+          const show = filter === "all" || g.dataset.group === filter;
+          g.style.display = show ? "" : "none";
+          // Restore all cards within visible groups
+          if (show)
+            g.querySelectorAll(".topic-card").forEach(
+              (c) => (c.style.display = ""),
+            );
+        });
+        document.getElementById("countNum").textContent = countVisible();
+        document
+          .getElementById("emptyState")
+          .classList.toggle("visible", countVisible() === 0);
+      }
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          document.getElementById("searchInput").value = "";
+          applyFilter(tab.dataset.filter);
+        });
+      });
+
+      // Live search
+      document
+        .getElementById("searchInput")
+        .addEventListener("input", function () {
+          const q = this.value.toLowerCase().trim();
+          tabs.forEach((t) => t.classList.remove("active"));
+          if (!q) {
+            tabs[0].classList.add("active");
+            applyFilter("all");
+            return;
+          }
+
+          groups.forEach((group) => {
+            let groupVisible = false;
+            group.querySelectorAll(".topic-card").forEach((card) => {
+              const title = (card.dataset.title || "").toLowerCase();
+              const cat = (card.dataset.category || "").toLowerCase();
+              const desc =
+                card
+                  .querySelector(".topic-card-desc")
+                  ?.textContent.toLowerCase() || "";
+              const match =
+                title.includes(q) || cat.includes(q) || desc.includes(q);
+              card.style.display = match ? "" : "none";
+              if (match) groupVisible = true;
+            });
+            group.style.display = groupVisible ? "" : "none";
+          });
+
+          const vis = countVisible();
+          document.getElementById("countNum").textContent = vis;
+          document
+            .getElementById("emptyState")
+            .classList.toggle("visible", vis === 0);
+        });
+    </script>
+  </body>
+</html>
