@@ -298,7 +298,7 @@ nav {
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 28px;
     max-width: 1100px;
     margin: 0 auto;
@@ -317,7 +317,7 @@ nav {
     box-shadow: 0 16px 40px rgba(0,22,92,0.12);
 }
 
-/* Photo placeholder */
+/* Photo area */
 .member-photo {
     width: 100%;
     aspect-ratio: 1 / 1;
@@ -327,6 +327,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .member-card:nth-child(1) .member-photo { background: #00165C; }
@@ -338,7 +339,7 @@ nav {
 .member-card:nth-child(7) .member-photo { background: #00236c; }
 .member-card:nth-child(8) .member-photo { background: #00256e; }
 
-/* The grid-line overlay on the photo background */
+/* Grid-line overlay — pointer-events: none so clicks pass through */
 .member-photo::before {
     content: '';
     position: absolute;
@@ -347,15 +348,26 @@ nav {
     linear-gradient(rgba(12,112,206,0.1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(12,112,206,0.1) 1px, transparent 1px);
     background-size: 24px 24px;
+    pointer-events: none;
 }
 
-/* Blue accent bar at top of photo */
+/* Blue accent bar at top — pointer-events: none so clicks pass through */
 .member-photo::after {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 4px;
     background: var(--blue);
+    pointer-events: none;
+}
+
+/* Hover zoom effect on the image */
+.member-photo img {
+    transition: transform 0.35s ease;
+}
+
+.member-photo:hover img {
+    transform: scale(1.05);
 }
 
 /* Silhouette / placeholder icon */
@@ -633,6 +645,79 @@ footer {
 
 .footer-bottom-links a:hover { color: var(--blue); }
 
+/* ───────────────── LIGHTBOX ───────────────── */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-overlay.active {
+    display: flex;
+}
+
+.lightbox-box {
+    position: relative;
+    max-width: 480px;
+    width: 90%;
+    background: var(--navy);
+    border: 2px solid var(--blue);
+    border-radius: 4px;
+    overflow: hidden;
+    animation: fadeUp 0.3s ease forwards;
+}
+
+.lightbox-box img {
+    width: 100%;
+    display: block;
+}
+
+.lightbox-name {
+    padding: 16px 20px;
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    color: var(--white);
+    text-align: center;
+    border-top: 1px solid rgba(12,112,206,0.4);
+}
+
+.lightbox-role {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--blue);
+    text-align: center;
+    padding-bottom: 16px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    font-size: 1.6rem;
+    color: var(--white);
+    cursor: pointer;
+    background: rgba(0,0,0,0.5);
+    border: none;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: background 0.2s;
+}
+
+.lightbox-close:hover {
+    background: var(--blue);
+}
+
 /* ───────────────── SCROLL REVEAL ───────────────── */
 .reveal {
     opacity: 0;
@@ -651,9 +736,11 @@ footer {
     .nav-links { gap: 1.2rem; }
     .cta-banner { flex-direction: column; text-align: center; }
     .team-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+    .values-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 480px) {
     .nav-links { gap: 0.8rem; }
     .nav-links a { font-size: 0.78rem; letter-spacing: 0.8px; }
+    .values-grid { grid-template-columns: 1fr; }
 }
