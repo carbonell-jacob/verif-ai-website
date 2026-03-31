@@ -633,6 +633,88 @@ footer {
 
 .footer-bottom-links a:hover { color: var(--blue); }
 
+/* ───────────────── LIGHTBOX ───────────────── */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-overlay.active {
+  display: flex;
+}
+
+.lightbox-box {
+  position: relative;
+  max-width: 480px;
+  width: 90%;
+  background: var(--navy);
+  border: 2px solid var(--blue);
+  border-radius: 4px;
+  overflow: hidden;
+  animation: fadeUp 0.3s ease forwards;
+}
+
+.lightbox-box img {
+  width: 100%;
+  display: block;
+}
+
+.lightbox-name {
+  padding: 16px 20px;
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  color: var(--white);
+  text-align: center;
+  border-top: 1px solid rgba(12,112,206,0.4);
+}
+
+.lightbox-role {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--blue);
+  text-align: center;
+  padding-bottom: 16px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 1.6rem;
+  color: var(--white);
+  cursor: pointer;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: background 0.2s;
+}
+
+.lightbox-close:hover {
+  background: var(--blue);
+}
+
+.member-photo {
+  cursor: pointer;
+}
+
+.member-photo:hover .photo-placeholder {
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
 /* ───────────────── SCROLL REVEAL ───────────────── */
 .reveal {
     opacity: 0;

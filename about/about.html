@@ -311,7 +311,57 @@
         ? '0 4px 30px rgba(0,22,92,0.6)'
         : '0 2px 30px rgba(0,22,92,0.35)';
     });
+
+    // Lightbox
+    const lightbox        = document.getElementById('lightbox');
+    const lightboxImg     = document.getElementById('lightboxImg');
+    const lightboxName    = document.getElementById('lightboxName');
+    const lightboxRole    = document.getElementById('lightboxRole');
+    const lightboxClose   = document.getElementById('lightboxClose');
+
+    document.querySelectorAll('.member-photo').forEach(photo => {
+      photo.addEventListener('click', () => {
+        const card = photo.closest('.member-card');
+        const img  = photo.querySelector('img');
+        const name = card.querySelector('.member-name').textContent;
+        const role = card.querySelector('.member-role').textContent;
+
+        lightboxImg.src = img ? img.src : '';
+        lightboxImg.alt = name;
+        lightboxImg.style.display = img ? 'block' : 'none';
+        lightboxName.textContent = name;
+        lightboxRole.textContent = role;
+        lightbox.classList.add('active');
+      });
+    });
+
+    // Close on button click
+    lightboxClose.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+    });
+
+    // Close when clicking outside the box
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('active');
+      }
+    });
+
+    // Close with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') lightbox.classList.remove('active');
+    });
   </script>
+
+  <!-- LIGHTBOX OVERLAY -->
+  <div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-box">
+      <button class="lightbox-close" id="lightboxClose">&times;</button>
+      <img src="" alt="" id="lightboxImg">
+      <div class="lightbox-name" id="lightboxName"></div>
+      <div class="lightbox-role" id="lightboxRole"></div>
+    </div>
+  </div>
 
 </body>
 </html>
