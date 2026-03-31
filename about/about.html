@@ -291,6 +291,16 @@
     </div>
   </footer>
 
+  <!-- LIGHTBOX OVERLAY -->
+  <div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-box">
+      <button class="lightbox-close" id="lightboxClose">&times;</button>
+      <img src="" alt="" id="lightboxImg">
+      <div class="lightbox-name" id="lightboxName"></div>
+      <div class="lightbox-role" id="lightboxRole"></div>
+    </div>
+  </div>
+
   <script>
     // Scroll reveal
     const reveals = document.querySelectorAll('.reveal');
@@ -352,16 +362,6 @@
       if (e.key === 'Escape') lightbox.classList.remove('active');
     });
   </script>
-
-  <!-- LIGHTBOX OVERLAY -->
-  <div class="lightbox-overlay" id="lightbox">
-    <div class="lightbox-box">
-      <button class="lightbox-close" id="lightboxClose">&times;</button>
-      <img src="" alt="" id="lightboxImg">
-      <div class="lightbox-name" id="lightboxName"></div>
-      <div class="lightbox-role" id="lightboxRole"></div>
-    </div>
-  </div>
 
 </body>
 </html>
