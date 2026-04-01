@@ -74,6 +74,10 @@ nav {
   transition: color 0.3s;
 }
 
+.nav-links a.active::after {
+  width: 100%;
+}
+
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -138,6 +142,44 @@ nav {
   overflow: hidden;
 }
 
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(236, 236, 236, 0.45);
+  margin-bottom: 1.4rem;
+  opacity: 0;
+  animation: fadeUp 0.6s 0.1s forwards;
+}
+.breadcrumb a {
+  color: var(--blue);
+  text-decoration: none;
+}
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+.breadcrumb span {
+  color: rgba(236, 236, 236, 0.25);
+}
+.page-eyebrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  padding: 5px 16px;
+  border-radius: 2px;
+  margin-bottom: 1.2rem;
+  opacity: 0;
+  animation: fadeUp 0.6s 0.2s forwards;
+}
+
 .page-hero h1 {
   font-family: var(--font-head);
   font-size: 3.2rem;
@@ -153,12 +195,12 @@ nav {
 }
 
 .page-hero p {
-  max-width: 650px;
-  color: rgba(255, 255, 255, 0.75);
-  position: relative;
-  z-index: 2;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(236, 236, 236, 0.75);
+  max-width: 540px;
   opacity: 0;
-  animation: fadeUp 0.7s 0.6s forwards;
+  animation: fadeUp 0.6s 0.5s forwards;
 }
 
 .hero-content {

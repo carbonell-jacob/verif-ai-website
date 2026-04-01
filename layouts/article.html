@@ -3,22 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="article.css" />
     <title>How to Spot AI-Generated Images – VerifAI</title>
   </head>
   <body>
     <nav>
       <a class="nav-logo" href="../index.html">Verif<span>AI</span></a>
       <ul class="nav-links">
-        <li><a href="../index.html#about">About</a></li>
-        <li><a href="../gallery/gallery.html">Gallery</a></li>
-        <li><a href="../index.html#topics">Topics</a></li>
-        <li><a href="../index.html#contact">Contact</a></li>
+        <li><a href="../index.html#about" target="about">About</a></li>
+        <li><a href="../gallery/gallery.html" target="gallery">Gallery</a></li>
+        <li><a href="../index.html#topics" target="topics">Topics</a></li>
+        <li><a href="../index.html#contact" target="contact">Contact</a></li>
       </ul>
     </nav>
-
-    <div class="progress-bar">
-      <div class="progress-fill" id="progressFill"></div>
-    </div>
 
     <section class="article-hero">
       <div class="article-hero-grid"></div>
@@ -27,24 +24,22 @@
         <div class="breadcrumb">
           <a href="../index.html">Home</a><span>›</span>
           <a href="../index.html#topics">Topics</a><span>›</span>
-          AI-Generated Images
+          {Insert Topic Name}
         </div>
-        <span class="article-category">AI-Generated Images</span>
+        <span class="article-category">{Insert Topic Name}</span>
         <h1>How to Spot<br /><span>AI-Generated</span> Images</h1>
         <div class="article-meta">
           <div class="meta-author">
             <div class="meta-avatar">V</div>
             <div class="meta-author-info">
-              <span class="meta-author-name">VerifAI Editorial Team</span>
-              <span class="meta-author-role">Media Literacy Experts</span>
+              <span class="meta-author-name">LAST NAME</span>
+              <span class="meta-author-role">POSITION</span>
             </div>
           </div>
           <div class="meta-divider"></div>
           <span class="meta-detail"><strong>March 2026</strong></span>
           <div class="meta-divider"></div>
           <span class="meta-detail"><strong>8 min</strong> read</span>
-          <div class="meta-divider"></div>
-          <span class="meta-detail">Beginner–Intermediate</span>
         </div>
       </div>
     </section>
@@ -87,7 +82,7 @@
           question what you see before you share it.
         </p>
 
-        <div class="article-image reveal">
+        <div class="article-image">
           <div class="article-image-inner">
             <div class="img-compare">
               <div class="img-box real">📸<label>Real Photo</label></div>
@@ -96,7 +91,7 @@
             </div>
           </div>
           <div class="article-image-caption">
-            <strong>Figure 1:</strong> Side-by-side comparisons reveal subtle
+            <strong>Figure 1:</strong> Side-by-side comparisons subtle
             differences invisible at a casual scroll speed — but obvious once
             you know where to look.
           </div>
@@ -118,7 +113,7 @@
           the small imperfections of real fingernails?
         </p>
 
-        <div class="warning-box reveal">
+        <div class="warning-box">
           <div class="warning-box-label">⚠ Key Checkpoint</div>
           <p>
             Always count fingers in both hands if visible. Even a single extra
@@ -144,7 +139,7 @@
           uniformity.
         </p>
 
-        <div class="clue-grid reveal">
+        <div class="clue-grid">
           <div class="clue-card">
             <div class="clue-card-icon">👁️</div>
             <h4>Uncanny Eyes</h4>
@@ -182,7 +177,7 @@
         <h2 id="s3">3. Check the Background and Edges</h2>
         <p>
           While AI generators focus computational effort on the primary subject,
-          backgrounds often reveal the seams. Look for text that is garbled or
+          backgrounds often the seams. Look for text that is garbled or
           nonsensical — AI models do not understand language, so signs and
           labels in the background often contain letter-like shapes that spell
           nothing.
@@ -195,7 +190,7 @@
           seems to float slightly above the scene.
         </p>
 
-        <div class="pull-quote reveal">
+        <div class="pull-quote">
           <p>
             The background is where most generators run out of budget. Blurry
             signs, walls with non-Euclidean geometry, and reflections that don't
@@ -227,7 +222,7 @@
           invisible to human vision.
         </p>
 
-        <ol class="steps-list reveal">
+        <ol class="steps-list">
           <li>
             <div class="step-num">1</div>
             <div class="step-content">
@@ -297,7 +292,7 @@
           choosing not to share is an act of responsible digital citizenship.
         </p>
 
-        <div class="warning-box reveal">
+        <div class="warning-box">
           <div class="warning-box-label">💡 Remember</div>
           <p>
             No single clue is definitive proof that an image is AI-generated.
@@ -417,12 +412,12 @@
     </section>
 
     <section class="more-articles">
-      <div class="section-header reveal">
+      <div class="section-header">
         <span class="section-label">Keep Learning</span>
         <h2>More from <span>VerifAI</span></h2>
       </div>
       <div class="cards-grid">
-        <a class="card reveal" href="#">
+        <a class="card" href="#">
           <div class="card-thumb">🎭</div>
           <div class="card-body">
             <div class="card-cat">Face Swapping</div>
@@ -436,7 +431,7 @@
             </div>
           </div>
         </a>
-        <a class="card reveal" href="#">
+        <a class="card" href="#">
           <div class="card-thumb">📰</div>
           <div class="card-body">
             <div class="card-cat">AI & Journalism</div>
@@ -450,7 +445,7 @@
             </div>
           </div>
         </a>
-        <a class="card reveal" href="#">
+        <a class="card" href="#">
           <div class="card-thumb">🗳️</div>
           <div class="card-body">
             <div class="card-cat">Political Manipulation</div>
@@ -515,64 +510,5 @@
         </div>
       </div>
     </footer>
-
-    <script>
-      const fill = document.getElementById("progressFill");
-      window.addEventListener("scroll", () => {
-        const max = document.documentElement.scrollHeight - window.innerHeight;
-        fill.style.width = Math.min((window.scrollY / max) * 100, 100) + "%";
-      });
-
-      const reveals = document.querySelectorAll(".reveal");
-      const obs = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("visible");
-              obs.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.12 },
-      );
-      reveals.forEach((el) => obs.observe(el));
-
-      const sections = ["s1", "s2", "s3", "s4", "s5", "s6"];
-      const tocObs = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            const link = document.querySelector(
-              `.toc-link[href="#${e.target.id}"]`,
-            );
-            if (link) link.classList.toggle("active", e.isIntersecting);
-          });
-        },
-        { rootMargin: "-30% 0px -60% 0px" },
-      );
-      sections.forEach((id) => {
-        const el = document.getElementById(id);
-        if (el) tocObs.observe(el);
-      });
-
-      const nav = document.querySelector("nav");
-      window.addEventListener("scroll", () => {
-        nav.style.boxShadow =
-          window.scrollY > 40
-            ? "0 4px 30px rgba(0,22,92,0.6)"
-            : "0 2px 30px rgba(0,22,92,0.35)";
-      });
-
-      document.querySelectorAll(".share-btn").forEach((btn) => {
-        if (btn.title === "Copy Link") {
-          btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            navigator.clipboard.writeText(window.location.href).then(() => {
-              btn.textContent = "✓";
-              setTimeout(() => (btn.textContent = "🔗"), 1500);
-            });
-          });
-        }
-      });
-    </script>
   </body>
 </html>
