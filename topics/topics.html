@@ -3,809 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="topics.css" />
     <title>Topics – VerifAI</title>
-    <style>
-      :root {
-        --navy: #00165c;
-        --blue: #0c70ce;
-        --white: #ffffff;
-        --light: #ececec;
-        --ink: #1a1a2e;
-        --muted: #555e7a;
-        --font-head: Georgia, "Times New Roman", serif;
-        --font-body: Helvetica, Arial, sans-serif;
-      }
-
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        font-family: var(--font-body);
-        background: var(--white);
-        color: var(--ink);
-        overflow-x: hidden;
-      }
-
-      /* ── NAVBAR ── */
-      nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 100;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 5%;
-        height: 70px;
-        background: var(--navy);
-        border-bottom: 3px solid var(--blue);
-        box-shadow: 0 2px 30px rgba(0, 22, 92, 0.35);
-      }
-      .nav-logo {
-        font-family: var(--font-head);
-        font-size: 1.7rem;
-        font-weight: bold;
-        color: var(--white);
-        letter-spacing: 2px;
-        text-decoration: none;
-      }
-      .nav-logo span {
-        color: var(--blue);
-      }
-      .nav-links {
-        display: flex;
-        gap: 2.5rem;
-        list-style: none;
-      }
-      .nav-links a {
-        font-size: 0.9rem;
-        font-weight: 600;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        color: var(--light);
-        text-decoration: none;
-        position: relative;
-        transition: color 0.3s;
-      }
-      .nav-links a::after {
-        content: "";
-        position: absolute;
-        bottom: -4px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: var(--blue);
-        transition: width 0.3s ease;
-      }
-      .nav-links a:hover {
-        color: var(--white);
-      }
-      .nav-links a:hover::after {
-        width: 100%;
-      }
-      .nav-links a.active {
-        color: var(--white);
-      }
-      .nav-links a.active::after {
-        width: 100%;
-      }
-
-      /* ── PAGE HERO ── */
-      .page-hero {
-        min-height: 380px;
-        background: var(--navy);
-        display: flex;
-        align-items: flex-end;
-        padding: 110px 8% 56px;
-        position: relative;
-        overflow: hidden;
-      }
-      .hero-grid {
-        position: absolute;
-        inset: 0;
-        background-image:
-          linear-gradient(rgba(12, 112, 206, 0.12) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(12, 112, 206, 0.12) 1px, transparent 1px);
-        background-size: 50px 50px;
-        animation: gridDrift 20s linear infinite;
-      }
-      @keyframes gridDrift {
-        0% {
-          background-position: 0 0;
-        }
-        100% {
-          background-position: 50px 50px;
-        }
-      }
-      .hero-glow {
-        position: absolute;
-        width: 700px;
-        height: 400px;
-        border-radius: 50%;
-        background: radial-gradient(
-          ellipse,
-          rgba(12, 112, 206, 0.18) 0%,
-          transparent 70%
-        );
-        bottom: -100px;
-        right: -50px;
-        pointer-events: none;
-      }
-      /* Decorative large text watermark */
-      .hero-watermark {
-        position: absolute;
-        right: 6%;
-        bottom: -10px;
-        font-family: var(--font-head);
-        font-size: clamp(5rem, 12vw, 9rem);
-        font-weight: bold;
-        color: rgba(12, 112, 206, 0.06);
-        letter-spacing: -4px;
-        pointer-events: none;
-        line-height: 1;
-        user-select: none;
-      }
-
-      .page-hero-content {
-        position: relative;
-        z-index: 2;
-        max-width: 700px;
-      }
-      .breadcrumb {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 0.72rem;
-        font-weight: 600;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: rgba(236, 236, 236, 0.45);
-        margin-bottom: 1.4rem;
-        opacity: 0;
-        animation: fadeUp 0.6s 0.1s forwards;
-      }
-      .breadcrumb a {
-        color: var(--blue);
-        text-decoration: none;
-      }
-      .breadcrumb a:hover {
-        text-decoration: underline;
-      }
-      .breadcrumb span {
-        color: rgba(236, 236, 236, 0.25);
-      }
-
-      .page-eyebrow {
-        display: inline-block;
-        font-size: 0.7rem;
-        font-weight: 700;
-        letter-spacing: 4px;
-        text-transform: uppercase;
-        color: var(--blue);
-        border: 1px solid var(--blue);
-        padding: 5px 16px;
-        border-radius: 2px;
-        margin-bottom: 1.2rem;
-        opacity: 0;
-        animation: fadeUp 0.6s 0.2s forwards;
-      }
-      .page-hero h1 {
-        font-family: var(--font-head);
-        font-size: clamp(2.4rem, 5.5vw, 4rem);
-        line-height: 1.08;
-        color: var(--white);
-        margin-bottom: 1rem;
-        opacity: 0;
-        animation: fadeUp 0.6s 0.35s forwards;
-      }
-      .page-hero h1 span {
-        color: var(--blue);
-      }
-      .page-hero p {
-        font-size: 1.05rem;
-        line-height: 1.75;
-        color: rgba(236, 236, 236, 0.75);
-        max-width: 540px;
-        opacity: 0;
-        animation: fadeUp 0.6s 0.5s forwards;
-      }
-
-      @keyframes fadeUp {
-        from {
-          opacity: 0;
-          transform: translateY(22px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* ── STATS BAND ── */
-      .stats-band {
-        background: var(--light);
-        border-top: 4px solid var(--blue);
-        border-bottom: 4px solid var(--blue);
-        padding: 32px 8%;
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        gap: 1.5rem;
-      }
-      .stat-item {
-        text-align: center;
-      }
-      .stat-num {
-        font-family: var(--font-head);
-        font-size: 2.4rem;
-        font-weight: bold;
-        color: var(--navy);
-        line-height: 1;
-      }
-      .stat-num span {
-        color: var(--blue);
-      }
-      .stat-label {
-        font-size: 0.75rem;
-        font-weight: 600;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: #666;
-        margin-top: 5px;
-      }
-
-      /* ── FILTER BAR ── */
-      .filter-section {
-        background: var(--white);
-        padding: 40px 8% 0;
-        position: sticky;
-        top: 70px;
-        z-index: 50;
-        border-bottom: 1px solid rgba(0, 22, 92, 0.08);
-        box-shadow: 0 4px 20px rgba(0, 22, 92, 0.04);
-      }
-      .filter-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1.5rem;
-        flex-wrap: wrap;
-        padding-bottom: 20px;
-      }
-      .filter-label {
-        font-size: 0.7rem;
-        font-weight: 700;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: var(--muted);
-        white-space: nowrap;
-      }
-      .filter-pills {
-        display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-        flex: 1;
-      }
-      .filter-pill {
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        padding: 7px 18px;
-        border: 1.5px solid rgba(0, 22, 92, 0.15);
-        border-radius: 2px;
-        color: var(--muted);
-        background: transparent;
-        cursor: pointer;
-        transition: all 0.2s;
-        white-space: nowrap;
-      }
-      .filter-pill:hover {
-        border-color: var(--blue);
-        color: var(--blue);
-      }
-      .filter-pill.active {
-        background: var(--navy);
-        color: var(--white);
-        border-color: var(--navy);
-      }
-      .search-wrap {
-        position: relative;
-        flex-shrink: 0;
-      }
-      .search-input {
-        padding: 8px 16px 8px 36px;
-        border: 1.5px solid rgba(0, 22, 92, 0.15);
-        border-radius: 2px;
-        font-size: 0.85rem;
-        font-family: var(--font-body);
-        color: var(--ink);
-        outline: none;
-        width: 220px;
-        transition: border-color 0.2s;
-      }
-      .search-input:focus {
-        border-color: var(--blue);
-      }
-      .search-icon {
-        position: absolute;
-        left: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 0.85rem;
-        color: var(--muted);
-        pointer-events: none;
-      }
-
-      /* ── TOPICS GRID ── */
-      .topics-section {
-        padding: 60px 8% 80px;
-      }
-
-      /* Category group */
-      .category-group {
-        margin-bottom: 70px;
-      }
-      .category-group-header {
-        display: flex;
-        align-items: center;
-        gap: 1.2rem;
-        margin-bottom: 1.8rem;
-        padding-bottom: 1rem;
-        border-bottom: 2px solid var(--light);
-        position: relative;
-      }
-      .category-group-header::after {
-        content: "";
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 80px;
-        height: 2px;
-        background: var(--blue);
-      }
-      .category-group-icon {
-        width: 48px;
-        height: 48px;
-        border-radius: 3px;
-        background: var(--navy);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.4rem;
-        flex-shrink: 0;
-      }
-      .category-group-info {
-      }
-      .category-group-name {
-        font-family: var(--font-head);
-        font-size: 1.5rem;
-        color: var(--navy);
-        line-height: 1.2;
-      }
-      .category-group-count {
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--blue);
-        margin-top: 2px;
-      }
-
-      /* Topic cards grid */
-      .topic-cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 1.2rem;
-      }
-
-      .topic-card {
-        display: block;
-        text-decoration: none;
-        border: 1.5px solid rgba(0, 22, 92, 0.1);
-        border-radius: 3px;
-        overflow: hidden;
-        background: var(--white);
-        transition:
-          transform 0.25s,
-          box-shadow 0.25s,
-          border-color 0.25s;
-        position: relative;
-      }
-      .topic-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 40px rgba(0, 22, 92, 0.12);
-        border-color: var(--blue);
-      }
-
-      /* Card accent bar at top */
-      .topic-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: var(--blue);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.3s ease;
-      }
-      .topic-card:hover::before {
-        transform: scaleX(1);
-      }
-
-      .topic-card-thumb {
-        height: 140px;
-        background: var(--navy);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        overflow: hidden;
-      }
-      .topic-card-thumb::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image:
-          linear-gradient(rgba(12, 112, 206, 0.1) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(12, 112, 206, 0.1) 1px, transparent 1px);
-        background-size: 28px 28px;
-      }
-      .topic-card-thumb-icon {
-        font-size: 2.8rem;
-        position: relative;
-        z-index: 1;
-        filter: drop-shadow(0 4px 16px rgba(12, 112, 206, 0.4));
-        transition: transform 0.3s ease;
-      }
-      .topic-card:hover .topic-card-thumb-icon {
-        transform: scale(1.12);
-      }
-
-      /* Difficulty badge on thumb */
-      .difficulty-badge {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        z-index: 2;
-        font-size: 0.6rem;
-        font-weight: 700;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        padding: 4px 10px;
-        border-radius: 2px;
-      }
-      .diff-beginner {
-        background: rgba(0, 180, 100, 0.2);
-        color: #00b464;
-        border: 1px solid rgba(0, 180, 100, 0.3);
-      }
-      .diff-intermediate {
-        background: rgba(12, 112, 206, 0.2);
-        color: #5aabf5;
-        border: 1px solid rgba(12, 112, 206, 0.3);
-      }
-      .diff-advanced {
-        background: rgba(200, 50, 50, 0.2);
-        color: #e07070;
-        border: 1px solid rgba(200, 50, 50, 0.3);
-      }
-
-      .topic-card-body {
-        padding: 1.3rem 1.4rem 1.5rem;
-      }
-      .topic-card-cat {
-        font-size: 0.65rem;
-        font-weight: 700;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: var(--blue);
-        margin-bottom: 0.4rem;
-      }
-      .topic-card-title {
-        font-family: var(--font-head);
-        font-size: 1.05rem;
-        color: var(--navy);
-        line-height: 1.35;
-        margin-bottom: 0.6rem;
-      }
-      .topic-card-desc {
-        font-size: 0.84rem;
-        line-height: 1.6;
-        color: var(--muted);
-        margin-bottom: 1rem;
-      }
-      .topic-card-footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 0.9rem;
-        border-top: 1px solid rgba(0, 22, 92, 0.06);
-        font-size: 0.75rem;
-        color: rgba(85, 94, 122, 0.7);
-      }
-      .topic-card-articles {
-        display: flex;
-        align-items: center;
-        gap: 0.4rem;
-      }
-      .topic-card-articles::before {
-        content: "";
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: var(--blue);
-        flex-shrink: 0;
-      }
-      .topic-card-read {
-        font-weight: 700;
-        color: var(--blue);
-        display: flex;
-        align-items: center;
-        gap: 0.3rem;
-      }
-      .topic-card-read::after {
-        content: "→";
-      }
-
-      /* ── FEATURED TOPIC (wide card) ── */
-      .topic-card.featured {
-        grid-column: 1 / -1;
-        display: grid;
-        grid-template-columns: 340px 1fr;
-      }
-      .topic-card.featured .topic-card-thumb {
-        height: 100%;
-        min-height: 200px;
-      }
-      .topic-card.featured .topic-card-title {
-        font-size: 1.3rem;
-      }
-      .topic-card.featured .topic-card-desc {
-        font-size: 0.9rem;
-      }
-
-      /* ── NO RESULTS ── */
-      .no-results {
-        display: none;
-        text-align: center;
-        padding: 60px 0;
-        grid-column: 1 / -1;
-      }
-      .no-results.visible {
-        display: block;
-      }
-      .no-results-icon {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-      }
-      .no-results h3 {
-        font-family: var(--font-head);
-        font-size: 1.4rem;
-        color: var(--navy);
-        margin-bottom: 0.5rem;
-      }
-      .no-results p {
-        font-size: 0.9rem;
-        color: var(--muted);
-      }
-
-      /* ── CTA BANNER ── */
-      .cta-banner {
-        background: var(--blue);
-        padding: 70px 8%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 2rem;
-        flex-wrap: wrap;
-      }
-      .cta-banner h2 {
-        font-family: var(--font-head);
-        font-size: clamp(1.6rem, 3vw, 2.4rem);
-        color: var(--white);
-        max-width: 560px;
-        line-height: 1.25;
-      }
-      .btn-white {
-        font-family: var(--font-body);
-        font-size: 0.9rem;
-        font-weight: 700;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        padding: 16px 40px;
-        background: var(--white);
-        color: var(--blue);
-        border: 2px solid var(--white);
-        border-radius: 3px;
-        text-decoration: none;
-        white-space: nowrap;
-        transition:
-          background 0.3s,
-          color 0.3s;
-      }
-      .btn-white:hover {
-        background: transparent;
-        color: var(--white);
-      }
-
-      /* ── FOOTER ── */
-      footer {
-        background: var(--navy);
-        border-top: 4px solid var(--blue);
-        padding: 50px 8% 30px;
-      }
-      .footer-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        gap: 2rem;
-        margin-bottom: 36px;
-      }
-      .footer-brand .nav-logo {
-        display: block;
-        margin-bottom: 0.8rem;
-        font-size: 2rem;
-      }
-      .footer-brand p {
-        font-size: 0.9rem;
-        color: rgba(236, 236, 236, 0.6);
-        max-width: 280px;
-        line-height: 1.6;
-      }
-      .footer-links h4 {
-        font-family: var(--font-head);
-        font-size: 1rem;
-        color: var(--white);
-        margin-bottom: 1rem;
-        letter-spacing: 1px;
-      }
-      .footer-links ul {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-      .footer-links ul a {
-        font-size: 0.9rem;
-        color: rgba(236, 236, 236, 0.65);
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-      .footer-links ul a:hover {
-        color: var(--blue);
-      }
-      .footer-social a {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 0.9rem;
-        color: rgba(236, 236, 236, 0.65);
-        text-decoration: none;
-        margin-top: 0.4rem;
-        transition: color 0.3s;
-      }
-      .footer-social a:hover {
-        color: var(--blue);
-      }
-      .fb-icon {
-        width: 28px;
-        height: 28px;
-        background: var(--blue);
-        border-radius: 5px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.85rem;
-        color: var(--white);
-        font-weight: bold;
-      }
-      .footer-bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding-top: 20px;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-      .footer-bottom p {
-        font-size: 0.8rem;
-        color: rgba(236, 236, 236, 0.4);
-      }
-      .footer-bottom-links {
-        display: flex;
-        gap: 1.5rem;
-      }
-      .footer-bottom-links a {
-        font-size: 0.8rem;
-        color: rgba(236, 236, 236, 0.4);
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-      .footer-bottom-links a:hover {
-        color: var(--blue);
-      }
-
-      /* ── REVEAL ── */
-      .reveal {
-        opacity: 0;
-        transform: translateY(28px);
-        transition:
-          opacity 0.65s ease,
-          transform 0.65s ease;
-      }
-      .reveal.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .reveal-delay-1 {
-        transition-delay: 0.1s;
-      }
-      .reveal-delay-2 {
-        transition-delay: 0.2s;
-      }
-      .reveal-delay-3 {
-        transition-delay: 0.3s;
-      }
-
-      /* hidden card for filtering */
-      .topic-card[data-hidden="true"] {
-        display: none;
-      }
-      .category-group[data-empty="true"] {
-        display: none;
-      }
-
-      /* ── RESPONSIVE ── */
-      @media (max-width: 900px) {
-        .topic-card.featured {
-          grid-template-columns: 1fr;
-        }
-        .topic-card.featured .topic-card-thumb {
-          min-height: 160px;
-        }
-        .filter-inner {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        .search-input {
-          width: 100%;
-        }
-        .search-wrap {
-          width: 100%;
-        }
-      }
-      @media (max-width: 600px) {
-        .nav-links {
-          gap: 1.2rem;
-        }
-        .topic-cards {
-          grid-template-columns: 1fr;
-        }
-        .cta-banner {
-          flex-direction: column;
-          text-align: center;
-        }
-        .filter-pills {
-          gap: 0.4rem;
-        }
-        .filter-pill {
-          font-size: 0.7rem;
-          padding: 6px 12px;
-        }
-      }
-    </style>
   </head>
   <body>
     <!-- NAVBAR -->
@@ -823,7 +22,6 @@
     <section class="page-hero">
       <div class="hero-grid"></div>
       <div class="hero-glow"></div>
-      <div class="hero-watermark">TOPICS</div>
       <div class="page-hero-content">
         <div class="breadcrumb">
           <a href="../index.html">Home</a>
@@ -840,94 +38,77 @@
       </div>
     </section>
 
-    <!-- STATS BAND -->
-    <div class="stats-band">
-      <div class="stat-item">
-        <div class="stat-num">12<span>+</span></div>
-        <div class="stat-label">Topic Categories</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">50<span>+</span></div>
-        <div class="stat-label">Educational Articles</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">4</div>
-        <div class="stat-label">Media Types Covered</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">100<span>%</span></div>
-        <div class="stat-label">Free to Access</div>
-      </div>
-    </div>
-
     <!-- FILTER BAR -->
     <div class="filter-section">
       <div class="filter-inner">
-        <span class="filter-label">Filter by:</span>
+        <span class="filter-label">Jump to:</span>
         <div class="filter-pills">
-          <button class="filter-pill active" data-filter="all">
-            All Topics
-          </button>
-          <button class="filter-pill" data-filter="visual">Visual Media</button>
-          <button class="filter-pill" data-filter="audio">Audio</button>
-          <button class="filter-pill" data-filter="text">Text & Writing</button>
-          <button class="filter-pill" data-filter="detection">Detection</button>
-          <button class="filter-pill" data-filter="society">
-            Society & Ethics
-          </button>
-        </div>
-        <div class="search-wrap">
-          <span class="search-icon">🔍</span>
-          <input
-            class="search-input"
-            type="text"
-            placeholder="Search topics…"
-            id="topicSearch"
-          />
+          <a class="filter-pill" href="#group-what-is-ai">
+            What is AI-Generated Media
+          </a>
+          <a class="filter-pill" href="#group-how-ai-creates">
+            How AI Creates Media
+          </a>
+          <a class="filter-pill" href="#group-tools"> AI-Generating Tools </a>
+          <a class="filter-pill" href="#group-detection">
+            Detecting AI-Generated Content
+          </a>
+          <a class="filter-pill" href="#group-risks">
+            AI Risks, Scams, and Misinformation
+          </a>
+          <a class="filter-pill" href="#group-ethics">
+            Ethical and Legal Issues of AI Media
+          </a>
+          <a class="filter-pill" href="#group-society">
+            AI in Society and Real Life
+          </a>
+          <a class="filter-pill" href="#group-literacy">
+            Digital Literacy and Prevention
+          </a>
+          <a class="filter-pill" href="#group-cases">
+            Case Studies of AI Media Incidents
+          </a>
+          <a class="filter-pill" href="#group-future"> Future of AI Media </a>
         </div>
       </div>
     </div>
 
     <!-- TOPICS SECTION -->
     <section class="topics-section" id="topicsSection">
-      <!-- ══════════════ CATEGORY: VISUAL MEDIA ══════════════ -->
-      <div class="category-group reveal" data-group="visual" id="group-visual">
+      <!-- ══════════════ 1. What is AI-Generated Media ══════════════ -->
+      <div class="category-group" data-group="what-is-ai" id="group-what-is-ai">
         <div class="category-group-header">
           <div class="category-group-icon">🖼️</div>
           <div class="category-group-info">
-            <div class="category-group-name">Visual Media</div>
-            <div class="category-group-count">
-              4 Topics · Images, Video & Face Technology
-            </div>
+            <div class="category-group-name">What is AI-Generated Media?</div>
+            <div class="category-group-count">9 Topics · Ryan Moyo</div>
           </div>
         </div>
-        <div class="topic-cards" id="cards-visual">
+        <div class="topic-cards" id="cards-what-is-ai">
           <!-- FEATURED -->
           <a
             class="topic-card featured"
             href="../article.html"
-            data-category="visual"
-            data-title="AI-Generated Images"
+            data-category="what-is-ai"
+            data-title="Definition of AI-Generated Media"
           >
             <div class="topic-card-thumb">
-              <span class="topic-card-thumb-icon">🖼️</span>
+              <span class="topic-card-thumb-icon">📖</span>
               <span class="difficulty-badge diff-beginner">Beginner</span>
             </div>
             <div class="topic-card-body">
-              <div class="topic-card-cat">AI-Generated Images</div>
+              <div class="topic-card-cat">What It Means</div>
               <div class="topic-card-title">
-                How to Spot AI-Generated Images: A Complete Visual Guide
+                Definition of AI-Generated Media
               </div>
               <div class="topic-card-desc">
-                Hands with too many fingers, glassy eyes, garbled background
-                text — learn every tell-tale sign that an image was created by a
-                machine, not a camera. Our most comprehensive beginner guide.
+                What exactly counts as AI-generated media? This foundational
+                article breaks down the concept clearly — covering what it is,
+                where it came from, and why understanding it matters for
+                everyday media consumers.
               </div>
               <div class="topic-card-footer">
-                <span class="topic-card-articles"
-                  >6 Articles in this topic</span
-                >
-                <span class="topic-card-read">Start Reading</span>
+                <span class="topic-card-read">Start Reading →</span>
               </div>
             </div>
           </a>
@@ -935,30 +116,53 @@
           <a
             class="topic-card"
             href="#"
-            data-category="visual"
-            data-title="Deepfake Videos"
+            data-category="what-is-ai"
+            data-title="Types of AI Media"
           >
             <div class="topic-card-thumb">
-              <span class="topic-card-thumb-icon">🎥</span>
+              <span class="topic-card-thumb-icon">🎨</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Types</div>
+              <div class="topic-card-title">
+                Types of AI Media (Images, Video, Audio, Text, Chatbots)
+              </div>
+              <div class="topic-card-desc">
+                A guided tour of the five major categories of AI-generated
+                content — from photorealistic images and synthetic video to
+                cloned audio, AI-written text, and conversational chatbots.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="what-is-ai"
+            data-title="Difference Between AI Content and Real Content"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🔍</span>
               <span class="difficulty-badge diff-intermediate"
                 >Intermediate</span
               >
             </div>
             <div class="topic-card-body">
-              <div class="topic-card-cat">Deepfake Videos</div>
+              <div class="topic-card-cat">Comparison</div>
               <div class="topic-card-title">
-                Deepfake Videos: How They Work and How to Catch Them
+                Difference Between AI Content and Real Content
               </div>
               <div class="topic-card-desc">
-                Frame-by-frame flickering, mismatched lighting, and lip-sync
-                errors — the comprehensive guide to detecting manipulated video
-                footage.
+                Side-by-side breakdowns of what separates machine-generated
+                media from authentic human-created content — and why the gap is
+                narrowing faster than most people realize.
               </div>
               <div class="topic-card-footer">
-                <span class="topic-card-articles"
-                  >8 Articles in this topic</span
-                >
-                <span class="topic-card-read">Start Reading</span>
+                <span class="topic-card-read">Start Reading →</span>
               </div>
             </div>
           </a>
@@ -966,82 +170,262 @@
           <a
             class="topic-card"
             href="#"
-            data-category="visual"
-            data-title="Face Swapping"
-          >
-            <div class="topic-card-thumb">
-              <span class="topic-card-thumb-icon">🎭</span>
-              <span class="difficulty-badge diff-intermediate"
-                >Intermediate</span
-              >
-            </div>
-            <div class="topic-card-body">
-              <div class="topic-card-cat">Face Swapping</div>
-              <div class="topic-card-title">
-                Face Swaps in the Wild: Recognition and Response
-              </div>
-              <div class="topic-card-desc">
-                The technology behind face swapping has become trivially
-                accessible. Understand how it works and what to look for at the
-                edges of a swapped face.
-              </div>
-              <div class="topic-card-footer">
-                <span class="topic-card-articles"
-                  >5 Articles in this topic</span
-                >
-                <span class="topic-card-read">Start Reading</span>
-              </div>
-            </div>
-          </a>
-
-          <a
-            class="topic-card"
-            href="#"
-            data-category="visual"
-            data-title="AI in Social Media"
+            data-category="what-is-ai"
+            data-title="How AI is Used in Everyday Applications"
           >
             <div class="topic-card-thumb">
               <span class="topic-card-thumb-icon">📱</span>
               <span class="difficulty-badge diff-beginner">Beginner</span>
             </div>
             <div class="topic-card-body">
-              <div class="topic-card-cat">AI in Social Media</div>
+              <div class="topic-card-cat">Everyday AI</div>
               <div class="topic-card-title">
-                Synthetic Profiles and AI-Generated Content on Social Platforms
+                How AI is Used in Everyday Applications (Chatbots, Filters,
+                Recommendations)
               </div>
               <div class="topic-card-desc">
-                Fake profile pictures, AI-generated posts, bot networks — how
-                synthetic media spreads across social media and what platforms
-                are doing about it.
+                From the face filters on your phone to the playlists curated for
+                you and the chatbots answering your questions — AI-generated
+                media is already woven into daily life.
               </div>
               <div class="topic-card-footer">
-                <span class="topic-card-articles"
-                  >7 Articles in this topic</span
-                >
-                <span class="topic-card-read">Start Reading</span>
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="what-is-ai"
+            data-title="Advantages of AI-Generated Media"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">✅</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Pros</div>
+              <div class="topic-card-title">
+                Advantages of AI-Generated Media
+              </div>
+              <div class="topic-card-desc">
+                AI-generated content can lower costs, democratize creativity,
+                and open new doors for accessibility and expression. A
+                fair-minded look at the genuine upsides.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="what-is-ai"
+            data-title="Disadvantages of AI-Generated Media"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">⚠️</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Cons</div>
+              <div class="topic-card-title">
+                Disadvantages of AI-Generated Media
+              </div>
+              <div class="topic-card-desc">
+                Misinformation, job displacement, loss of trust, and ethical
+                blind spots — an honest accounting of the downsides that come
+                with the rise of synthetic media.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="what-is-ai"
+            data-title="Why AI Media is Becoming Popular"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">📈</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Trends</div>
+              <div class="topic-card-title">
+                Why AI Media is Becoming Popular
+              </div>
+              <div class="topic-card-desc">
+                Cheaper tools, faster generation, viral demand for content —
+                unpacking the forces driving the explosive growth of
+                AI-generated media across every platform.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="what-is-ai"
+            data-title="Human vs AI Content Comparison"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🤖</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Deep Dive</div>
+              <div class="topic-card-title">Human vs AI Content Comparison</div>
+              <div class="topic-card-desc">
+                A structured comparison of human and AI content across
+                creativity, accuracy, emotional depth, and speed — exploring
+                where each excels and where each falls short.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="what-is-ai"
+            data-title="Examples of AI Media in Daily Life"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🌐</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Real-World Examples</div>
+              <div class="topic-card-title">
+                Examples of AI Media in Daily Life
+              </div>
+              <div class="topic-card-desc">
+                Concrete, relatable examples of AI-generated media you likely
+                encounter every day — from news thumbnails and social media
+                posts to smart home assistants and product images.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
               </div>
             </div>
           </a>
         </div>
       </div>
 
-      <!-- ══════════════ CATEGORY: AUDIO ══════════════ -->
-      <div class="category-group reveal" data-group="audio" id="group-audio">
+      <!-- ══════════════ 2. How AI Creates Media ══════════════ -->
+      <div
+        class="category-group"
+        data-group="how-ai-creates"
+        id="group-how-ai-creates"
+      >
         <div class="category-group-header">
-          <div class="category-group-icon">🎙️</div>
+          <div class="category-group-icon">⚙️</div>
           <div class="category-group-info">
-            <div class="category-group-name">Audio</div>
-            <div class="category-group-count">
-              2 Topics · Voice, Sound & Authenticity
-            </div>
+            <div class="category-group-name">How AI Creates Media</div>
+            <div class="category-group-count">8 Topics · Tagama</div>
           </div>
         </div>
-        <div class="topic-cards" id="cards-audio">
+        <div class="topic-cards" id="cards-how-ai-creates">
           <a
             class="topic-card featured"
             href="#"
-            data-category="audio"
-            data-title="Voice Cloning"
+            data-category="how-ai-creates"
+            data-title="AI Model Training and Data Sources"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🧠</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Foundations</div>
+              <div class="topic-card-title">
+                AI Model Training and Data Sources
+              </div>
+              <div class="topic-card-desc">
+                Before AI can generate anything, it must learn. Explore how AI
+                models are trained on massive datasets — and what the choice of
+                training data means for the quality, bias, and risks of
+                generated content.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="how-ai-creates"
+            data-title="How AI Generates Images"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🖼️</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Image Generation</div>
+              <div class="topic-card-title">How AI Generates Images</div>
+              <div class="topic-card-desc">
+                From diffusion models to GANs — a clear explanation of how
+                modern AI turns a text prompt or seed image into a
+                photorealistic or artistic output in seconds.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="how-ai-creates"
+            data-title="How AI Generates Videos"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🎬</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Video Generation</div>
+              <div class="topic-card-title">How AI Generates Videos</div>
+              <div class="topic-card-desc">
+                Video generation is the frontier of synthetic media. Understand
+                the models and pipelines behind AI-generated video clips — from
+                short social content to near-broadcast-quality footage.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="how-ai-creates"
+            data-title="How AI Generates Audio"
           >
             <div class="topic-card-thumb">
               <span class="topic-card-thumb-icon">🎙️</span>
@@ -1050,22 +434,17 @@
               >
             </div>
             <div class="topic-card-body">
-              <div class="topic-card-cat">Voice Cloning</div>
+              <div class="topic-card-cat">Audio Generation</div>
               <div class="topic-card-title">
-                When You Can't Trust Your Ears: The Complete Guide to Voice
-                Clone Detection
+                How AI Generates Audio (Voice Cloning, Music)
               </div>
               <div class="topic-card-desc">
-                Modern AI can clone a voice from just a few seconds of audio.
-                Learn about the subtle artifacts — breathing patterns, resonance
-                anomalies, and unnatural prosody — that betray a synthetic
-                voice.
+                Modern AI can clone a voice from just a few seconds of audio —
+                and compose entire music tracks from scratch. Learn how these
+                systems work and what makes them so convincing.
               </div>
               <div class="topic-card-footer">
-                <span class="topic-card-articles"
-                  >6 Articles in this topic</span
-                >
-                <span class="topic-card-read">Start Reading</span>
+                <span class="topic-card-read">Start Reading →</span>
               </div>
             </div>
           </a>
@@ -1073,71 +452,23 @@
           <a
             class="topic-card"
             href="#"
-            data-category="audio"
-            data-title="AI Audio Scams"
-          >
-            <div class="topic-card-thumb">
-              <span class="topic-card-thumb-icon">📞</span>
-              <span class="difficulty-badge diff-beginner">Beginner</span>
-            </div>
-            <div class="topic-card-body">
-              <div class="topic-card-cat">AI Audio Scams</div>
-              <div class="topic-card-title">
-                The Rise of Voice Phishing: AI-Powered Phone Scams
-              </div>
-              <div class="topic-card-desc">
-                Criminals are using voice cloning to impersonate family members
-                and executives. What to listen for and how to verify before you
-                act.
-              </div>
-              <div class="topic-card-footer">
-                <span class="topic-card-articles"
-                  >4 Articles in this topic</span
-                >
-                <span class="topic-card-read">Start Reading</span>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <!-- ══════════════ CATEGORY: TEXT & WRITING ══════════════ -->
-      <div class="category-group reveal" data-group="text" id="group-text">
-        <div class="category-group-header">
-          <div class="category-group-icon">✍️</div>
-          <div class="category-group-info">
-            <div class="category-group-name">Text & Writing</div>
-            <div class="category-group-count">
-              3 Topics · Articles, Journalism & Language
-            </div>
-          </div>
-        </div>
-        <div class="topic-cards" id="cards-text">
-          <a
-            class="topic-card"
-            href="#"
-            data-category="text"
-            data-title="Synthetic Text"
+            data-category="how-ai-creates"
+            data-title="How AI Generates Text"
           >
             <div class="topic-card-thumb">
               <span class="topic-card-thumb-icon">✍️</span>
               <span class="difficulty-badge diff-beginner">Beginner</span>
             </div>
             <div class="topic-card-body">
-              <div class="topic-card-cat">Synthetic Text</div>
-              <div class="topic-card-title">
-                AI-Written Articles: Spotting the Patterns in Machine Prose
-              </div>
+              <div class="topic-card-cat">Text Generation</div>
+              <div class="topic-card-title">How AI Generates Text</div>
               <div class="topic-card-desc">
-                Hedging language, statistical averageness, and lack of genuine
-                opinion — learn the linguistic fingerprints that give away
-                AI-generated writing.
+                Large language models predict the next word — over and over — to
+                produce articles, stories, emails, and more. A plain-language
+                explanation of how transformer-based text AI works.
               </div>
               <div class="topic-card-footer">
-                <span class="topic-card-articles"
-                  >7 Articles in this topic</span
-                >
-                <span class="topic-card-read">Start Reading</span>
+                <span class="topic-card-read">Start Reading →</span>
               </div>
             </div>
           </a>
@@ -1145,79 +476,278 @@
           <a
             class="topic-card"
             href="#"
-            data-category="text"
-            data-title="AI & Journalism"
+            data-category="how-ai-creates"
+            data-title="Deepfake Technology Explained"
           >
             <div class="topic-card-thumb">
-              <span class="topic-card-thumb-icon">📰</span>
+              <span class="topic-card-thumb-icon">🎭</span>
+              <span class="difficulty-badge diff-advanced">Advanced</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Deepfakes</div>
+              <div class="topic-card-title">Deepfake Technology Explained</div>
+              <div class="topic-card-desc">
+                A technical but accessible breakdown of how deepfakes are made —
+                from face-swapping encoders to lip-sync models — and why they
+                have become so difficult to detect reliably.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="how-ai-creates"
+            data-title="Role of Machine Learning in Media Creation"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🔬</span>
+              <span class="difficulty-badge diff-advanced">Advanced</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Under the Hood</div>
+              <div class="topic-card-title">
+                Role of Machine Learning in Media Creation
+              </div>
+              <div class="topic-card-desc">
+                Neural networks, loss functions, training loops — a deeper look
+                at the machine learning mechanisms that power every form of
+                AI-generated media, explained without jargon overload.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="how-ai-creates"
+            data-title="Limitations of AI Media Generation"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🚧</span>
               <span class="difficulty-badge diff-intermediate"
                 >Intermediate</span
               >
             </div>
             <div class="topic-card-body">
-              <div class="topic-card-cat">AI & Journalism</div>
+              <div class="topic-card-cat">Limitations</div>
               <div class="topic-card-title">
-                How Newsrooms Are Fighting Back Against Synthetic Media
+                Limitations of AI Media Generation
               </div>
               <div class="topic-card-desc">
-                Verification desks, provenance checking, and AI detection
-                classifiers — explore how professional journalists are adapting
-                to the synthetic content wave.
+                AI still struggles with hands, consistent faces, factual
+                accuracy, and long-form coherence. Understanding these
+                limitations helps you spot AI-generated content in the wild.
               </div>
               <div class="topic-card-footer">
-                <span class="topic-card-articles"
-                  >5 Articles in this topic</span
-                >
-                <span class="topic-card-read">Start Reading</span>
-              </div>
-            </div>
-          </a>
-
-          <a
-            class="topic-card"
-            href="#"
-            data-category="text"
-            data-title="AI Disinformation"
-          >
-            <div class="topic-card-thumb">
-              <span class="topic-card-thumb-icon">🗞️</span>
-              <span class="difficulty-badge diff-advanced">Advanced</span>
-            </div>
-            <div class="topic-card-body">
-              <div class="topic-card-cat">AI Disinformation</div>
-              <div class="topic-card-title">
-                Synthetic News Networks: How AI Generates Entire Fake
-                Publications
-              </div>
-              <div class="topic-card-desc">
-                Entire websites staffed by AI — publishing fake local news,
-                political content, and health misinformation at industrial
-                scale. How they operate and how to spot them.
-              </div>
-              <div class="topic-card-footer">
-                <span class="topic-card-articles"
-                  >4 Articles in this topic</span
-                >
-                <span class="topic-card-read">Start Reading</span>
+                <span class="topic-card-read">Start Reading →</span>
               </div>
             </div>
           </a>
         </div>
       </div>
 
-      <!-- ══════════════ CATEGORY: DETECTION ══════════════ -->
-      <div
-        class="category-group reveal"
-        data-group="detection"
-        id="group-detection"
-      >
+      <!-- ══════════════ 3. AI-Generating Tools ══════════════ -->
+      <div class="category-group" data-group="tools" id="group-tools">
+        <div class="category-group-header">
+          <div class="category-group-icon">🛠️</div>
+          <div class="category-group-info">
+            <div class="category-group-name">AI-Generating Tools</div>
+            <div class="category-group-count">7 Topics · Carbonell</div>
+          </div>
+        </div>
+        <div class="topic-cards" id="cards-tools">
+          <a
+            class="topic-card featured"
+            href="#"
+            data-category="tools"
+            data-title="Popular AI Tools in 2026"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">⭐</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Tool Roundup</div>
+              <div class="topic-card-title">Popular AI Tools in 2026</div>
+              <div class="topic-card-desc">
+                A curated overview of the most widely used AI-generating tools
+                across image, video, audio, and text — what they do, who uses
+                them, and what you should know before you try them.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="tools"
+            data-title="Image Generator Tools"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🖼️</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Image Tools</div>
+              <div class="topic-card-title">Image Generator Tools</div>
+              <div class="topic-card-desc">
+                A guide to the leading AI image generators — comparing their
+                strengths, output styles, accessibility, and the types of
+                synthetic images each is best known for producing.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="tools"
+            data-title="Video Generator Tools"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🎬</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Video Tools</div>
+              <div class="topic-card-title">Video Generator Tools</div>
+              <div class="topic-card-desc">
+                From short-form social clips to longer synthetic footage — an
+                overview of the AI video tools reshaping content creation and
+                the risks they introduce for media verification.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="tools"
+            data-title="Audio Generator Tools"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🎵</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Audio Tools</div>
+              <div class="topic-card-title">Audio Generator Tools</div>
+              <div class="topic-card-desc">
+                Voice cloning platforms, AI music composers, and text-to-speech
+                tools — a guide to the audio generators changing how sound is
+                produced, and the scam risks they present.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="tools"
+            data-title="Text Generator Tools"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">✍️</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Text Tools</div>
+              <div class="topic-card-title">Text Generator Tools</div>
+              <div class="topic-card-desc">
+                Chatbots, essay writers, news generators — a breakdown of the
+                major AI text tools, what they produce, and how to recognize
+                writing that came from a machine rather than a person.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="tools"
+            data-title="Free AI Tools"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🆓</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Free Tools</div>
+              <div class="topic-card-title">Free AI Tools</div>
+              <div class="topic-card-desc">
+                You don't need a paid subscription to generate synthetic media —
+                or to detect it. A practical guide to the best free AI tools
+                available in 2026 for both creation and verification.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="tools"
+            data-title="AI Detection Tools Overview"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🔎</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Detection Tools</div>
+              <div class="topic-card-title">AI Detection Tools Overview</div>
+              <div class="topic-card-desc">
+                An overview of tools designed to identify AI-generated content —
+                how they work, how accurate they really are, and how to use them
+                as one part of a broader verification strategy.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- ══════════════ 4. Detecting AI-Generated Content ══════════════ -->
+      <div class="category-group" data-group="detection" id="group-detection">
         <div class="category-group-header">
           <div class="category-group-icon">🔎</div>
           <div class="category-group-info">
-            <div class="category-group-name">Detection & Verification</div>
-            <div class="category-group-count">
-              2 Topics · Tools, Techniques & Forensics
+            <div class="category-group-name">
+              Detecting AI-Generated Content
             </div>
+            <div class="category-group-count">10 Topics · Bascos</div>
           </div>
         </div>
         <div class="topic-cards" id="cards-detection">
@@ -1225,28 +755,25 @@
             class="topic-card featured"
             href="#"
             data-category="detection"
-            data-title="Media Verification Tools"
+            data-title="Step-by-Step Guide to Verifying Digital Media"
           >
             <div class="topic-card-thumb">
               <span class="topic-card-thumb-icon">🛡️</span>
               <span class="difficulty-badge diff-beginner">Beginner</span>
             </div>
             <div class="topic-card-body">
-              <div class="topic-card-cat">Media Verification Tools</div>
+              <div class="topic-card-cat">Verification Guide</div>
               <div class="topic-card-title">
-                The Best Free Tools for Verifying Digital Media in 2026
+                Step-by-Step Guide to Verifying Digital Media
               </div>
               <div class="topic-card-desc">
-                Reverse image search, EXIF readers, AI detection classifiers,
-                and content provenance checkers — a curated, tested guide to the
-                tools that actually work for everyday verification without a
-                technical background.
+                A practical, beginner-friendly checklist for verifying images,
+                videos, and audio before you share or believe them — no
+                technical background required. Built for everyday media
+                consumers.
               </div>
               <div class="topic-card-footer">
-                <span class="topic-card-articles"
-                  >9 Articles in this topic</span
-                >
-                <span class="topic-card-read">Start Reading</span>
+                <span class="topic-card-read">Start Reading →</span>
               </div>
             </div>
           </a>
@@ -1255,7 +782,87 @@
             class="topic-card"
             href="#"
             data-category="detection"
-            data-title="Digital Forensics"
+            data-title="Common Signs of AI-Generated Images, Audio, and Video"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🧩</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Visual Clues</div>
+              <div class="topic-card-title">
+                Common Signs of AI-Generated Images, Audio, and Video
+              </div>
+              <div class="topic-card-desc">
+                Distorted hands, unnatural blinking, robotic cadence — the
+                telltale artifacts and inconsistencies that signal synthetic
+                media across all three formats.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="detection"
+            data-title="Signs a Viral Image Might Be Fake"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">📸</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Image Verification</div>
+              <div class="topic-card-title">
+                Signs a Viral Image Might Be Fake
+              </div>
+              <div class="topic-card-desc">
+                Before you share that striking photo, run through these red
+                flags — from impossible lighting and blurred backgrounds to
+                context mismatches and suspicious metadata.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="detection"
+            data-title="Signs a Viral Video Might Be Fake"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🎥</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Video Verification</div>
+              <div class="topic-card-title">
+                Signs a Viral Video Might Be Fake
+              </div>
+              <div class="topic-card-desc">
+                Unnatural mouth movement, mismatched audio, inconsistent
+                shadows, and frame glitches — how to pause, rewind, and
+                scrutinize video content before amplifying it.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="detection"
+            data-title="Metadata Analysis for Media Verification"
           >
             <div class="topic-card-thumb">
               <span class="topic-card-thumb-icon">🔬</span>
@@ -1264,18 +871,15 @@
             <div class="topic-card-body">
               <div class="topic-card-cat">Digital Forensics</div>
               <div class="topic-card-title">
-                Digital Forensics for Non-Experts: Reading Image Metadata
+                Metadata Analysis for Media Verification
               </div>
               <div class="topic-card-desc">
-                EXIF data, pixel-level analysis, compression artifact patterns —
-                a practical deep dive into the technical methods used to
-                authenticate or debunk digital media.
+                EXIF data, creation timestamps, GPS coordinates, and compression
+                artifacts — how metadata embedded in media files can reveal or
+                confirm manipulation.
               </div>
               <div class="topic-card-footer">
-                <span class="topic-card-articles"
-                  >6 Articles in this topic</span
-                >
-                <span class="topic-card-read">Start Reading</span>
+                <span class="topic-card-read">Start Reading →</span>
               </div>
             </div>
           </a>
@@ -1284,75 +888,174 @@
             class="topic-card"
             href="#"
             data-category="detection"
-            data-title="Spotting Clues"
+            data-title="Reverse Image Search Techniques"
           >
             <div class="topic-card-thumb">
-              <span class="topic-card-thumb-icon">🧩</span>
+              <span class="topic-card-thumb-icon">🔄</span>
               <span class="difficulty-badge diff-beginner">Beginner</span>
             </div>
             <div class="topic-card-body">
-              <div class="topic-card-cat">Spotting Clues</div>
+              <div class="topic-card-cat">Search Techniques</div>
               <div class="topic-card-title">
-                Quick Visual Checks Anyone Can Do Before Sharing
+                Reverse Image Search Techniques
               </div>
               <div class="topic-card-desc">
-                A simple checklist of 10 visual clues that take under 60 seconds
-                and can prevent you from spreading synthetic media to your
-                network.
+                How to use reverse image search to trace where a photo
+                originally came from — and what it means when a viral image
+                can't be traced to any authentic source.
               </div>
               <div class="topic-card-footer">
-                <span class="topic-card-articles"
-                  >3 Articles in this topic</span
-                >
-                <span class="topic-card-read">Start Reading</span>
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="detection"
+            data-title="Limitations of AI Detection Tools"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">⚡</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Tool Limitations</div>
+              <div class="topic-card-title">
+                Limitations of AI Detection Tools
+              </div>
+              <div class="topic-card-desc">
+                No detector is perfect. Understand the false-positive rates, the
+                adversarial evasion techniques, and the real-world conditions
+                under which even the best tools fail.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="detection"
+            data-title="Watermarking in AI Media"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🏷️</span>
+              <span class="difficulty-badge diff-advanced">Advanced</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Provenance</div>
+              <div class="topic-card-title">
+                Watermarking in AI Media (Visible and Invisible)
+              </div>
+              <div class="topic-card-desc">
+                How visible labels and cryptographic invisible watermarks are
+                being used to tag AI-generated content at the source — and why
+                they're not yet a complete solution.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="detection"
+            data-title="Comparing Multiple Sources for Verification"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">📊</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Cross-Verification</div>
+              <div class="topic-card-title">
+                Comparing Multiple Sources for Verification
+              </div>
+              <div class="topic-card-desc">
+                Why you should never rely on a single source — and how to
+                efficiently triangulate across credible outlets, archives, and
+                community fact-checkers when verifying contested media.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="detection"
+            data-title="Fact-checking Methods Used by Organizations"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">📰</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Professional Methods</div>
+              <div class="topic-card-title">
+                Fact-checking Methods Used by Organizations (Snopes, PolitiFact)
+              </div>
+              <div class="topic-card-desc">
+                How professional fact-checkers at organizations like Snopes and
+                PolitiFact investigate viral claims — the tools, standards, and
+                workflows you can adapt for your own media diet.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
               </div>
             </div>
           </a>
         </div>
       </div>
 
-      <!-- ══════════════ CATEGORY: SOCIETY & ETHICS ══════════════ -->
-      <div
-        class="category-group reveal"
-        data-group="society"
-        id="group-society"
-      >
+      <!-- ══════════════ 5. AI Risks, Scams, and Misinformation ══════════════ -->
+      <div class="category-group" data-group="risks" id="group-risks">
         <div class="category-group-header">
-          <div class="category-group-icon">⚖️</div>
+          <div class="category-group-icon">⚠️</div>
           <div class="category-group-info">
-            <div class="category-group-name">Society & Ethics</div>
-            <div class="category-group-count">
-              3 Topics · Politics, Law & Responsibility
+            <div class="category-group-name">
+              AI Risks, Scams, and Misinformation
             </div>
+            <div class="category-group-count">9 Topics · Bobiles</div>
           </div>
         </div>
-        <div class="topic-cards" id="cards-society">
+        <div class="topic-cards" id="cards-risks">
           <a
-            class="topic-card"
+            class="topic-card featured"
             href="#"
-            data-category="society"
-            data-title="Political Manipulation"
+            data-category="risks"
+            data-title="Dangers of AI-Generated Misinformation"
           >
             <div class="topic-card-thumb">
-              <span class="topic-card-thumb-icon">🗳️</span>
-              <span class="difficulty-badge diff-advanced">Advanced</span>
+              <span class="topic-card-thumb-icon">🚨</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
             </div>
             <div class="topic-card-body">
-              <div class="topic-card-cat">Political Manipulation</div>
+              <div class="topic-card-cat">Misinformation</div>
               <div class="topic-card-title">
-                AI-Generated Political Media: The New Threat to Democratic
-                Discourse
+                Dangers of AI-Generated Misinformation
               </div>
               <div class="topic-card-desc">
-                Fabricated speeches, synthetic rallies, cloned candidate voices
-                — how AI is being weaponised in elections and what you can do to
-                protect yourself from influence operations.
+                AI enables the production of false content at a scale and speed
+                never before possible. A frank look at the documented real-world
+                harms — from public health crises to election interference.
               </div>
               <div class="topic-card-footer">
-                <span class="topic-card-articles"
-                  >6 Articles in this topic</span
-                >
-                <span class="topic-card-read">Start Reading</span>
+                <span class="topic-card-read">Start Reading →</span>
               </div>
             </div>
           </a>
@@ -1360,8 +1063,235 @@
           <a
             class="topic-card"
             href="#"
-            data-category="society"
-            data-title="Ethics of AI Media"
+            data-category="risks"
+            data-title="Misinformation vs Disinformation"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">📢</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Key Concepts</div>
+              <div class="topic-card-title">
+                Misinformation vs Disinformation
+              </div>
+              <div class="topic-card-desc">
+                Not all false information is equal. The difference between
+                misinformation (false but not intentional) and disinformation
+                (deliberately deceptive) matters for understanding AI's role in
+                each.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="risks"
+            data-title="AI Voice Cloning Scams"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">📞</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Scams</div>
+              <div class="topic-card-title">AI Voice Cloning Scams</div>
+              <div class="topic-card-desc">
+                Criminals are calling families using AI-cloned voices of their
+                loved ones. How these scams work, what they target, and the
+                exact steps you should take if you receive a suspicious call.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="risks"
+            data-title="Identity Theft Using AI Media"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🪪</span>
+              <span class="difficulty-badge diff-advanced">Advanced</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Identity Theft</div>
+              <div class="topic-card-title">Identity Theft Using AI Media</div>
+              <div class="topic-card-desc">
+                Synthetic faces, forged IDs, and cloned voices are now tools for
+                identity fraud. How AI-powered identity theft operates and what
+                you can do to protect yourself.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="risks"
+            data-title="AI Scam Cases on Social Media"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">📲</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Social Media Scams</div>
+              <div class="topic-card-title">AI Scam Cases on Social Media</div>
+              <div class="topic-card-desc">
+                Fake celebrity endorsements, AI-generated charity fraud, and
+                romance scams powered by synthetic personas — documented cases
+                of AI scams spreading across major platforms.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="risks"
+            data-title="How Fake Content Spreads During Crises"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🌊</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Crisis Misinformation</div>
+              <div class="topic-card-title">
+                How Fake Content Spreads During Crises
+              </div>
+              <div class="topic-card-desc">
+                Disasters, pandemics, and emergencies create a perfect storm for
+                misinformation. How AI-generated fake content exploits crisis
+                conditions — and why it spreads so fast.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="risks"
+            data-title="Why People Fall for Fake Content"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🧠</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Psychology</div>
+              <div class="topic-card-title">
+                Why People Fall for Fake Content
+              </div>
+              <div class="topic-card-desc">
+                Confirmation bias, emotional triggers, and cognitive shortcuts
+                make everyone vulnerable. Understanding why our brains fall for
+                synthetic media is the first step to protecting against it.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="risks"
+            data-title="Psychological Impact of AI Media on Users"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">💭</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Mental Impact</div>
+              <div class="topic-card-title">
+                Psychological Impact of AI Media on Users
+              </div>
+              <div class="topic-card-desc">
+                Beyond believing false information — the deeper psychological
+                effects of living in a world flooded with synthetic content,
+                including anxiety, distrust, and epistemic fatigue.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="risks"
+            data-title="Can We Still Trust What We See Online?"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">👁️</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Trust &amp; Reality</div>
+              <div class="topic-card-title">
+                Can We Still Trust What We See Online?
+              </div>
+              <div class="topic-card-desc">
+                The rise of synthetic media challenges the old assumption that
+                seeing is believing. A thoughtful examination of what trust in
+                digital media now requires — and whether it's possible.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- ══════════════ 6. Ethical and Legal Issues of AI Media ══════════════ -->
+      <div class="category-group" data-group="ethics" id="group-ethics">
+        <div class="category-group-header">
+          <div class="category-group-icon">⚖️</div>
+          <div class="category-group-info">
+            <div class="category-group-name">
+              Ethical and Legal Issues of AI Media
+            </div>
+            <div class="category-group-count">7 Topics · Sabas</div>
+          </div>
+        </div>
+        <div class="topic-cards" id="cards-ethics">
+          <a
+            class="topic-card featured"
+            href="#"
+            data-category="ethics"
+            data-title="Ethical Issues in AI Content Creation"
           >
             <div class="topic-card-thumb">
               <span class="topic-card-thumb-icon">🤔</span>
@@ -1370,20 +1300,204 @@
               >
             </div>
             <div class="topic-card-body">
-              <div class="topic-card-cat">Ethics of AI Media</div>
+              <div class="topic-card-cat">Ethics</div>
               <div class="topic-card-title">
-                The Ethics of Synthetic Media: Where Is the Line?
+                Ethical Issues in AI Content Creation
               </div>
               <div class="topic-card-desc">
-                Satire, art, consent, harm — exploring the ethical landscape of
-                AI-generated content and the frameworks societies are developing
-                in response.
+                Consent, representation, exploitation, and the blurring of truth
+                — an exploration of the core ethical dilemmas that AI-generated
+                content raises for creators, platforms, and consumers.
               </div>
               <div class="topic-card-footer">
-                <span class="topic-card-articles"
-                  >5 Articles in this topic</span
-                >
-                <span class="topic-card-read">Start Reading</span>
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="ethics"
+            data-title="Accountability in AI Media"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">👤</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Accountability</div>
+              <div class="topic-card-title">
+                Accountability in AI Media (Who Is Responsible?)
+              </div>
+              <div class="topic-card-desc">
+                When AI generates harmful content, who is held accountable — the
+                developer, the platform, or the user? A clear look at how
+                responsibility is distributed across the AI media chain.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="ethics"
+            data-title="Legal Use of AI Media"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">📜</span>
+              <span class="difficulty-badge diff-advanced">Advanced</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Law</div>
+              <div class="topic-card-title">Legal Use of AI Media</div>
+              <div class="topic-card-desc">
+                From the EU AI Act to emerging national deepfake legislation —
+                an accessible overview of what's legally permitted, what's
+                prohibited, and where the law is still catching up.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="ethics"
+            data-title="Bias in AI-Generated Media"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">⚖️</span>
+              <span class="difficulty-badge diff-advanced">Advanced</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Bias</div>
+              <div class="topic-card-title">Bias in AI-Generated Media</div>
+              <div class="topic-card-desc">
+                AI systems trained on biased data produce biased outputs —
+                underrepresenting communities, reinforcing stereotypes, and
+                skewing what "normal" looks like. Why this matters and what's
+                being done.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="ethics"
+            data-title="Copyright and Ownership Issues"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">©️</span>
+              <span class="difficulty-badge diff-advanced">Advanced</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Copyright</div>
+              <div class="topic-card-title">Copyright and Ownership Issues</div>
+              <div class="topic-card-desc">
+                Who owns AI-generated art — the model, the prompter, or no one?
+                A guide to the unresolved copyright questions reshaping creative
+                industries and intellectual property law.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="ethics"
+            data-title="Responsible Use of AI Tools"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🌱</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Responsible Use</div>
+              <div class="topic-card-title">Responsible Use of AI Tools</div>
+              <div class="topic-card-desc">
+                Guidelines for using AI-generating tools ethically —
+                transparency, consent, avoiding harm, and the practices that
+                separate responsible creators from those causing damage.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="ethics"
+            data-title="How Students Can Avoid Using AI Unethically"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🎓</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">For Students</div>
+              <div class="topic-card-title">
+                How Students Can Avoid Using AI Unethically
+              </div>
+              <div class="topic-card-desc">
+                Academic integrity, proper attribution, and the line between
+                AI-assisted work and AI-replacing your own thinking — a
+                practical guide for students navigating AI in school.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- ══════════════ 7. AI in Society and Real Life ══════════════ -->
+      <div class="category-group" data-group="society" id="group-society">
+        <div class="category-group-header">
+          <div class="category-group-icon">🏙️</div>
+          <div class="category-group-info">
+            <div class="category-group-name">AI in Society and Real Life</div>
+            <div class="category-group-count">8 Topics · Maghirang</div>
+          </div>
+        </div>
+        <div class="topic-cards" id="cards-society">
+          <a
+            class="topic-card featured"
+            href="#"
+            data-category="society"
+            data-title="AI in Social Media"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">📱</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Social Media</div>
+              <div class="topic-card-title">AI in Social Media</div>
+              <div class="topic-card-desc">
+                From algorithmic feeds to AI-generated posts and synthetic
+                influencers — how AI is reshaping what you see, who you follow,
+                and what you believe on every major social platform.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
               </div>
             </div>
           </a>
@@ -1392,38 +1506,766 @@
             class="topic-card"
             href="#"
             data-category="society"
-            data-title="Law and Regulation"
+            data-title="AI in Journalism and News"
           >
             <div class="topic-card-thumb">
-              <span class="topic-card-thumb-icon">📜</span>
-              <span class="difficulty-badge diff-advanced">Advanced</span>
+              <span class="topic-card-thumb-icon">📰</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
             </div>
             <div class="topic-card-body">
-              <div class="topic-card-cat">Law & Regulation</div>
-              <div class="topic-card-title">
-                Deepfakes and the Law: What Legal Protections Exist in 2026?
-              </div>
+              <div class="topic-card-cat">Journalism</div>
+              <div class="topic-card-title">AI in Journalism and News</div>
               <div class="topic-card-desc">
-                From the EU AI Act to emerging national legislation — an
-                accessible overview of the legal frameworks governing synthetic
-                media creation and distribution.
+                AI is writing news articles, generating press images, and
+                powering misinformation campaigns — all at the same time. How
+                journalism is adapting and what readers must do differently.
               </div>
               <div class="topic-card-footer">
-                <span class="topic-card-articles"
-                  >4 Articles in this topic</span
-                >
-                <span class="topic-card-read">Start Reading</span>
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="society"
+            data-title="AI in Education"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🏫</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Education</div>
+              <div class="topic-card-title">
+                AI in Education (Helpful or Harmful?)
+              </div>
+              <div class="topic-card-desc">
+                AI tutors, instant essay generators, and automated grading —
+                education is being transformed by AI tools that carry real
+                benefits and genuine risks for learning and academic integrity.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="society"
+            data-title="Role of Influencers and AI Personas"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🌟</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Influencers</div>
+              <div class="topic-card-title">
+                Role of Influencers and AI Personas
+              </div>
+              <div class="topic-card-desc">
+                Virtual influencers with millions of followers, AI-generated
+                brand ambassadors, and deepfake celebrity endorsements — the
+                blurring line between real and synthetic online identity.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="society"
+            data-title="AI in School Projects"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">📚</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">For Students</div>
+              <div class="topic-card-title">AI in School Projects</div>
+              <div class="topic-card-desc">
+                How students are using AI tools in research, presentations, and
+                creative work — and how to use them in ways that enhance your
+                learning rather than shortcut it.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="society"
+            data-title="Benefits of AI in Education"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">✨</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Education Benefits</div>
+              <div class="topic-card-title">Benefits of AI in Education</div>
+              <div class="topic-card-desc">
+                Personalized tutoring, language learning support, accessibility
+                for students with disabilities — the genuine ways AI is
+                expanding educational opportunity when used responsibly.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="society"
+            data-title="AI Impact on Content Creators"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🎨</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Content Creators</div>
+              <div class="topic-card-title">AI Impact on Content Creators</div>
+              <div class="topic-card-desc">
+                Artists, writers, photographers, and musicians are facing AI
+                tools that can replicate their work instantly. How creators are
+                responding — through adaptation, advocacy, and legal action.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="society"
+            data-title="AI for Office Workers"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">💼</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Workplace</div>
+              <div class="topic-card-title">
+                AI for Office Workers (Email / Media Verification)
+              </div>
+              <div class="topic-card-desc">
+                AI-generated phishing emails, synthetic documents, and spoofed
+                meeting recordings are entering the workplace. Practical
+                guidance for office workers navigating AI media threats on the
+                job.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
               </div>
             </div>
           </a>
         </div>
       </div>
 
-      <!-- No results message -->
-      <div class="no-results" id="noResults">
-        <div class="no-results-icon">🔍</div>
-        <h3>No topics found</h3>
-        <p>Try a different search term or clear your filters.</p>
+      <!-- ══════════════ 8. Digital Literacy and Prevention ══════════════ -->
+      <div class="category-group" data-group="literacy" id="group-literacy">
+        <div class="category-group-header">
+          <div class="category-group-icon">📚</div>
+          <div class="category-group-info">
+            <div class="category-group-name">
+              Digital Literacy and Prevention
+            </div>
+            <div class="category-group-count">9 Topics · Palmero</div>
+          </div>
+        </div>
+        <div class="topic-cards" id="cards-literacy">
+          <a
+            class="topic-card featured"
+            href="#"
+            data-category="literacy"
+            data-title="Why Digital Literacy Matters"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">💡</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Foundations</div>
+              <div class="topic-card-title">Why Digital Literacy Matters</div>
+              <div class="topic-card-desc">
+                In an era of synthetic media, digital literacy isn't optional —
+                it's a survival skill. An introduction to why understanding AI
+                and media is now as essential as reading and writing.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="literacy"
+            data-title="Basic Tips to Stay Safe from Fake Content Online"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🔐</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Safety Tips</div>
+              <div class="topic-card-title">
+                Basic Tips to Stay Safe from Fake Content Online
+              </div>
+              <div class="topic-card-desc">
+                Simple, actionable habits anyone can start today — from pausing
+                before sharing to checking source credibility — that reduce your
+                risk of spreading or being misled by fake content.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="literacy"
+            data-title="Responsible Sharing Online"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🔁</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Responsible Sharing</div>
+              <div class="topic-card-title">Responsible Sharing Online</div>
+              <div class="topic-card-desc">
+                Every share is a choice. A guide to developing a sharing ethic
+                that prioritizes accuracy over speed and protects your network
+                from the harms of misinformation.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="literacy"
+            data-title="How to Verify Online Sources"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🔍</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Source Verification</div>
+              <div class="topic-card-title">How to Verify Online Sources</div>
+              <div class="topic-card-desc">
+                Not all websites are created equal. How to evaluate the
+                credibility of online sources quickly — checking domain history,
+                author credentials, citations, and editorial standards.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="literacy"
+            data-title="How to Talk to Family About Fake Content"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">👨‍👩‍👧</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">For Families</div>
+              <div class="topic-card-title">
+                How to Talk to Family About Fake Content
+              </div>
+              <div class="topic-card-desc">
+                Conversations about misinformation can be difficult — especially
+                across generations. Practical approaches for raising the topic
+                with parents, grandparents, and younger siblings without
+                conflict.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="literacy"
+            data-title="How Students Can Avoid Fake Information"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🎒</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">For Students</div>
+              <div class="topic-card-title">
+                How Students Can Avoid Fake Information
+              </div>
+              <div class="topic-card-desc">
+                Research papers, group chats, social feeds — fake information
+                enters student life from many directions. A student-focused
+                guide to building reliable information habits.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="literacy"
+            data-title="How Teachers Can Promote AI Literacy"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">👩‍🏫</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">For Teachers</div>
+              <div class="topic-card-title">
+                How Teachers Can Promote AI Literacy
+              </div>
+              <div class="topic-card-desc">
+                Classroom activities, discussion frameworks, and curriculum
+                integration strategies to help educators bring AI media literacy
+                into every subject — not just technology class.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="literacy"
+            data-title="How Parents Can Identify Fake Content"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">👪</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">For Parents</div>
+              <div class="topic-card-title">
+                How Parents Can Identify Fake Content
+              </div>
+              <div class="topic-card-desc">
+                A parent-friendly introduction to spotting AI-generated media —
+                with a focus on what children are most likely to encounter and
+                how to guide them toward healthy skepticism.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="literacy"
+            data-title="Guide Before Sharing Posts Online"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">📋</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Quick Checklist</div>
+              <div class="topic-card-title">
+                Guide Before Sharing Posts Online
+              </div>
+              <div class="topic-card-desc">
+                A concise pre-share checklist — ask these five questions before
+                every repost, retweet, or forward to make sure you're not
+                amplifying false or harmful content to your network.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- ══════════════ 9. Case Studies of AI Media Incidents ══════════════ -->
+      <div class="category-group" data-group="cases" id="group-cases">
+        <div class="category-group-header">
+          <div class="category-group-icon">🗂️</div>
+          <div class="category-group-info">
+            <div class="category-group-name">
+              Case Studies of AI Media Incidents
+            </div>
+            <div class="category-group-count">6 Topics · Bobiles</div>
+          </div>
+        </div>
+        <div class="topic-cards" id="cards-cases">
+          <a
+            class="topic-card featured"
+            href="#"
+            data-category="cases"
+            data-title="Famous Deepfake Cases"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">📁</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Deepfake Cases</div>
+              <div class="topic-card-title">Famous Deepfake Cases</div>
+              <div class="topic-card-desc">
+                From celebrity non-consensual deepfakes to political
+                disinformation campaigns — an in-depth look at the most
+                significant deepfake cases that shaped public understanding of
+                the technology.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="cases"
+            data-title="AI Scam Case Studies"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🕵️</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Scam Cases</div>
+              <div class="topic-card-title">AI Scam Case Studies</div>
+              <div class="topic-card-desc">
+                Documented, real-world cases of AI-powered scams — voice cloning
+                fraud, synthetic identity theft, and deepfake CEO impersonation
+                — analyzed for how they worked and what stopped them.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="cases"
+            data-title="Fake Social Media Post Examples"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">📲</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Social Media</div>
+              <div class="topic-card-title">
+                Fake Social Media Post Examples
+              </div>
+              <div class="topic-card-desc">
+                Annotated examples of viral fake posts — breaking down exactly
+                what made them convincing, what the red flags were, and how each
+                was ultimately debunked.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="cases"
+            data-title="Real-Life AI Misinformation Incidents"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">📡</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Misinformation Incidents</div>
+              <div class="topic-card-title">
+                Real-Life AI Misinformation Incidents
+              </div>
+              <div class="topic-card-desc">
+                Documented incidents where AI-generated content caused
+                real-world harm — from false disaster reports to fabricated
+                medical guidance — and what each case reveals about the
+                information ecosystem.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="cases"
+            data-title="Case Studies of AI in Politics"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🗳️</span>
+              <span class="difficulty-badge diff-advanced">Advanced</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Politics</div>
+              <div class="topic-card-title">Case Studies of AI in Politics</div>
+              <div class="topic-card-desc">
+                Fabricated speeches, synthetic rallies, cloned candidate voices
+                — detailed case studies of AI being used in political campaigns
+                and influence operations around the world.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="cases"
+            data-title="Case Studies of AI in Advertising"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">📣</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Advertising</div>
+              <div class="topic-card-title">
+                Case Studies of AI in Advertising
+              </div>
+              <div class="topic-card-desc">
+                AI-generated ads, synthetic celebrity endorsements, and deepfake
+                product reviews — how advertising is being transformed by
+                synthetic media, and the consumer protection questions it
+                raises.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- ══════════════ 10. Future of AI Media ══════════════ -->
+      <div class="category-group" data-group="future" id="group-future">
+        <div class="category-group-header">
+          <div class="category-group-icon">🚀</div>
+          <div class="category-group-info">
+            <div class="category-group-name">Future of AI Media</div>
+            <div class="category-group-count">6 Topics · Sabas</div>
+          </div>
+        </div>
+        <div class="topic-cards" id="cards-future">
+          <a
+            class="topic-card featured"
+            href="#"
+            data-category="future"
+            data-title="Future of AI Media Technology"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🔭</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Technology Outlook</div>
+              <div class="topic-card-title">Future of AI Media Technology</div>
+              <div class="topic-card-desc">
+                Where is AI-generated media headed? An informed look at the next
+                generation of synthesis technology — from real-time video
+                generation to fully interactive synthetic environments.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="future"
+            data-title="AI Opportunities"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🌟</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Opportunities</div>
+              <div class="topic-card-title">AI Opportunities</div>
+              <div class="topic-card-desc">
+                Beyond the risks — the genuine opportunities AI media technology
+                creates for education, accessibility, creative expression, and
+                economic development in the years ahead.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="future"
+            data-title="Future Jobs Related to AI"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">💼</span>
+              <span class="difficulty-badge diff-beginner">Beginner</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Careers</div>
+              <div class="topic-card-title">Future Jobs Related to AI</div>
+              <div class="topic-card-desc">
+                AI prompt engineers, deepfake investigators, content provenance
+                auditors — a look at the emerging careers being created by the
+                rise of synthetic media and AI literacy needs.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="future"
+            data-title="Risks of AI in the Future"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">⚡</span>
+              <span class="difficulty-badge diff-advanced">Advanced</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Future Risks</div>
+              <div class="topic-card-title">Risks of AI in the Future</div>
+              <div class="topic-card-desc">
+                As AI generation capabilities accelerate, the risks grow too. A
+                forward-looking analysis of the threats synthetic media poses to
+                democracy, privacy, and social trust in the coming decade.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="future"
+            data-title="AI Regulation Trends"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🏛️</span>
+              <span class="difficulty-badge diff-advanced">Advanced</span>
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Policy &amp; Law</div>
+              <div class="topic-card-title">AI Regulation Trends</div>
+              <div class="topic-card-desc">
+                Governments worldwide are racing to regulate AI media. A survey
+                of the regulatory landscape — what's passed, what's proposed,
+                and where policy is likely to go in the next five years.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            class="topic-card"
+            href="#"
+            data-category="future"
+            data-title="AI and Society in the Future"
+          >
+            <div class="topic-card-thumb">
+              <span class="topic-card-thumb-icon">🌐</span>
+              <span class="difficulty-badge diff-intermediate"
+                >Intermediate</span
+              >
+            </div>
+            <div class="topic-card-body">
+              <div class="topic-card-cat">Society</div>
+              <div class="topic-card-title">AI and Society in the Future</div>
+              <div class="topic-card-desc">
+                How will society adapt to a world where synthetic media is
+                indistinguishable from reality? Examining the long-term social,
+                cultural, and psychological shifts ahead — and how we prepare
+                for them.
+              </div>
+              <div class="topic-card-footer">
+                <span class="topic-card-read">Start Reading →</span>
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -1481,76 +2323,16 @@
       </div>
     </footer>
 
+    <!-- BACK TO TOP -->
+    <a href="#" class="back-to-top visible" id="backToTop">Go to top ↑</a>
+
     <script>
-      // ── Scroll reveal ──
-      const reveals = document.querySelectorAll(".reveal");
-      const revealObs = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("visible");
-              revealObs.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.08 },
-      );
-      reveals.forEach((el) => revealObs.observe(el));
-
-      // ── Navbar scroll effect ──
-      const navbar = document.querySelector("nav");
-      window.addEventListener("scroll", () => {
-        navbar.style.boxShadow =
-          window.scrollY > 40
-            ? "0 4px 30px rgba(0,22,92,0.6)"
-            : "0 2px 30px rgba(0,22,92,0.35)";
-      });
-
       // ── Filter + Search logic ──
       const pills = document.querySelectorAll(".filter-pill");
       const searchInput = document.getElementById("topicSearch");
       const allCards = document.querySelectorAll(".topic-card");
       const allGroups = document.querySelectorAll(".category-group");
       const noResults = document.getElementById("noResults");
-
-      let activeFilter = "all";
-      let searchTerm = "";
-
-      function applyFilters() {
-        let anyVisible = false;
-
-        allCards.forEach((card) => {
-          const cat = card.dataset.category || "";
-          const title = (card.dataset.title || "").toLowerCase();
-          const desc = (
-            card.querySelector(".topic-card-desc")?.textContent || ""
-          ).toLowerCase();
-
-          const filterMatch = activeFilter === "all" || cat === activeFilter;
-          const searchMatch =
-            searchTerm === "" ||
-            title.includes(searchTerm) ||
-            desc.includes(searchTerm);
-
-          const visible = filterMatch && searchMatch;
-          card.dataset.hidden = visible ? "false" : "true";
-          if (visible) anyVisible = true;
-        });
-
-        // Hide empty groups
-        allGroups.forEach((group) => {
-          const groupFilter = group.dataset.group;
-          const visibleCards = group.querySelectorAll(
-            '.topic-card:not([data-hidden="true"])',
-          );
-          const groupVisible =
-            (activeFilter === "all" || groupFilter === activeFilter) &&
-            visibleCards.length > 0;
-          group.dataset.empty = groupVisible ? "false" : "true";
-        });
-
-        noResults.classList.toggle("visible", !anyVisible);
-      }
 
       pills.forEach((pill) => {
         pill.addEventListener("click", () => {
@@ -1559,11 +2341,6 @@
           activeFilter = pill.dataset.filter;
           applyFilters();
         });
-      });
-
-      searchInput.addEventListener("input", () => {
-        searchTerm = searchInput.value.trim().toLowerCase();
-        applyFilters();
       });
     </script>
   </body>

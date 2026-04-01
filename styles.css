@@ -196,9 +196,10 @@ nav {
 }
 
 .btn-primary {
+  display: inline-block;
   font-family: var(--font-body);
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: bold;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   padding: 14px 36px;
@@ -581,6 +582,10 @@ nav {
   flex-wrap: wrap;
   gap: 0.8rem;
   justify-content: center;
+}
+
+.topic-buttons {
+  margin-top: 2rem;
 }
 
 .chip {
