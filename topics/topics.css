@@ -328,8 +328,6 @@ nav {
   font-size: 1.4rem;
   flex-shrink: 0;
 }
-.category-group-info {
-}
 .category-group-name {
   font-family: var(--font-head);
   font-size: 1.5rem;
