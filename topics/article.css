@@ -773,6 +773,10 @@ nav {
 }
 
 /* PAGINATION */
+.hidden {
+  pointer-events: none;
+  visibility: hidden;
+}
 .article-pagination {
   border-top: 4px solid var(--blue);
   background: var(--light);
