@@ -716,30 +716,10 @@ nav {
   position: relative;
   overflow: hidden;
 }
-.article-nav-card::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: var(--blue);
-  transform: scaleY(0);
-  transform-origin: bottom;
-  transition: transform 0.25s ease;
-}
-.article-nav-card.next::before {
-  left: auto;
-  right: 0;
-  transform-origin: top;
-}
 .article-nav-card:hover {
   border-color: var(--blue);
   transform: translateY(-3px);
   box-shadow: 0 8px 24px rgba(0, 22, 92, 0.1);
-}
-.article-nav-card:hover::before {
-  transform: scaleY(1);
 }
 .article-nav-card.next {
   text-align: right;
