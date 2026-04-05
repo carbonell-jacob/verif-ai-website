@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../article.css" />
+    <title>Deepfake Technology Explained – VerifAI</title>
+  </head>
+  <body>
+    <nav>
+      <a class="nav-logo" href="../index.html">Verif<span>AI</span></a>
+      <ul class="nav-links">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../../about/about.html" target="about">About</a></li>
+        <li><a href="../../gallery/gallery.html" target="gallery">Gallery</a></li>
+        <li><a href="../topics.html" target="topics">Topics</a></li>
+        <li><a href="../../contactUs/contactUs.html" target="contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+    <section class="article-hero">
+      <div class="article-hero-grid"></div>
+      <div class="article-hero-glow"></div>
+      <div class="article-hero-content">
+        <div class="breadcrumb">
+          <a href="../../index.html">Home</a><span>›</span>
+          <a href="../topics.html" target="topics">Topics</a><span>›</span>
+          How AI Creates Media
+        </div>
+        <div class="article-category">How AI Creates Media</div>
+        <h1>Deepfake Technology <span>Explained</span></h1>
+        <div class="article-meta">
+          <div class="meta-author">
+            <div class="meta-author-info">
+              <span class="meta-author-name">Tagama</span>
+              <span class="meta-author-role">Quality Assurance</span>
+            </div>
+          </div>
+          <div class="meta-divider"></div>
+          <span class="meta-detail"><strong>April 2026</strong></span>
+          <div class="meta-divider"></div>
+          <span class="meta-detail"><strong>10 min</strong> read</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-wrap">
+      <aside class="sidebar-left">
+        <div class="sidebar-heading">In This Article</div>
+        <ul class="toc-list">
+          <li><a href="#s1" class="toc-link">1. What Is a Deepfake?</a></li>
+          <li><a href="#s2" class="toc-link">2. How Deepfakes Are Made</a></li>
+          <li><a href="#s3" class="toc-link">3. Types of Deepfakes</a></li>
+          <li><a href="#s4" class="toc-link">4. How to Detect a Deepfake</a></li>
+          <li><a href="#s5" class="toc-link">5. Real-World Harm</a></li>
+          <li><a href="#s6" class="toc-link">6. What Is Being Done</a></li>
+          <li><a href="#s7" class="toc-link">7. What We've Learned</a></li>
+        </ul>
+      </aside>
+
+      <main class="article-body" id="articleBody">
+        <p class="article-lead">
+          Deepfakes represent one of the most serious and rapidly evolving threats to truth in the digital age. They are AI-generated videos, images, or audio recordings that show real people doing or saying things they never actually did — and they are becoming harder and harder to detect with the naked eye.
+        </p>
+
+        <h2 id="s1">What Is a Deepfake?</h2>
+        <p>
+          The term "deepfake" combines "deep learning" — the AI technique used to create them — with "fake." A deepfake is a piece of synthetic media in which a person's likeness, voice, or both are replaced or manipulated using AI to create a convincing but entirely false representation. The person in the deepfake may appear to say words they never spoke, perform actions they never did, or be placed in situations they were never in.
+        </p>
+        <p>
+          While the concept of manipulated media is not new — photo and video editing have existed for decades — deepfakes are different in scale, quality, and accessibility. What once required a Hollywood-level visual effects studio can now be accomplished by a teenager with a laptop and a free application. This democratization of deception is what makes deepfakes a uniquely dangerous phenomenon.
+        </p>
+
+        <div class="article-image">
+          <a href="../../assets/images/content/howAiCreatesMedia/article6-fig1.png" target="image">
+            <img
+              src="../../assets/images/content/howAiCreatesMedia/article6-fig1.png"
+              alt="Side-by-side comparison of an original video frame and a deepfake version with subtle visual differences highlighted"
+              title="Original vs. Deepfake — Spotting the Subtle Differences"
+            />
+          </a>
+          <div class="article-image-caption">
+            <strong>Figure 1:</strong> Original vs. Deepfake — even high-quality deepfakes may contain subtle artifacts at the edges of the face or in lighting inconsistencies.
+          </div>
+        </div>
+
+        <h2 id="s2">How Deepfakes Are Made</h2>
+        <p>
+          Most deepfakes are created using a type of neural network called an autoencoder, often in combination with GANs (Generative Adversarial Networks). The process begins by training the model on a large collection of images or video frames of the target person — their face, expressions, angles, and lighting conditions. The more source material available, the more convincing the final deepfake will be.
+        </p>
+        <p>
+          Once trained, the model learns to encode the target person's face and decode it onto another person's face in real time. The result is a video that appears to show the target person performing the actions and expressions of the source video — but with the original person replaced. Audio deepfakes use a similar process, cloning the target's voice and synthesizing new speech in it.
+        </p>
+
+        <ol class="steps-list">
+          <li>
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h4>Data Collection</h4>
+              <p>Hundreds or thousands of images and video frames of the target person are collected, often from public sources like social media and news footage.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h4>Model Training</h4>
+              <p>An autoencoder or GAN is trained on this data to learn the visual features of the target's face — expressions, skin texture, lighting responses, and angles.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h4>Face Swapping</h4>
+              <p>The trained model is applied to a source video, replacing the source person's face with the target's face, frame by frame.</p>
+            </div>
+          </li>
+          <li>
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h4>Post-Processing</h4>
+              <p>The output is refined to smooth inconsistencies, match skin tones, and align lighting — making the result more convincing.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="article-image">
+          <a href="../../assets/images/content/howAiCreatesMedia/article6-fig2.jpg" target="image">
+            <img
+              src="../../assets/images/content/howAiCreatesMedia/article6-fig2.jpg"
+              alt="Technical diagram showing the autoencoder architecture used in deepfake face-swapping"
+              title="The Autoencoder Architecture Behind Deepfake Face-Swapping"
+            />
+          </a>
+          <div class="article-image-caption">
+            <strong>Figure 2:</strong> The Autoencoder Architecture Behind Deepfake Face-Swapping — two encoder-decoder pairs learn to map facial features from one person to another.
+          </div>
+        </div>
+
+        <h2 id="s3">Types of Deepfakes</h2>
+        <p>
+          Deepfake technology is not limited to face swapping. There are several distinct types, each with different techniques and use cases:
+        </p>
+
+        <div class="clue-grid">
+          <div class="clue-card">
+            <div class="clue-card-icon">😶</div>
+            <h4>Face Swap</h4>
+            <p>The most common type — one person's face is replaced with another's in a video, making it appear they performed the actions shown.</p>
+          </div>
+          <div class="clue-card">
+            <div class="clue-card-icon">🗣️</div>
+            <h4>Lip Sync</h4>
+            <p>The target's mouth movements are altered to match new audio — making them appear to say things they never said without replacing their face entirely.</p>
+          </div>
+          <div class="clue-card">
+            <div class="clue-card-icon">🎭</div>
+            <h4>Puppet Master</h4>
+            <p>The target's entire face and head movements are driven by a separate person's movements in real time, as if they were a puppet.</p>
+          </div>
+          <div class="clue-card">
+            <div class="clue-card-icon">🔊</div>
+            <h4>Voice Deepfake</h4>
+            <p>Audio-only deepfakes that clone a person's voice and generate new speech in it — no video required.</p>
+          </div>
+        </div>
+
+        <h2 id="s4">How to Detect a Deepfake</h2>
+        <p>
+          While deepfakes are becoming harder to detect, careful observation can still reveal many of them. The following are the most reliable visual and behavioral signals to look for:
+        </p>
+        <ul>
+          <li>Unnatural blinking — too frequent, too infrequent, or eyelids that flicker</li>
+          <li>Blurring or warping at the edges of the face, especially the hairline and ears</li>
+          <li>Inconsistent skin tone between the face and the neck</li>
+          <li>Lighting on the face that does not match the rest of the scene</li>
+          <li>Teeth that appear blurry or oddly shaped</li>
+          <li>Facial expressions that seem slightly delayed or unnatural</li>
+          <li>Audio that does not perfectly match lip movements</li>
+          <li>Background elements that warp or shift near the person's head</li>
+        </ul>
+
+        <div class="pull-quote">
+          <p>The eyes often reveal what the algorithm missed. Look for subtle irregularities in how they move, blink, and reflect light — these are among the hardest things for deepfake models to replicate correctly.</p>
+          <cite>— Deepfake Detection Research, Media Forensics Lab</cite>
+        </div>
+
+        <h2 id="s5">Real-World Harm</h2>
+        <p>
+          Deepfakes have already caused documented harm across multiple domains. Politicians have been targeted with fake videos designed to damage their reputations or provoke public outrage. Celebrities have had their faces placed into non-consensual intimate content without their knowledge or permission. Private individuals have been victimized through deepfake harassment and extortion. Business executives have been impersonated using voice deepfakes to authorize fraudulent financial transfers worth millions of dollars.
+        </p>
+        <p>
+          The psychological harm to victims is often severe — a loss of control over one's own image and voice, reputational damage that can be nearly impossible to undo, and the emotional burden of knowing that synthetic versions of yourself are circulating online. These are not edge cases. They are increasingly common occurrences affecting ordinary people around the world.
+        </p>
+
+        <div class="warning-box">
+          <div class="warning-box-label">⚠️ Real Impact</div>
+          <p>Non-consensual deepfake content disproportionately targets women. Studies have found that the overwhelming majority of deepfake content online is non-consensual intimate imagery — a form of digital abuse with serious psychological consequences for victims.</p>
+        </div>
+
+        <h2 id="s6">What Is Being Done</h2>
+        <p>
+          Governments, technology companies, and researchers are actively working to combat the deepfake threat. Detection tools have been developed that use AI to analyze videos for deepfake artifacts, though these tools face the ongoing challenge of keeping up with increasingly sophisticated generation techniques. Several countries have passed or are developing legislation that criminalizes the creation and distribution of deepfakes used for harassment, fraud, or election interference.
+        </p>
+        <p>
+          Major platforms like Meta, YouTube, and TikTok have policies against deepfake content, particularly non-consensual intimate imagery, and have invested in automated detection systems. Media provenance standards — cryptographic signatures embedded in authentic media at the point of creation — are being developed as a long-term solution, allowing viewers to verify that a video has not been manipulated.
+        </p>
+
+        <h2 id="s7">What We've Learned</h2>
+        <p>
+          Deepfakes are AI-generated synthetic media that replace or manipulate a person's likeness to make them appear to say or do things they never did. They are created using autoencoders and GANs trained on images or video of the target person, and they range from face swaps and lip syncs to full puppet-master animations and voice clones.
+        </p>
+        <p>
+          While detection tools and legislation are developing, the most important defense remains individual media literacy. Learning to recognize the visual and behavioral signs of a deepfake — blurring at the face edges, unnatural blinking, lighting inconsistencies — and developing the habit of verifying content before sharing it are essential skills for every digital citizen in an age where seeing is no longer believing.
+        </p>
+
+        <div class="warning-box">
+          <div class="warning-box-label">💡 Remember</div>
+          <p>If a video shows a public figure doing or saying something shocking, stop before you share. Ask where it came from, look for verification from trusted sources, and examine it closely for the signs of deepfake manipulation. Your critical thinking is the first line of defense.</p>
+        </div>
+      </main>
+
+      <aside class="sidebar-right">
+        <div class="sidebar-section">
+          <div class="sidebar-heading">Related Articles</div>
+          <a class="related-card" href="article2.html">
+            <div class="related-thumb">🖼️</div>
+            <div>
+              <div class="related-cat">How AI Creates Media</div>
+              <div class="related-title">How AI Generates Images</div>
+            </div>
+          </a>
+          <a class="related-card" href="article3.html">
+            <div class="related-thumb">🎬</div>
+            <div>
+              <div class="related-cat">How AI Creates Media</div>
+              <div class="related-title">How AI Generates Videos</div>
+            </div>
+          </a>
+          <a class="related-card" href="article4.html">
+            <div class="related-thumb">🎙️</div>
+            <div>
+              <div class="related-cat">How AI Creates Media</div>
+              <div class="related-title">How AI Generates Audio</div>
+            </div>
+          </a>
+          <a class="related-card" href="article7.html">
+            <div class="related-thumb">🤖</div>
+            <div>
+              <div class="related-cat">How AI Creates Media</div>
+              <div class="related-title">Role of Machine Learning in Media Creation</div>
+            </div>
+          </a>
+        </div>
+      </aside>
+    </div>
+
+    <section class="article-pagination">
+      <a class="article-nav-card prev" href="article5.html">
+        <span class="nav-dir">← Previous</span>
+        <span class="nav-title">How AI Generates Text</span>
+      </a>
+      <a class="article-nav-card next" href="article7.html">
+        <span class="nav-dir">Next →</span>
+        <span class="nav-title">Role of Machine Learning in Media Creation</span>
+      </a>
+    </section>
+
+    <section class="more-articles">
+      <div class="section-header">
+        <span class="section-label">Keep Learning</span>
+        <h2>More from <span>How AI Creates Media</span></h2>
+      </div>
+      <div class="cards-grid">
+        <a class="card" href="article3.html">
+          <div class="card-thumb">🎬</div>
+          <div class="card-body">
+            <div class="card-cat">How AI Creates Media</div>
+            <h3>How AI Generates Videos</h3>
+            <p>From frame prediction to full scene generation — how AI is now producing realistic video content.</p>
+            <div class="card-meta"><span>9 min read</span><span>Intermediate</span></div>
+          </div>
+        </a>
+        <a class="card" href="article4.html">
+          <div class="card-thumb">🎙️</div>
+          <div class="card-body">
+            <div class="card-cat">How AI Creates Media</div>
+            <h3>How AI Generates Audio</h3>
+            <p>Voice cloning, AI music, and synthetic speech — how AI is transforming the world of sound.</p>
+            <div class="card-meta"><span>8 min read</span><span>Beginner</span></div>
+          </div>
+        </a>
+        <a class="card" href="article7.html">
+          <div class="card-thumb">🤖</div>
+          <div class="card-body">
+            <div class="card-cat">How AI Creates Media</div>
+            <h3>Role of Machine Learning in Media Creation</h3>
+            <p>How the principles of machine learning underpin every type of AI-generated media we see today.</p>
+            <div class="card-meta"><span>9 min read</span><span>Intermediate</span></div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="nav-logo" href="../index.html">Verif<span>AI</span></a>
+          <p>Educating the public on how to identify AI-generated media. Stay informed, stay critical, stay real.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../about/about.html" target="about">About</a></li>
+            <li><a href="../../contactUs/contactUs.html" target="contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="../../gallery/gallery.html" target="gallery">Gallery</a></li>
+            <li><a href="../topics.html" target="topics">Topics</a></li>
+          </ul>
+        </div>
+        <div class="footer-links footer-social">
+          <h4>Follow Us</h4>
+          <a href="https://www.facebook.com/profile.php?id=61582741020706" target="_blank" rel="noopener">
+            <span class="fb-icon">f</span> Verif-AI on Facebook
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 VerifAI. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="../../index.html">Home</a>
+          <a href="../../about/about.html" target="about">About</a>
+          <a href="../../contactUs/contactUs.html" target="contact">Contact Us</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      window.addEventListener("scroll", () => {
+        const doc = document.documentElement;
+        const scrollTop = doc.scrollTop || document.body.scrollTop;
+        const scrollHeight = doc.scrollHeight - doc.clientHeight;
+        const progress = (scrollTop / scrollHeight) * 100;
+        document.getElementById("progressFill").style.width = progress + "%";
+      });
+    </script>
+  </body>
+</html>

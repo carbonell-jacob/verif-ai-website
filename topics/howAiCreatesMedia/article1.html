@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../article.css" />
-    <title>Image Generator Tools – VerifAI</title>
+    <title>AI Model Training and Data Sources – VerifAI</title>
   </head>
   <body>
     <nav>
@@ -12,15 +12,13 @@
       <ul class="nav-links">
         <li><a href="../../index.html">Home</a></li>
         <li><a href="../../about/about.html" target="about">About</a></li>
-        <li>
-          <a href="../../gallery/gallery.html" target="gallery">Gallery</a>
-        </li>
+        <li><a href="../../gallery/gallery.html" target="gallery">Gallery</a></li>
         <li><a href="../topics.html" target="topics">Topics</a></li>
-        <li>
-          <a href="../../contactUs/contactUs.html" target="contact">Contact</a>
-        </li>
+        <li><a href="../../contactUs/contactUs.html" target="contact">Contact</a></li>
       </ul>
     </nav>
+
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
 
     <section class="article-hero">
       <div class="article-hero-grid"></div>
@@ -29,433 +27,282 @@
         <div class="breadcrumb">
           <a href="../../index.html">Home</a><span>›</span>
           <a href="../topics.html" target="topics">Topics</a><span>›</span>
-          AI-Generating Tools
+          How AI Creates Media
         </div>
-        <h1>Image Generator <span>Tools</span></h1>
+        <div class="article-category">How AI Creates Media</div>
+        <h1>AI Model Training and <span>Data Sources</span></h1>
         <div class="article-meta">
           <div class="meta-author">
             <div class="meta-author-info">
-              <span class="meta-author-name">Jacob Carbonell</span>
-              <span class="meta-author-role">Developer</span>
+              <span class="meta-author-name">Tagama</span>
+              <span class="meta-author-role">Quality Assurance</span>
             </div>
           </div>
           <div class="meta-divider"></div>
           <span class="meta-detail"><strong>April 2026</strong></span>
           <div class="meta-divider"></div>
-          <span class="meta-detail"><strong>8 min</strong> read</span>
+          <span class="meta-detail"><strong>9 min</strong> read</span>
         </div>
       </div>
     </section>
 
     <div class="page-wrap">
-      <!-- LEFT SIDEBAR: Table of Contents -->
+      <!-- LEFT SIDEBAR -->
       <aside class="sidebar-left">
         <div class="sidebar-heading">In This Article</div>
         <ul class="toc-list">
-          <li>
-            <a href="#s1" class="toc-link">1. How Image Generator Tools Work</a>
-          </li>
-          <li>
-            <a href="#s2" class="toc-link"
-              >2. Common Features of Image Generator Tools
-            </a>
-          </li>
-          <li>
-            <a href="#s3" class="toc-link"
-              >3. Examples of Image Generator Tools</a
-            >
-          </li>
-          <li>
-            <a href="#s4" class="toc-link"
-              >4. Why People Use Image Generator Tools</a
-            >
-          </li>
-          <li><a href="#s5" class="toc-link">5. Risks and Misuse</a></li>
+          <li><a href="#s1" class="toc-link">1. What Is AI Model Training?</a></li>
+          <li><a href="#s2" class="toc-link">2. Where Does the Data Come From?</a></li>
+          <li><a href="#s3" class="toc-link">3. How Training Actually Works</a></li>
+          <li><a href="#s4" class="toc-link">4. Types of Training Data</a></li>
+          <li><a href="#s5" class="toc-link">5. Problems With Training Data</a></li>
+          <li><a href="#s6" class="toc-link">6. Why This Matters for Media</a></li>
+          <li><a href="#s7" class="toc-link">7. What We've Learned</a></li>
         </ul>
       </aside>
 
-      <!-- CENTER: Main Article -->
+      <!-- MAIN ARTICLE -->
       <main class="article-body" id="articleBody">
-        <p>
-          Image generator tools are one of the main reasons why AI-generated
-          media is everywhere today. These tools use artificial intelligence to
-          create images from simple text prompts. For example, a person can type
-          “a cat wearing sunglasses on the beach,” and the tool will generate a
-          realistic or artistic image based on that description.
-        </p>
-        <p>
-          For example, if someone types “a futuristic city at night with flying
-          cars,” the tool will create an image based on that idea. This makes
-          image generators powerful, but also risky if used to create misleading
-          or fake content.
+        <p class="article-lead">
+          Before an AI can generate images, write text, or clone a voice, it must first learn — and that learning process, called training, depends entirely on the quality and quantity of data it consumes. Understanding where that data comes from is the first step to understanding how AI-generated media is made.
         </p>
 
-        <h2 id="s1">How Image Generator Tools Work</h2>
+        <h2 id="s1">What Is AI Model Training?</h2>
         <p>
-          Image generator tools are trained using large collections of images
-          and text from the internet. During training, the AI learns patterns
-          such as shapes, colors, lighting, and styles.
+          AI model training is the process by which a machine learning system learns to perform a task by studying large amounts of example data. Think of it like teaching a child to recognize animals: you show them thousands of pictures of cats and dogs, and over time they learn the patterns that make each animal distinct. AI models do the same thing, but at a scale that is almost impossible to imagine — often processing billions of examples over weeks or months using powerful computers.
         </p>
         <p>
-          When a user enters a prompt, the AI does not copy an existing image.
-          Instead, it creates a new one by combining everything it has learned.
-          Many tools use a process where the image starts as random noise and
-          slowly becomes clear and detailed.
+          During training, the AI adjusts its internal settings, called parameters or weights, every time it makes a mistake. If the model incorrectly labels a photo or generates a blurry image, its internal values are updated slightly so that it performs better next time. This process is repeated millions or even billions of times until the model reaches an acceptable level of accuracy.
         </p>
 
-        <div class="warning-box">
-          <div class="warning-box-label">Key Point</div>
-          <p>
-            Because of this, every image generated is usually unique, even if
-            the same prompt is used.
-          </p>
+        <div class="article-image">
+          <a href="../../assets/images/content/howAiCreatesMedia/article1-fig1.png" target="image">
+            <img
+              src="../../assets/images/content/howAiCreatesMedia/article1-fig1.png"
+              alt="Diagram showing the AI training process from raw data to a finished model"
+              title="The AI Model Training Pipeline"
+            />
+          </a>
+          <div class="article-image-caption">
+            <strong>Figure 1:</strong> The AI Model Training Pipeline — from raw data collection to a deployable model.
+          </div>
         </div>
 
-        <h2 id="s2">Common Features of Image Generator Tools</h2>
-        <p>Most image generator tools include:</p>
+        <h2 id="s2">Where Does the Data Come From?</h2>
+        <p>
+          The data used to train AI models comes from many different sources. For text-based models, common sources include books, news articles, academic papers, websites, forums, social media posts, and even Wikipedia. For image-based models, training data often includes photos scraped from the internet, stock image libraries, and publicly available image datasets. Audio models may be trained on music libraries, podcasts, speeches, and recorded conversations.
+        </p>
+        <p>
+          Some of this data is collected with permission, such as when companies license datasets from publishers or contributors. However, a significant portion of training data has historically been collected through web scraping — automatically downloading content from websites — without the explicit consent of the original creators. This practice has sparked major ethical and legal debates about copyright and intellectual property.
+        </p>
+
+        <div class="clue-grid">
+          <div class="clue-card">
+            <div class="clue-card-icon">📚</div>
+            <h4>Text Data</h4>
+            <p>Books, websites, forums, news articles, and academic papers scraped from the internet.</p>
+          </div>
+          <div class="clue-card">
+            <div class="clue-card-icon">🖼️</div>
+            <h4>Image Data</h4>
+            <p>Photos from social media, stock libraries, and public image datasets like ImageNet.</p>
+          </div>
+          <div class="clue-card">
+            <div class="clue-card-icon">🎵</div>
+            <h4>Audio Data</h4>
+            <p>Music, podcasts, recorded speeches, and voice samples from various online platforms.</p>
+          </div>
+          <div class="clue-card">
+            <div class="clue-card-icon">🎬</div>
+            <h4>Video Data</h4>
+            <p>Clips from video-sharing platforms, documentaries, and publicly available recordings.</p>
+          </div>
+        </div>
+
+        <h2 id="s3">How Training Actually Works</h2>
+        <p>
+          Most modern AI models are trained using a technique called deep learning, which uses structures called neural networks. These networks are loosely inspired by the human brain and consist of many layers of interconnected nodes. Each layer processes the data differently — early layers might detect basic patterns like edges or sounds, while deeper layers recognize more complex concepts like faces or sentences.
+        </p>
+        <p>
+          The training process begins by feeding the neural network a batch of data. The model makes a prediction or generates an output, and that result is compared to the correct answer. The difference between the prediction and the correct answer is called the loss. The model then uses a mathematical process called backpropagation to adjust its weights in a way that reduces the loss. After enough repetitions across enough data, the model becomes capable of performing its task reliably.
+        </p>
+
+        <div class="article-image">
+          <a href="../../assets/images/content/howAiCreatesMedia/article1-fig2.jpg" target="image">
+            <img
+              src="../../assets/images/content/howAiCreatesMedia/article1-fig2.jpg"
+              alt="Visual diagram of a neural network with multiple layers processing data"
+              title="How a Neural Network Processes Data During Training"
+            />
+          </a>
+          <div class="article-image-caption">
+            <strong>Figure 2:</strong> A simplified view of how a neural network processes data through multiple layers during training.
+          </div>
+        </div>
+
+        <h2 id="s4">Types of Training Data</h2>
+        <p>
+          Not all training data is the same. Researchers classify it in several important ways depending on how it is labeled and how it will be used by the model.
+        </p>
         <ol class="steps-list">
           <li>
             <div class="step-num">1</div>
             <div class="step-content">
-              <h4>Text-to-image generation</h4>
-              <p>Create images from written prompts</p>
+              <h4>Labeled Data</h4>
+              <p>Each example comes with a correct answer or tag. For example, an image labeled "cat" teaches the model what a cat looks like. Labeled data is expensive and time-consuming to produce.</p>
             </div>
           </li>
           <li>
             <div class="step-num">2</div>
             <div class="step-content">
-              <h4>Style selection</h4>
-              <p>Choose different styles like realistic, anime, or painting</p>
+              <h4>Unlabeled Data</h4>
+              <p>Raw data with no tags or annotations. Models trained on unlabeled data must find patterns on their own, which is the basis of unsupervised learning.</p>
             </div>
           </li>
           <li>
             <div class="step-num">3</div>
             <div class="step-content">
-              <h4>Image editing</h4>
-              <p>Change parts of an existing image</p>
+              <h4>Synthetic Data</h4>
+              <p>Artificially generated data created by other AI systems. This is increasingly used when real data is scarce or too sensitive to collect.</p>
             </div>
           </li>
           <li>
             <div class="step-num">4</div>
             <div class="step-content">
-              <h4>Variations</h4>
-              <p>Generate multiple versions of the same idea.</p>
-            </div>
-          </li>
-          <li>
-            <div class="step-num">5</div>
-            <div class="step-content">
-              <h4>Upscaling</h4>
-              <p>Improve image quality and make it clearer</p>
+              <h4>Human Feedback Data</h4>
+              <p>Ratings and corrections provided by human reviewers who evaluate the model's outputs. This is essential for training conversational and generative AI systems.</p>
             </div>
           </li>
         </ol>
 
-        <h2 id="s3">Examples of Image Generator Tools</h2>
-        <h3>1. DALL·E</h3>
+        <h2 id="s5">Problems With Training Data</h2>
+        <p>
+          The quality and composition of training data directly shapes what an AI model can and cannot do — and what biases it may carry. If the training data contains mostly images of one type of person, the model may struggle to accurately represent others. If it is trained on news articles that favor a particular perspective, its generated text may reflect that bias. These are not hypothetical concerns; they are well-documented problems that AI developers actively work to address.
+        </p>
+
+        <div class="pull-quote">
+          <p>An AI model is only as good — and as fair — as the data it was trained on. Garbage in, garbage out is more than a saying; it is a law of machine learning.</p>
+          <cite>— Principle of Data Quality in Machine Learning</cite>
+        </div>
+
+        <p>
+          Privacy is another serious issue. Training data collected from the internet may include personal information that people never intended to share with AI companies. Faces, voices, and writing styles can all be captured and used to train models without the knowledge or consent of the individuals involved. This has led to growing calls for stricter regulations around data collection and model training.
+        </p>
+
+        <div class="warning-box">
+          <div class="warning-box-label">⚠️ Important</div>
+          <p>Many AI models have been trained on data that was collected without the explicit consent of the original creators. This raises serious questions about intellectual property, privacy, and fairness that are still being debated in courts and legislatures worldwide.</p>
+        </div>
+
+        <h2 id="s6">Why This Matters for Media</h2>
+        <p>
+          Understanding how AI models are trained is essential for anyone who wants to critically evaluate AI-generated media. When a model generates a realistic-looking news photo that never happened, or writes a convincing but false news article, it is drawing on patterns it learned from real media — real photos, real writing, real voices. The output may be entirely fabricated, but it is constructed from fragments of the real world.
+        </p>
+        <p>
+          This means that AI-generated media can be extremely convincing precisely because it is modeled on genuine human-made content. The more data a model is trained on, and the higher the quality of that data, the more realistic its outputs will be. Recognizing this connection helps us understand why AI-generated fakes are becoming harder and harder to detect without specialized tools.
+        </p>
+
         <div class="article-image">
-          <a
-            href="../../assets/images/content/ai_gen_tools/dalle.webp"
-            target="image"
-          >
+          <a href="../../assets/images/content/howAiCreatesMedia/article1-fig3." target="image">
             <img
-              src="../../assets/images/content/ai_gen_tools/dalle.webp"
-              alt="DALL·E Logo"
-              title="DALL·E Logo"
+              src="../../assets/images/content/howAiCreatesMedia/article1-fig3.jpg"
+              alt="Comparison of real versus AI-generated media to show how training data influences output quality"
+              title="Real vs. AI-Generated Media — The Influence of Training Data"
             />
           </a>
           <div class="article-image-caption">
-            <strong>Figure 1:</strong> DALL·E Logo
+            <strong>Figure 3:</strong> Real vs. AI-Generated Media — how training data quality directly influences how convincing the output appears.
           </div>
         </div>
+
+        <h2 id="s7">What We've Learned</h2>
         <p>
-          DALL·E is an AI tool developed by OpenAI. It is known for creating
-          detailed and creative images from text.
-        </p>
-        <ul>
-          <li>Good at understanding complex prompts</li>
-          <li>Can generate both realistic and imaginative images</li>
-          <li>Often used for design ideas and illustrations</li>
-        </ul>
-
-        <h3>2. Midjourney</h3>
-        <div class="article-image">
-          <a
-            href="../../assets/images/content/ai_gen_tools/midjourney.jpeg"
-            target="image"
-          >
-            <img
-              src="../../assets/images/content/ai_gen_tools/midjourney.jpeg"
-              alt="Midjourney Logo"
-              title="Midjourney Logo"
-            />
-          </a>
-          <div class="article-image-caption">
-            <strong>Figure 2:</strong> Midjourney Logo
-          </div>
-        </div>
-        <p>
-          Midjourney is a popular tool that creates highly artistic and visually
-          appealing images.
-        </p>
-        <ul>
-          <li>Produces very detailed and stylized images</li>
-          <li>Commonly used by digital artists</li>
-          <li>Known for its unique and dramatic style</li>
-        </ul>
-
-        <h3>3. Stable Diffusion</h3>
-        <div class="article-image">
-          <a
-            href="../../assets/images/content/ai_gen_tools/stablediffusion.jpeg"
-            target="image"
-          >
-            <img
-              src="../../assets/images/content/ai_gen_tools/stablediffusion.jpeg"
-              alt="Stable Diffusion Logo"
-              title="Stable Diffusion Logo"
-            />
-          </a>
-          <div class="article-image-caption">
-            <strong>Figure 3:</strong> Stable Diffusion Logo
-          </div>
-        </div>
-        <p>
-          Stable Diffusion is an open-source image generator, meaning people can
-          run it on their own computers.
-        </p>
-        <ul>
-          <li>Free and customizable</li>
-          <li>Allows more control over image generation</li>
-          <li>Widely used by developers and researchers</li>
-        </ul>
-
-        <h3>4. Adobe Firefly</h3>
-        <div class="article-image">
-          <a
-            href="../../assets/images/content/ai_gen_tools/adobeFireFly.webp"
-            target="image"
-          >
-            <img
-              src="../../assets/images/content/ai_gen_tools/adobeFireFly.webp"
-              alt="Adobe Firefly Logo"
-              title="Adobe Firefly Logo"
-            />
-          </a>
-          <div class="article-image-caption">
-            <strong>Figure 4:</strong> Adobe Firefly Logo
-          </div>
-        </div>
-        <p>
-          Adobe Firefly is designed for creators and is integrated into Adobe
-          products.
-        </p>
-        <ul>
-          <li>Focuses on safe and legal content creation</li>
-          <li>Useful for graphic design and editing</li>
-          <li>Works well with tools like Photoshop</li>
-        </ul>
-
-        <h3>5. Canva AI Image Generator</h3>
-        <div class="article-image">
-          <a
-            href="../../assets/images/content/ai_gen_tools/canvaImageGenerator.webp"
-            target="image"
-          >
-            <img
-              src="../../assets/images/content/ai_gen_tools/canvaImageGenerator.webp"
-              alt="Canva AI Image Generator example"
-              title="Canva AI Image Generator usage example"
-            />
-          </a>
-          <div class="article-image-caption">
-            <strong>Figure 5:</strong> Canva AI Image Generator usage example
-          </div>
-        </div>
-        <p>Canva includes an AI image generator inside its design platform.</p>
-        <ul>
-          <li>Easy to use for beginners</li>
-          <li>Great for social media content and presentations</li>
-          <li>Integrated with other design tools</li>
-        </ul>
-
-        <h3>6. DeepAI Image Generator</h3>
-        <div class="article-image">
-          <a
-            href="../../assets/images/content/ai_gen_tools/deepai.webp"
-            target="image"
-          >
-            <img
-              src="../../assets/images/content/ai_gen_tools/deepai.webp"
-              alt="DeepAI logo"
-              title="DeepAI logo"
-            />
-          </a>
-          <div class="article-image-caption">
-            <strong>Figure 6:</strong> DeepAI logo
-          </div>
-        </div>
-        <p>DeepAI offers simple AI tools, including image generation.</p>
-        <ul>
-          <li>Basic and easy to access</li>
-          <li>Good for quick experiments</li>
-          <li>Less advanced compared to other tools</li>
-        </ul>
-
-        <h2 id="s4">Why People Use Image Generator Tools</h2>
-        <p>
-          People use image generator tools because they are fast, easy, and
-          highly creative. Instead of spending hours drawing or editing, users
-          can create images in just a few seconds by typing a simple
-          description. These tools do not require any artistic skills, which
-          makes them accessible to beginners as well as professionals.
+          AI model training is the foundation of every AI system that generates media. It is a process of learning from vast amounts of data — text, images, audio, and video — collected from across the internet and other sources. Through deep learning and neural networks, models adjust themselves over millions of repetitions until they can generate convincing outputs on their own.
         </p>
         <p>
-          They are also very useful for generating new ideas, especially for
-          designers, content creators, and students who need visuals for their
-          work. In addition, many image generator tools are free or affordable,
-          making them a practical choice for people who want to create images
-          without spending too much money. Because of these advantages, they are
-          widely used in social media, marketing, art, and education.
-        </p>
-
-        <h2 id="s5">Risks and Misuse</h2>
-        <p>
-          Despite their benefits, these tools can also be used in harmful ways.
-        </p>
-        <p>Some risks include:</p>
-        <ul>
-          <li>Creating fake images that look real</li>
-          <li>Spreading misinformation</li>
-          <li>Making edited or misleading content</li>
-        </ul>
-
-        <h2 id="s6">What We've Learned</h2>
-        <p>
-          Image generator tools are powerful AI tools that can create images
-          from simple text. They work by learning from large amounts of data and
-          using that knowledge to generate new and unique visuals. Popular tools
-          like DALL·E, Midjourney, Stable Diffusion, Adobe Firefly, Canva, and
-          DeepAI each offer different features, styles, and levels of control,
-          making them useful for many purposes such as design, education, and
-          content creation.
-        </p>
-        <p>
-          People use these tools because they are fast, easy to use, and
-          accessible, even for those without artistic skills. However, despite
-          their benefits, they can also be misused to create fake or misleading
-          images. Because of this, it is important to understand how these tools
-          work and to stay aware when viewing images online. By being informed,
-          users can better identify AI-generated media and avoid being misled.
+          However, this process is not without serious concerns. The data used to train these models may be biased, collected without consent, or include private information. These issues directly affect the fairness and safety of the AI systems built on top of that data. By understanding where training data comes from and how it shapes AI behavior, we become better equipped to recognize AI-generated media and think critically about the technology behind it.
         </p>
 
         <div class="warning-box">
           <div class="warning-box-label">💡 Remember</div>
-          <p>
-            AI-generated images can look very realistic and may be used to
-            spread false information. Always check the source and think
-            critically before trusting what you see.
-          </p>
+          <p>Every AI-generated image, video, or piece of text is the product of a training process built on real human-made content. Understanding this connection is the first step to becoming a more informed and critical consumer of media.</p>
         </div>
       </main>
 
-      <!-- RIGHT SIDEBAR: Stats, Related, Newsletter -->
+      <!-- RIGHT SIDEBAR -->
       <aside class="sidebar-right">
         <div class="sidebar-section">
           <div class="sidebar-heading">Related Articles</div>
-          <a class="related-card" href="#">
-            <div class="related-thumb">🎥</div>
+          <a class="related-card" href="article2.html">
             <div>
-              <div class="related-cat">Video Generator Tools</div>
-              <div class="related-title">Examples of video generated tools</div>
+              <div class="related-cat">How AI Creates Media</div>
+              <div class="related-title">How AI Generates Images</div>
             </div>
           </a>
-          <a class="related-card" href="#">
-            <div class="related-thumb">🎙️</div>
+          <a class="related-card" href="article3.html">
             <div>
-              <div class="related-cat">Audio Generator Tools</div>
-              <div class="related-title">Examples of audio generated tools</div>
+              <div class="related-cat">How AI Creates Media</div>
+              <div class="related-title">How AI Generates Videos</div>
             </div>
           </a>
-          <a class="related-card" href="#">
-            <div class="related-thumb">✍️</div>
+          <a class="related-card" href="article6.html">
             <div>
-              <div class="related-cat">Text Generator Tools</div>
-              <div class="related-title">Examples of text generated tools</div>
+              <div class="related-cat">How AI Creates Media</div>
+              <div class="related-title">Deepfake Technology Explained</div>
+            </div>
+          </a>
+          <a class="related-card" href="article7.html">
+            <div>
+              <div class="related-cat">How AI Creates Media</div>
+              <div class="related-title">Role of Machine Learning in Media Creation</div>
             </div>
           </a>
         </div>
       </aside>
     </div>
-    <!-- /page-wrap -->
 
     <section class="article-pagination">
       <a class="article-nav-card prev hidden" href="#">
         <span class="nav-dir">← Previous</span>
-        <span class="nav-title"
-          >Introduction to AI-Generated Media: What It Is and Why It
-          Matters</span
-        >
-        <span class="nav-cat">Beginner · AI Basics</span>
+        <span class="nav-title"></span>
       </a>
-      <a class="article-nav-card next" href="#">
+      <a class="article-nav-card next" href="article2.html">
         <span class="nav-dir">Next →</span>
-        <span class="nav-title"
-          >Deepfake Videos: Frame-by-Frame Analysis Techniques</span
-        >
-        <span class="nav-cat">Intermediate · Deepfake Videos</span>
+        <span class="nav-title">How AI Generates Images</span>
       </a>
     </section>
 
     <section class="more-articles">
       <div class="section-header">
         <span class="section-label">Keep Learning</span>
-        <h2>More from <span>VerifAI</span></h2>
+        <h2>More from <span>How AI Creates Media</span></h2>
       </div>
       <div class="cards-grid">
-        <a class="card" href="#">
-          <div class="card-thumb">🎭</div>
+        <a class="card" href="article2.html">
+          <div class="card-thumb">🖼️</div>
           <div class="card-body">
-            <div class="card-cat">Face Swapping</div>
-            <h3>Face Swaps in the Wild: How They Work and How to Catch Them</h3>
-            <p>
-              The technology behind face swapping has become trivially
-              accessible. Here's how to recognise it.
-            </p>
-            <div class="card-meta">
-              <span>6 min read</span><span>Intermediate</span>
-            </div>
+            <div class="card-cat">How AI Creates Media</div>
+            <h3>How AI Generates Images</h3>
+            <p>Discover how AI transforms a text prompt into a fully-formed image using diffusion models and neural networks.</p>
+            <div class="card-meta"><span>8 min read</span><span>Beginner</span></div>
           </div>
         </a>
-        <a class="card" href="#">
-          <div class="card-thumb">📰</div>
+        <a class="card" href="article3.html">
+          <div class="card-thumb">🎬</div>
           <div class="card-body">
-            <div class="card-cat">AI & Journalism</div>
-            <h3>How Newsrooms Are Fighting Back Against Synthetic Media</h3>
-            <p>
-              Leading publications have developed verification protocols to
-              combat the flood of AI-generated content.
-            </p>
-            <div class="card-meta">
-              <span>5 min read</span><span>All Levels</span>
-            </div>
+            <div class="card-cat">How AI Creates Media</div>
+            <h3>How AI Generates Videos</h3>
+            <p>From frame prediction to full scene generation — how AI is now capable of producing realistic video content.</p>
+            <div class="card-meta"><span>9 min read</span><span>Intermediate</span></div>
           </div>
         </a>
-        <a class="card" href="#">
-          <div class="card-thumb">🗳️</div>
+        <a class="card" href="article6.html">
+          <div class="card-thumb">👤</div>
           <div class="card-body">
-            <div class="card-cat">Political Manipulation</div>
-            <h3>
-              AI-Generated Political Media: The New Threat to Democratic
-              Discourse
-            </h3>
-            <p>
-              From fabricated speeches to synthetic rallies — how AI is being
-              weaponised in politics.
-            </p>
-            <div class="card-meta">
-              <span>10 min read</span><span>Advanced</span>
-            </div>
+            <div class="card-cat">How AI Creates Media</div>
+            <h3>Deepfake Technology Explained</h3>
+            <p>What deepfakes are, how they are made, and why they pose a growing threat to truth and trust online.</p>
+            <div class="card-meta"><span>10 min read</span><span>Intermediate</span></div>
           </div>
         </a>
       </div>
@@ -465,39 +312,26 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a class="nav-logo" href="../index.html">Verif<span>AI</span></a>
-          <p>
-            Educating the public on how to identify AI-generated media. Stay
-            informed, stay critical, stay real.
-          </p>
+          <p>Educating the public on how to identify AI-generated media. Stay informed, stay critical, stay real.</p>
         </div>
         <div class="footer-links">
           <h4>Navigation</h4>
           <ul>
             <li><a href="../../index.html">Home</a></li>
             <li><a href="../../about/about.html" target="about">About</a></li>
-            <li>
-              <a href="../../contactUs/contactUs.html" target="contact"
-                >Contact Us</a
-              >
-            </li>
+            <li><a href="../../contactUs/contactUs.html" target="contact">Contact Us</a></li>
           </ul>
         </div>
         <div class="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li>
-              <a href="../../gallery/gallery.html" target="gallery">Gallery</a>
-            </li>
+            <li><a href="../../gallery/gallery.html" target="gallery">Gallery</a></li>
             <li><a href="../topics.html" target="topics">Topics</a></li>
           </ul>
         </div>
         <div class="footer-links footer-social">
           <h4>Follow Us</h4>
-          <a
-            href="https://www.facebook.com/profile.php?id=61582741020706"
-            target="_blank"
-            rel="noopener"
-          >
+          <a href="https://www.facebook.com/profile.php?id=61582741020706" target="_blank" rel="noopener">
             <span class="fb-icon">f</span> Verif-AI on Facebook
           </a>
         </div>
@@ -507,11 +341,19 @@
         <div class="footer-bottom-links">
           <a href="../../index.html">Home</a>
           <a href="../../about/about.html" target="about">About</a>
-          <a href="../../contactUs/contactUs.html" target="contact"
-            >Contact Us</a
-          >
+          <a href="../../contactUs/contactUs.html" target="contact">Contact Us</a>
         </div>
       </div>
     </footer>
+
+    <script>
+      window.addEventListener("scroll", () => {
+        const doc = document.documentElement;
+        const scrollTop = doc.scrollTop || document.body.scrollTop;
+        const scrollHeight = doc.scrollHeight - doc.clientHeight;
+        const progress = (scrollTop / scrollHeight) * 100;
+        document.getElementById("progressFill").style.width = progress + "%";
+      });
+    </script>
   </body>
 </html>
