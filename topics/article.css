@@ -476,19 +476,19 @@ nav {
   margin: 1.2rem 0 1.8rem 0;
   padding-left: 1.6rem;
   color: #2a2a3e;
-}
-
-.article-body ul {
   list-style: none;
   padding-left: 0;
 }
 
 .article-body ul li {
   position: relative;
-  font-size: 1rem;
   line-height: 1.85;
   padding: 0.35rem 0 0.35rem 1.8rem;
   border-bottom: 1px solid rgba(0, 22, 92, 0.05);
+}
+
+.article-body .steps-list li {
+  font-size: 0.95rem;
 }
 
 .article-body ul li:last-child {

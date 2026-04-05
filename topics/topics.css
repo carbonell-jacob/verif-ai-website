@@ -369,19 +369,6 @@ nav {
   border-color: var(--blue);
 }
 
-/* Card accent bar at top */
-.topic-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--blue);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
 .topic-card:hover::before {
   transform: scaleX(1);
 }
@@ -395,15 +382,7 @@ nav {
   position: relative;
   overflow: hidden;
 }
-.topic-card-thumb::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(12, 112, 206, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(12, 112, 206, 0.1) 1px, transparent 1px);
-  background-size: 28px 28px;
-}
+
 .topic-card-thumb-icon {
   font-size: 2.8rem;
   position: relative;
