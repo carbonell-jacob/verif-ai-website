@@ -112,16 +112,6 @@ nav {
     linear-gradient(rgba(12, 112, 206, 0.12) 1px, transparent 1px),
     linear-gradient(90deg, rgba(12, 112, 206, 0.12) 1px, transparent 1px);
   background-size: 50px 50px;
-  animation: gridDrift 20s linear infinite;
-}
-
-@keyframes gridDrift {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 50px 50px;
-  }
 }
 
 .hero-glow {
@@ -372,15 +362,6 @@ nav {
   justify-content: center;
   font-size: 2.8rem;
   box-shadow: 0 0 40px rgba(12, 112, 206, 0.6);
-}
-
-@keyframes spinSlow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .hex-grid {

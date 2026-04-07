@@ -398,15 +398,6 @@ nav {
   pointer-events: none;
 }
 
-/* Hover zoom effect on the image */
-.member-photo img {
-  transition: transform 0.35s ease;
-}
-
-.member-photo:hover img {
-  transform: scale(1.05);
-}
-
 /* Silhouette / placeholder icon */
 .photo-placeholder {
   position: relative;

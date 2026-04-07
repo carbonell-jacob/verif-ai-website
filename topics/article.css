@@ -638,6 +638,7 @@ nav {
   font-family: var(--font-head);
   font-size: 0.97rem;
   color: var(--navy);
+  margin-top: 0;
   margin-bottom: 0.25rem;
 }
 .step-content p {
