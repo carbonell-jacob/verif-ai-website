@@ -12,10 +12,12 @@
       <a class="nav-logo" href="../index.html">Verif<span>AI</span></a>
       <ul class="nav-links">
         <li><a href="../index.html">Home</a></li>
-        <li><a href="../about/about.html">About</a></li>
-        <li><a href="../gallery/gallery.html">Gallery</a></li>
-        <li><a href="topics.html" class="active">Topics</a></li>
-        <li><a href="../contactUs/contactUs.html">Contact</a></li>
+        <li><a href="../about/about.html" target="about">About</a></li>
+        <li><a href="../gallery/gallery.html" target="gallery">Gallery</a></li>
+        <li><a href="#" class="active">Topics</a></li>
+        <li>
+          <a href="../contactUs/contactUs.html" target="contact">Contact</a>
+        </li>
       </ul>
     </nav>
 
@@ -2200,16 +2202,21 @@
           <h4>Navigation</h4>
           <ul>
             <li><a href="../index.html">Home</a></li>
-            <li><a href="../index.html#about">About</a></li>
-            <li><a href="../index.html#contact">Contact Us</a></li>
+            <li><a href="../about/about.html" target="about">About</a></li>
+            <li>
+              <a href="../contactUs/contactUs.html" target="contact"
+                >Contact Us</a
+              >
+            </li>
           </ul>
         </div>
         <div class="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="../gallery/gallery.html">Gallery</a></li>
-            <li><a href="topics.html">Topics</a></li>
-            <li><a href="#">Privacy Policy</a></li>
+            <li>
+              <a href="../gallery/gallery.html" target="gallery">Gallery</a>
+            </li>
+            <li><a href="#">Topics</a></li>
           </ul>
         </div>
         <div class="footer-links footer-social">
@@ -2217,7 +2224,6 @@
           <a
             href="https://www.facebook.com/profile.php?id=61582741020706"
             target="_blank"
-            rel="noopener"
           >
             <span class="fb-icon">f</span>
             Verif-AI on Facebook
@@ -2228,31 +2234,13 @@
         <p>© 2026 VerifAI. All rights reserved.</p>
         <div class="footer-bottom-links">
           <a href="../index.html">Home</a>
-          <a href="../index.html#about">About</a>
-          <a href="../index.html#contact">Contact Us</a>
+          <a href="../about/about.html" target="about">About</a>
+          <a href="../contactUs/contactUs.html" target="contact">Contact Us</a>
         </div>
       </div>
     </footer>
 
     <!-- BACK TO TOP -->
     <a href="#" class="back-to-top visible" id="backToTop">Go to top ↑</a>
-
-    <script>
-      // ── Filter + Search logic ──
-      const pills = document.querySelectorAll(".filter-pill");
-      const searchInput = document.getElementById("topicSearch");
-      const allCards = document.querySelectorAll(".topic-card");
-      const allGroups = document.querySelectorAll(".category-group");
-      const noResults = document.getElementById("noResults");
-
-      pills.forEach((pill) => {
-        pill.addEventListener("click", () => {
-          pills.forEach((p) => p.classList.remove("active"));
-          pill.classList.add("active");
-          activeFilter = pill.dataset.filter;
-          applyFilters();
-        });
-      });
-    </script>
   </body>
 </html>

@@ -13,7 +13,7 @@
       <ul class="nav-links">
         <li><a href="../index.html">Home</a></li>
         <li><a href="../about/about.html" target="about">About</a></li>
-        <li><a href="gallery.html" class="active">Gallery</a></li>
+        <li><a href="#" class="active">Gallery</a></li>
         <li><a href="../topics/topics.html" target="topics">Topics</a></li>
         <li>
           <a href="../contactUs/contactUs.html" target="contact">Contact</a>
@@ -22,7 +22,7 @@
     </nav>
 
     <!-- PAGE HERO -->
-    <section class="page-hero reveal">
+    <section class="page-hero">
       <div class="breadcrumb">
         <a href="../index.html">Home</a>
         <span>›</span>
@@ -42,7 +42,7 @@
     </section>
 
     <!-- GALLERY CONTROLS -->
-    <section class="gallery-controls reveal">
+    <section class="gallery-controls">
       <h2>Categories</h2>
       <div class="filter-tabs">
         <button class="filter-btn active" data-filter="all">All</button>
@@ -52,10 +52,10 @@
     </section>
 
     <!-- GALLERY GRID -->
-    <section class="gallery-grid reveal">
+    <section class="gallery-grid">
       <div class="grid">
         <!-- Gallery Item 1 -->
-        <div class="gallery-item reveal" data-category="videos">
+        <div class="gallery-item" data-category="videos">
           <div class="gallery-item-image">
             📹
             <div class="gallery-item-overlay">
@@ -277,17 +277,20 @@
           <h4>Navigation</h4>
           <ul>
             <li><a href="../index.html">Home</a></li>
-            <li><a href="../about/about.html">About</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="../about/about.html" target="about">About</a></li>
+            <li>
+              <a href="../contactUs/contactUs.html" target="contact"
+                >Contact Us</a
+              >
+            </li>
           </ul>
         </div>
 
         <div class="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#topics">Topics</a></li>
-            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="../topics/topics.html" target="topics">Topics</a></li>
           </ul>
         </div>
 
@@ -308,36 +311,13 @@
         <p>© 2026 VerifAI. All rights reserved.</p>
         <div class="footer-bottom-links">
           <a href="../index.html">Home</a>
-          <a href="../about/about.html">About</a>
-          <a href="#contact">Contact Us</a>
+          <a href="../about/about.html" target="about">About</a>
+          <a href="../contactUs/contactUs.html" target="contact">Contact Us</a>
         </div>
       </div>
     </footer>
 
     <script>
-      // Scroll reveal logic
-      const reveals = document.querySelectorAll(".reveal");
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("visible");
-              observer.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.15 },
-      );
-      reveals.forEach((el) => observer.observe(el));
-
-      // Navbar scroll effect
-      const nav = document.querySelector("nav");
-      window.addEventListener("scroll", () => {
-        nav.style.boxShadow =
-          window.scrollY > 40
-            ? "0 4px 30px rgba(0,22,92,0.6)"
-            : "0 2px 30px rgba(0,22,92,0.35)";
-      });
       // Still fixing the filtering effect(not working properly)
       //Filtering logic
       document.addEventListener("DOMContentLoaded", function () {

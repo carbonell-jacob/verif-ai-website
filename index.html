@@ -183,17 +183,18 @@
           <h4>Navigation</h4>
           <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="about/about.html" target="about">About</a></li>
+            <li>
+              <a href="contactUs/contactUs.html" target="contact">Contact Us</a>
+            </li>
           </ul>
         </div>
 
         <div class="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#topics">Topics</a></li>
-            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="gallery/gallery.html" target="gallery">Gallery</a></li>
+            <li><a href="topics/topics.html" target="topics">Topics</a></li>
           </ul>
         </div>
 
@@ -201,6 +202,7 @@
           <h4>Follow Us</h4>
           <a
             href="https://www.facebook.com/profile.php?id=61582741020706"
+            target="social"
             target="_blank"
             rel="noopener"
           >
@@ -214,36 +216,10 @@
         <p>© 2026 VerifAI. All rights reserved.</p>
         <div class="footer-bottom-links">
           <a href="#">Home</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact Us</a>
+          <a href="about/about.html" target="about">About</a>
+          <a href="contactUs/contactUs.html" target="contact">Contact Us</a>
         </div>
       </div>
     </footer>
-
-    <script>
-      // Scroll reveal
-      const reveals = document.querySelectorAll(".reveal");
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("visible");
-              observer.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.15 },
-      );
-      reveals.forEach((el) => observer.observe(el));
-
-      // Navbar scroll effect
-      const nav = document.querySelector("nav");
-      window.addEventListener("scroll", () => {
-        nav.style.boxShadow =
-          window.scrollY > 40
-            ? "0 4px 30px rgba(0,22,92,0.6)"
-            : "0 2px 30px rgba(0,22,92,0.35)";
-      });
-    </script>
   </body>
 </html>
