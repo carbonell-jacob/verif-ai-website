@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="about.css" />
     <title>About Us – VerifAI</title>
+    <style>
+      /* Make member-card anchor behave like the original div */
+      a.member-card {
+        display: block;
+        text-decoration: none;
+        color: inherit;
+      }
+    </style>
   </head>
   <body>
     <!-- NAVBAR -->
@@ -114,7 +122,7 @@
 
       <div class="team-grid">
         <!-- MEMBER 1 -->
-        <div class="member-card">
+        <a class="member-card" href="people/carbonell.html" target="member">
           <div class="member-photo">
             <img
               src="../assets/images/team/aiPics/carbonellAI.png"
@@ -140,10 +148,10 @@
               combat the spread of false information.
             </p>
           </div>
-        </div>
+        </a>
 
         <!-- MEMBER 2 -->
-        <div class="member-card">
+        <a class="member-card" href="people/tagama.html" target="member">
           <div class="member-photo">
             <img
               src="../assets/images/team/aiPics/tagamaAI.jpg"
@@ -169,14 +177,14 @@
               combating misinformation.
             </p>
           </div>
-        </div>
+        </a>
 
         <!-- MEMBER 3 -->
-        <div class="member-card">
+        <a class="member-card" href="people/maghirang.html" target="member">
           <div class="member-photo">
             <img
               src="../assets/images/team/aiPics/maghirangAI.png"
-              alt="Member 3 Theejay"
+              alt="Member 3 Ivan"
               title="Member 3 Ivan"
               style="
                 width: 100%;
@@ -198,10 +206,10 @@
               AI-powered tools more accessible and understandable to users.
             </p>
           </div>
-        </div>
+        </a>
 
         <!-- MEMBER 4 -->
-        <div class="member-card">
+        <a class="member-card" href="people/sabas.html" target="member">
           <div class="member-photo">
             <img
               src="../assets/images/team/aiPics/daveAI.png"
@@ -222,15 +230,15 @@
             <p class="member-bio">
               Focuses on creating clean and user-friendly interface elements
               that enhance usability. His contributions help maintain
-              consistency and clarity across the platform’s design. He is
+              consistency and clarity across the platform's design. He is
               interested in promoting AI media literacy by making interfaces
               simple and easy for users to interact with.
             </p>
           </div>
-        </div>
+        </a>
 
         <!-- MEMBER 5 -->
-        <div class="member-card">
+        <a class="member-card" href="people/bobiles.html" target="member">
           <div class="member-photo">
             <img
               src="../assets/images/team/aiPics/bobilesAI.png"
@@ -249,17 +257,17 @@
             <div class="member-name">Vince Harvey Bobiles</div>
             <div class="member-role">CONTENT MANAGER #1</div>
             <p class="member-bio">
-              Responsible for organizing and managing the platform’s content to
+              Responsible for organizing and managing the platform's content to
               ensure accuracy and relevance. He plays a key role in delivering
               clear and informative materials for users. He is committed to
               improving public awareness about AI-generated content and
               misinformation.
             </p>
           </div>
-        </div>
+        </a>
 
         <!-- MEMBER 6 -->
-        <div class="member-card">
+        <a class="member-card" href="people/moyo.html" target="member">
           <div class="member-photo">
             <img
               src="../assets/images/team/aiPics/moyoAI.png"
@@ -284,18 +292,23 @@
               users critically evaluate digital information in the age of AI.
             </p>
           </div>
-        </div>
+        </a>
 
-        <!-- MEMBER 7 -->
+        <!-- MEMBERS 7 & 8 (centered row) -->
         <div
           style="
-            grid-column: 1 / -1;
+            grid-column: 1/-1;
             display: flex;
             justify-content: center;
             gap: 28px;
           "
         >
-          <div class="member-card" style="width: calc(33.333% - 14px)">
+          <a
+            class="member-card"
+            target="member"
+            href="people/palmero.html"
+            style="width: calc(33.333% - 14px)"
+          >
             <div class="member-photo">
               <img
                 src="../assets/images/team/aiPics/palmeroAI.png"
@@ -320,10 +333,14 @@
                 promoting responsible use of AI and digital media literacy.
               </p>
             </div>
-          </div>
+          </a>
 
-          <!-- MEMBER 8 -->
-          <div class="member-card" style="width: calc(33.333% - 14px)">
+          <a
+            class="member-card"
+            target="member"
+            href="people/bascos.html"
+            style="width: calc(33.333% - 14px)"
+          >
             <div class="member-photo">
               <img
                 src="../assets/images/team/aiPics/bascosAI.png"
@@ -348,7 +365,7 @@
                 AI tools more user-friendly and efficient.
               </p>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -463,56 +480,6 @@
       </div>
     </footer>
 
-    <!-- LIGHTBOX OVERLAY -->
-    <div class="lightbox-overlay" id="lightbox">
-      <div class="lightbox-box">
-        <button class="lightbox-close" id="lightboxClose">&times;</button>
-        <img src="" alt="" id="lightboxImg" />
-        <div class="lightbox-name" id="lightboxName"></div>
-        <div class="lightbox-role" id="lightboxRole"></div>
-      </div>
-    </div>
-
-    <script>
-      // Lightbox
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightboxImg");
-      const lightboxName = document.getElementById("lightboxName");
-      const lightboxRole = document.getElementById("lightboxRole");
-      const lightboxClose = document.getElementById("lightboxClose");
-
-      document.querySelectorAll(".member-photo").forEach((photo) => {
-        photo.addEventListener("click", () => {
-          const card = photo.closest(".member-card");
-          const img = photo.querySelector("img");
-          const name = card.querySelector(".member-name").textContent;
-          const role = card.querySelector(".member-role").textContent;
-
-          lightboxImg.src = img ? img.src : "";
-          lightboxImg.alt = name;
-          lightboxImg.style.display = img ? "block" : "none";
-          lightboxName.textContent = name;
-          lightboxRole.textContent = role;
-          lightbox.classList.add("active");
-        });
-      });
-
-      // Close on button click
-      lightboxClose.addEventListener("click", () => {
-        lightbox.classList.remove("active");
-      });
-
-      // Close when clicking outside the box
-      lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) {
-          lightbox.classList.remove("active");
-        }
-      });
-
-      // Close with Escape key
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") lightbox.classList.remove("active");
-      });
-    </script>
+    <!-- NOTE: Lightbox removed — clicking a card now navigates to the member's page. -->
   </body>
 </html>
