@@ -464,6 +464,13 @@ nav {
   margin: 1.5rem 0 0.7rem;
   position: relative;
 }
+.article-body h4 {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin: 1.5rem 0 0.5rem;
+  position: relative;
+}
 
 .article-body h1,
 .article-body h2,
