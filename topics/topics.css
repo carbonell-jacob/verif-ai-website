@@ -369,10 +369,6 @@ nav {
   border-color: var(--blue);
 }
 
-.topic-card:hover::before {
-  transform: scaleX(1);
-}
-
 .topic-card-thumb {
   height: 140px;
   background: var(--navy);
@@ -383,44 +379,14 @@ nav {
   overflow: hidden;
 }
 
-.topic-card-thumb-icon {
-  font-size: 2.8rem;
-  position: relative;
-  z-index: 1;
-  filter: drop-shadow(0 4px 16px rgba(12, 112, 206, 0.4));
-  transition: transform 0.3s ease;
-}
-.topic-card:hover .topic-card-thumb-icon {
-  transform: scale(1.12);
-}
-
-/* Difficulty badge on thumb */
-.difficulty-badge {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 2;
-  font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 2px;
-}
-.diff-beginner {
-  background: rgba(0, 180, 100, 0.2);
-  color: #00b464;
-  border: 1px solid rgba(0, 180, 100, 0.3);
-}
-.diff-intermediate {
-  background: rgba(12, 112, 206, 0.2);
-  color: #5aabf5;
-  border: 1px solid rgba(12, 112, 206, 0.3);
-}
-.diff-advanced {
-  background: rgba(200, 50, 50, 0.2);
-  color: #e07070;
-  border: 1px solid rgba(200, 50, 50, 0.3);
+/* Image inside thumb */
+.topic-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+  filter: brightness(0.75);
 }
 
 .topic-card-body {
