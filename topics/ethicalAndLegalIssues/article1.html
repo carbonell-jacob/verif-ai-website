@@ -1,517 +1,425 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../article.css" />
-    <title>Image Generator Tools – VerifAI</title>
-  </head>
-  <body>
-    <nav>
-      <a class="nav-logo" href="../index.html">Verif<span>AI</span></a>
-      <ul class="nav-links">
-        <li><a href="../../index.html">Home</a></li>
-        <li><a href="../../about/about.html" target="about">About</a></li>
-        <li>
-          <a href="../../gallery/gallery.html" target="gallery">Gallery</a>
-        </li>
-        <li><a href="../topics.html" target="topics">Topics</a></li>
-        <li>
-          <a href="../../contactUs/contactUs.html" target="contact">Contact</a>
-        </li>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deepfake Videos – VerifAI</title>
+
+<style>
+:root {
+  --navy: #00165C;
+  --blue: #0C70CE;
+  --white: #FFFFFF;
+  --light: #ECECEC;
+  --font-head: Georgia, 'Times New Roman', serif;
+  --font-body: Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--white);
+  color: var(--navy);
+  line-height: 1.7;
+}
+
+/* ── NAVBAR ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 70px;
+  background: var(--navy);
+  border-bottom: 3px solid var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  z-index: 100;
+}
+
+.nav-logo {
+  font-family: var(--font-head);
+  font-weight: bold;
+  font-size: 1.7rem;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+.nav-logo span { color: var(--blue); }
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a {
+  color: var(--light);
+  text-decoration: none;
+  font-size: .9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--blue); }
+
+/* ── PAGE HERO ── */
+.page-hero {
+  padding: 130px 8% 60px;
+  background: var(--navy);
+  color: white;
+}
+.page-hero h1 {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin-bottom: 10px;
+}
+.page-hero h1 span { color: var(--blue); }
+.page-hero p {
+  max-width: 650px;
+  color: rgba(255,255,255,0.75);
+}
+
+/* ── SINGLE COLUMN CONTENT ── */
+.single-column {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 70px 5%;
+}
+
+.single-column h2 {
+  font-family: var(--font-head);
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: var(--navy);
+}
+
+.single-column p {
+  margin-bottom: 18px;
+  color: #333;
+}
+
+.single-column img {
+  width: 100%;
+  margin: 25px 0;
+  border-radius: 6px;
+  display: block;
+  background: var(--light);
+  min-height: 220px;
+  object-fit: cover;
+}
+
+/* ── HIGHLIGHT BOX ── */
+.highlight-box {
+  background: var(--light);
+  border-left: 6px solid var(--blue);
+  padding: 25px;
+  margin: 40px 0;
+  border-radius: 0 6px 6px 0;
+}
+.highlight-box h3 {
+  font-family: var(--font-head);
+  margin-bottom: 10px;
+  color: var(--navy);
+}
+.highlight-box p { color: #444; margin: 0; }
+
+/* ── SECTION DIVIDER ── */
+.section-divider {
+  height: 1px;
+  background: var(--light);
+  margin: 50px 0;
+}
+
+/* ── TOPIC CARDS (replaces sidebar, now inline) ── */
+.topic-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 40px 0;
+}
+
+.topic-card {
+  background: var(--light);
+  border-radius: 6px;
+  padding: 22px;
+  border-top: 3px solid var(--blue);
+}
+.topic-card h4 {
+  font-family: var(--font-head);
+  margin-bottom: 12px;
+  color: var(--navy);
+}
+.topic-card ul { list-style: none; }
+.topic-card li { margin-bottom: 8px; }
+.topic-card a {
+  text-decoration: none;
+  color: var(--navy);
+  font-size: .9rem;
+  transition: color 0.2s;
+}
+.topic-card a:hover { color: var(--blue); }
+
+/* ── BUTTON ── */
+.btn-primary {
+  display: inline-block;
+  padding: 14px 34px;
+  background: var(--blue);
+  color: white;
+  text-decoration: none;
+  font-size: .9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  margin-top: 20px;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: #0e82ea; }
+
+/* ── CTA BANNER ── */
+.cta-banner {
+  background: var(--blue);
+  padding: 70px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.cta-banner h2 {
+  font-family: var(--font-head);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: var(--white);
+  max-width: 560px;
+  line-height: 1.25;
+}
+.btn-white {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 16px 40px;
+  background: var(--white);
+  color: var(--blue);
+  border: 2px solid var(--white);
+  border-radius: 3px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.3s, color 0.3s;
+}
+.btn-white:hover { background: transparent; color: var(--white); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy);
+  border-top: 4px solid var(--blue);
+  padding: 50px 8% 30px;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 36px;
+}
+.footer-brand .nav-logo {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-size: 2rem;
+}
+.footer-brand p {
+  font-size: 0.9rem;
+  color: rgba(236,236,236,0.6);
+  max-width: 280px;
+  line-height: 1.6;
+}
+.footer-links h4 {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+.footer-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.footer-links ul a {
+  font-size: 0.9rem;
+  color: rgba(236,236,236,0.65);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-links ul a:hover { color: var(--blue); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer-bottom p {
+  font-size: 0.8rem;
+  color: rgba(236,236,236,0.4);
+}
+.footer-bottom-links {
+  display: flex;
+  gap: 1.5rem;
+}
+.footer-bottom-links a {
+  font-size: 0.8rem;
+  color: rgba(236,236,236,0.4);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-bottom-links a:hover { color: var(--blue); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  .topic-cards {
+    grid-template-columns: 1fr;
+  }
+  .nav-links { gap: 1rem; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a class="nav-logo" href="index.html">Verif<span>AI</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#gallery">Gallery</a></li>
+    <li><a href="index.html#topics">Topics</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <h1>Lorem ipsum <span>dolor sit amet</span></h1>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisl massa,
+    efficitur vitae tincidunt eu, vehicula ac risus. Mauris ultricies ornare congue.
+  </p>
+</section>
+
+<!-- SINGLE COLUMN CONTENT -->
+<main class="single-column">
+
+  <h2>Lorem ipsum</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nisl massa,
+    efficitur vitae tincidunt eu, vehicula ac risus. Mauris ultricies ornare congue.
+    Proin lectus massa, pharetra sed mi a, blandit maximus elit. Nullam vitae elit dui.
+    Vivamus tempor euismod tincidunt. Nunc vel consequat risus.
+  </p>
+  <p>
+    Cras ac urna ligula. Donec sodales sed massa quis congue. Quisque id sapien nec
+    neque varius lacinia in sit amet felis. Nulla malesuada efficitur ex, et hendrerit
+    sem fermentum ut. Curabitur at justo tortor.
+  </p>
+
+  <img src="" alt="Lorem ipsum">
+
+  <div class="highlight-box">
+    <h3>Lorem ipsum</h3>
+    <p>
+      Cras ac urna ligula. Donec sodales sed massa quis congue. Quisque id sapien nec
+      neque varius lacinia in sit amet felis. Nulla malesuada efficitur ex, et hendrerit
+      sem fermentum ut. Curabitur at justo tortor.
+    </p>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <h2>Lorem ipsum dolor sit amet</h2>
+  <p>
+    Donec vel tristique ipsum. Phasellus a sapien sit amet augue pharetra malesuada
+    eget quis mi. Nunc porta ante sed pretium tincidunt. Morbi eu est nulla. Sed congue
+    magna at neque porttitor posuere. Integer egestas purus id quam feugiat fringilla.
+  </p>
+  <p>
+    Donec vel tristique ipsum. Phasellus a sapien sit amet augue pharetra malesuada
+    eget quis mi.
+  </p>
+
+  <a href="index.html#topics" class="btn-primary">Lorem ipsum</a>
+
+  <div class="section-divider"></div>
+
+  <!-- Topic cards — sidebar content now inline -->
+  <div class="topic-cards">
+    <div class="topic-card">
+      <h4>Topics</h4>
+      <ul>
+        <li><a href="#">Lorem ipsum</a></li>
+        <li><a href="#">Dolor sit amet</a></li>
+        <li><a href="#">Consectur</a></li>
+        <li><a href="#">Adipiscing elit</a></li>
       </ul>
-    </nav>
-
-    <section class="article-hero">
-      <div class="article-hero-grid"></div>
-      <div class="article-hero-glow"></div>
-      <div class="article-hero-content">
-        <div class="breadcrumb">
-          <a href="../../index.html">Home</a><span>›</span>
-          <a href="../topics.html" target="topics">Topics</a><span>›</span>
-          AI-Generating Tools
-        </div>
-        <h1>Image Generator <span>Tools</span></h1>
-        <div class="article-meta">
-          <div class="meta-author">
-            <div class="meta-author-info">
-              <span class="meta-author-name">Jacob Carbonell</span>
-              <span class="meta-author-role">Developer</span>
-            </div>
-          </div>
-          <div class="meta-divider"></div>
-          <span class="meta-detail"><strong>April 2026</strong></span>
-          <div class="meta-divider"></div>
-          <span class="meta-detail"><strong>8 min</strong> read</span>
-        </div>
-      </div>
-    </section>
-
-    <div class="page-wrap">
-      <!-- LEFT SIDEBAR: Table of Contents -->
-      <aside class="sidebar-left">
-        <div class="sidebar-heading">In This Article</div>
-        <ul class="toc-list">
-          <li>
-            <a href="#s1" class="toc-link">1. How Image Generator Tools Work</a>
-          </li>
-          <li>
-            <a href="#s2" class="toc-link"
-              >2. Common Features of Image Generator Tools
-            </a>
-          </li>
-          <li>
-            <a href="#s3" class="toc-link"
-              >3. Examples of Image Generator Tools</a
-            >
-          </li>
-          <li>
-            <a href="#s4" class="toc-link"
-              >4. Why People Use Image Generator Tools</a
-            >
-          </li>
-          <li><a href="#s5" class="toc-link">5. Risks and Misuse</a></li>
-        </ul>
-      </aside>
-
-      <!-- CENTER: Main Article -->
-      <main class="article-body" id="articleBody">
-        <p>
-          Image generator tools are one of the main reasons why AI-generated
-          media is everywhere today. These tools use artificial intelligence to
-          create images from simple text prompts. For example, a person can type
-          “a cat wearing sunglasses on the beach,” and the tool will generate a
-          realistic or artistic image based on that description.
-        </p>
-        <p>
-          For example, if someone types “a futuristic city at night with flying
-          cars,” the tool will create an image based on that idea. This makes
-          image generators powerful, but also risky if used to create misleading
-          or fake content.
-        </p>
-
-        <h2 id="s1">How Image Generator Tools Work</h2>
-        <p>
-          Image generator tools are trained using large collections of images
-          and text from the internet. During training, the AI learns patterns
-          such as shapes, colors, lighting, and styles.
-        </p>
-        <p>
-          When a user enters a prompt, the AI does not copy an existing image.
-          Instead, it creates a new one by combining everything it has learned.
-          Many tools use a process where the image starts as random noise and
-          slowly becomes clear and detailed.
-        </p>
-
-        <div class="warning-box">
-          <div class="warning-box-label">Key Point</div>
-          <p>
-            Because of this, every image generated is usually unique, even if
-            the same prompt is used.
-          </p>
-        </div>
-
-        <h2 id="s2">Common Features of Image Generator Tools</h2>
-        <p>Most image generator tools include:</p>
-        <ol class="steps-list">
-          <li>
-            <div class="step-num">1</div>
-            <div class="step-content">
-              <h4>Text-to-image generation</h4>
-              <p>Create images from written prompts</p>
-            </div>
-          </li>
-          <li>
-            <div class="step-num">2</div>
-            <div class="step-content">
-              <h4>Style selection</h4>
-              <p>Choose different styles like realistic, anime, or painting</p>
-            </div>
-          </li>
-          <li>
-            <div class="step-num">3</div>
-            <div class="step-content">
-              <h4>Image editing</h4>
-              <p>Change parts of an existing image</p>
-            </div>
-          </li>
-          <li>
-            <div class="step-num">4</div>
-            <div class="step-content">
-              <h4>Variations</h4>
-              <p>Generate multiple versions of the same idea.</p>
-            </div>
-          </li>
-          <li>
-            <div class="step-num">5</div>
-            <div class="step-content">
-              <h4>Upscaling</h4>
-              <p>Improve image quality and make it clearer</p>
-            </div>
-          </li>
-        </ol>
-
-        <h2 id="s3">Examples of Image Generator Tools</h2>
-        <h3>1. DALL·E</h3>
-        <div class="article-image">
-          <a
-            href="../../assets/images/content/ai_gen_tools/dalle.webp"
-            target="image"
-          >
-            <img
-              src="../../assets/images/content/ai_gen_tools/dalle.webp"
-              alt="DALL·E Logo"
-              title="DALL·E Logo"
-            />
-          </a>
-          <div class="article-image-caption">
-            <strong>Figure 1:</strong> DALL·E Logo
-          </div>
-        </div>
-        <p>
-          DALL·E is an AI tool developed by OpenAI. It is known for creating
-          detailed and creative images from text.
-        </p>
-        <ul>
-          <li>Good at understanding complex prompts</li>
-          <li>Can generate both realistic and imaginative images</li>
-          <li>Often used for design ideas and illustrations</li>
-        </ul>
-
-        <h3>2. Midjourney</h3>
-        <div class="article-image">
-          <a
-            href="../../assets/images/content/ai_gen_tools/midjourney.jpeg"
-            target="image"
-          >
-            <img
-              src="../../assets/images/content/ai_gen_tools/midjourney.jpeg"
-              alt="Midjourney Logo"
-              title="Midjourney Logo"
-            />
-          </a>
-          <div class="article-image-caption">
-            <strong>Figure 2:</strong> Midjourney Logo
-          </div>
-        </div>
-        <p>
-          Midjourney is a popular tool that creates highly artistic and visually
-          appealing images.
-        </p>
-        <ul>
-          <li>Produces very detailed and stylized images</li>
-          <li>Commonly used by digital artists</li>
-          <li>Known for its unique and dramatic style</li>
-        </ul>
-
-        <h3>3. Stable Diffusion</h3>
-        <div class="article-image">
-          <a
-            href="../../assets/images/content/ai_gen_tools/stablediffusion.jpeg"
-            target="image"
-          >
-            <img
-              src="../../assets/images/content/ai_gen_tools/stablediffusion.jpeg"
-              alt="Stable Diffusion Logo"
-              title="Stable Diffusion Logo"
-            />
-          </a>
-          <div class="article-image-caption">
-            <strong>Figure 3:</strong> Stable Diffusion Logo
-          </div>
-        </div>
-        <p>
-          Stable Diffusion is an open-source image generator, meaning people can
-          run it on their own computers.
-        </p>
-        <ul>
-          <li>Free and customizable</li>
-          <li>Allows more control over image generation</li>
-          <li>Widely used by developers and researchers</li>
-        </ul>
-
-        <h3>4. Adobe Firefly</h3>
-        <div class="article-image">
-          <a
-            href="../../assets/images/content/ai_gen_tools/adobeFireFly.webp"
-            target="image"
-          >
-            <img
-              src="../../assets/images/content/ai_gen_tools/adobeFireFly.webp"
-              alt="Adobe Firefly Logo"
-              title="Adobe Firefly Logo"
-            />
-          </a>
-          <div class="article-image-caption">
-            <strong>Figure 4:</strong> Adobe Firefly Logo
-          </div>
-        </div>
-        <p>
-          Adobe Firefly is designed for creators and is integrated into Adobe
-          products.
-        </p>
-        <ul>
-          <li>Focuses on safe and legal content creation</li>
-          <li>Useful for graphic design and editing</li>
-          <li>Works well with tools like Photoshop</li>
-        </ul>
-
-        <h3>5. Canva AI Image Generator</h3>
-        <div class="article-image">
-          <a
-            href="../../assets/images/content/ai_gen_tools/canvaImageGenerator.webp"
-            target="image"
-          >
-            <img
-              src="../../assets/images/content/ai_gen_tools/canvaImageGenerator.webp"
-              alt="Canva AI Image Generator example"
-              title="Canva AI Image Generator usage example"
-            />
-          </a>
-          <div class="article-image-caption">
-            <strong>Figure 5:</strong> Canva AI Image Generator usage example
-          </div>
-        </div>
-        <p>Canva includes an AI image generator inside its design platform.</p>
-        <ul>
-          <li>Easy to use for beginners</li>
-          <li>Great for social media content and presentations</li>
-          <li>Integrated with other design tools</li>
-        </ul>
-
-        <h3>6. DeepAI Image Generator</h3>
-        <div class="article-image">
-          <a
-            href="../../assets/images/content/ai_gen_tools/deepai.webp"
-            target="image"
-          >
-            <img
-              src="../../assets/images/content/ai_gen_tools/deepai.webp"
-              alt="DeepAI logo"
-              title="DeepAI logo"
-            />
-          </a>
-          <div class="article-image-caption">
-            <strong>Figure 6:</strong> DeepAI logo
-          </div>
-        </div>
-        <p>DeepAI offers simple AI tools, including image generation.</p>
-        <ul>
-          <li>Basic and easy to access</li>
-          <li>Good for quick experiments</li>
-          <li>Less advanced compared to other tools</li>
-        </ul>
-
-        <h2 id="s4">Why People Use Image Generator Tools</h2>
-        <p>
-          People use image generator tools because they are fast, easy, and
-          highly creative. Instead of spending hours drawing or editing, users
-          can create images in just a few seconds by typing a simple
-          description. These tools do not require any artistic skills, which
-          makes them accessible to beginners as well as professionals.
-        </p>
-        <p>
-          They are also very useful for generating new ideas, especially for
-          designers, content creators, and students who need visuals for their
-          work. In addition, many image generator tools are free or affordable,
-          making them a practical choice for people who want to create images
-          without spending too much money. Because of these advantages, they are
-          widely used in social media, marketing, art, and education.
-        </p>
-
-        <h2 id="s5">Risks and Misuse</h2>
-        <p>
-          Despite their benefits, these tools can also be used in harmful ways.
-        </p>
-        <p>Some risks include:</p>
-        <ul>
-          <li>Creating fake images that look real</li>
-          <li>Spreading misinformation</li>
-          <li>Making edited or misleading content</li>
-        </ul>
-
-        <h2 id="s6">What We've Learned</h2>
-        <p>
-          Image generator tools are powerful AI tools that can create images
-          from simple text. They work by learning from large amounts of data and
-          using that knowledge to generate new and unique visuals. Popular tools
-          like DALL·E, Midjourney, Stable Diffusion, Adobe Firefly, Canva, and
-          DeepAI each offer different features, styles, and levels of control,
-          making them useful for many purposes such as design, education, and
-          content creation.
-        </p>
-        <p>
-          People use these tools because they are fast, easy to use, and
-          accessible, even for those without artistic skills. However, despite
-          their benefits, they can also be misused to create fake or misleading
-          images. Because of this, it is important to understand how these tools
-          work and to stay aware when viewing images online. By being informed,
-          users can better identify AI-generated media and avoid being misled.
-        </p>
-
-        <div class="warning-box">
-          <div class="warning-box-label">💡 Remember</div>
-          <p>
-            AI-generated images can look very realistic and may be used to
-            spread false information. Always check the source and think
-            critically before trusting what you see.
-          </p>
-        </div>
-      </main>
-
-      <!-- RIGHT SIDEBAR: Stats, Related, Newsletter -->
-      <aside class="sidebar-right">
-        <div class="sidebar-section">
-          <div class="sidebar-heading">Related Articles</div>
-          <a class="related-card" href="#">
-            <div class="related-thumb">🎥</div>
-            <div>
-              <div class="related-cat">Video Generator Tools</div>
-              <div class="related-title">Examples of video generated tools</div>
-            </div>
-          </a>
-          <a class="related-card" href="#">
-            <div class="related-thumb">🎙️</div>
-            <div>
-              <div class="related-cat">Audio Generator Tools</div>
-              <div class="related-title">Examples of audio generated tools</div>
-            </div>
-          </a>
-          <a class="related-card" href="#">
-            <div class="related-thumb">✍️</div>
-            <div>
-              <div class="related-cat">Text Generator Tools</div>
-              <div class="related-title">Examples of text generated tools</div>
-            </div>
-          </a>
-        </div>
-      </aside>
     </div>
-    <!-- /page-wrap -->
+    <div class="topic-card">
+      <h4>Dolor sit amet</h4>
+      <ul>
+        <li><a href="#">Lorem ipsum</a></li>
+        <li><a href="#">Dolor sit amet</a></li>
+        <li><a href="#">Consectur</a></li>
+        <li><a href="#">Adipiscing elit</a></li>
+      </ul>
+    </div>
+  </div>
 
-    <section class="article-pagination">
-      <a class="article-nav-card prev hidden" href="#">
-        <span class="nav-dir">← Previous</span>
-        <span class="nav-title"
-          >Introduction to AI-Generated Media: What It Is and Why It
-          Matters</span
-        >
-        <span class="nav-cat">Beginner · AI Basics</span>
-      </a>
-      <a class="article-nav-card next" href="#">
-        <span class="nav-dir">Next →</span>
-        <span class="nav-title"
-          >Deepfake Videos: Frame-by-Frame Analysis Techniques</span
-        >
-        <span class="nav-cat">Intermediate · Deepfake Videos</span>
-      </a>
-    </section>
+</main>
 
-    <section class="more-articles">
-      <div class="section-header">
-        <span class="section-label">Keep Learning</span>
-        <h2>More from <span>VerifAI</span></h2>
-      </div>
-      <div class="cards-grid">
-        <a class="card" href="#">
-          <div class="card-thumb">🎭</div>
-          <div class="card-body">
-            <div class="card-cat">Face Swapping</div>
-            <h3>Face Swaps in the Wild: How They Work and How to Catch Them</h3>
-            <p>
-              The technology behind face swapping has become trivially
-              accessible. Here's how to recognise it.
-            </p>
-            <div class="card-meta">
-              <span>6 min read</span><span>Intermediate</span>
-            </div>
-          </div>
-        </a>
-        <a class="card" href="#">
-          <div class="card-thumb">📰</div>
-          <div class="card-body">
-            <div class="card-cat">AI & Journalism</div>
-            <h3>How Newsrooms Are Fighting Back Against Synthetic Media</h3>
-            <p>
-              Leading publications have developed verification protocols to
-              combat the flood of AI-generated content.
-            </p>
-            <div class="card-meta">
-              <span>5 min read</span><span>All Levels</span>
-            </div>
-          </div>
-        </a>
-        <a class="card" href="#">
-          <div class="card-thumb">🗳️</div>
-          <div class="card-body">
-            <div class="card-cat">Political Manipulation</div>
-            <h3>
-              AI-Generated Political Media: The New Threat to Democratic
-              Discourse
-            </h3>
-            <p>
-              From fabricated speeches to synthetic rallies — how AI is being
-              weaponised in politics.
-            </p>
-            <div class="card-meta">
-              <span>10 min read</span><span>Advanced</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </section>
+<!-- CTA BANNER -->
+<section class="cta-banner" id="contact">
+  <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+  <a href="#" class="btn-white">Contact Us Today</a>
+</section>
 
-    <footer>
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a class="nav-logo" href="../index.html">Verif<span>AI</span></a>
-          <p>
-            Educating the public on how to identify AI-generated media. Stay
-            informed, stay critical, stay real.
-          </p>
-        </div>
-        <div class="footer-links">
-          <h4>Navigation</h4>
-          <ul>
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="../../about/about.html" target="about">About</a></li>
-            <li>
-              <a href="../../contactUs/contactUs.html" target="contact"
-                >Contact Us</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <ul>
-            <li>
-              <a href="../../gallery/gallery.html" target="gallery">Gallery</a>
-            </li>
-            <li><a href="../topics.html" target="topics">Topics</a></li>
-          </ul>
-        </div>
-        <div class="footer-links footer-social">
-          <h4>Follow Us</h4>
-          <a
-            href="https://www.facebook.com/profile.php?id=61582741020706"
-            target="_blank"
-            rel="noopener"
-          >
-            <span class="fb-icon">f</span> Verif-AI on Facebook
-          </a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© 2026 VerifAI. All rights reserved.</p>
-        <div class="footer-bottom-links">
-          <a href="../../index.html">Home</a>
-          <a href="../../about/about.html" target="about">About</a>
-          <a href="../../contactUs/contactUs.html" target="contact"
-            >Contact Us</a
-          >
-        </div>
-      </div>
-    </footer>
-  </body>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a class="nav-logo" href="#">Verif<span>AI</span></a>
+      <p>Donec vel tristique ipsum. Phasellus a sapien sit amet augue pharetra malesuada eget quis mi.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Lorem ipsum</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Dolor sit amet</h4>
+      <ul>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#topics">Topics</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 VerifAI – AI Media Literacy Project</p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+</body>
 </html>
