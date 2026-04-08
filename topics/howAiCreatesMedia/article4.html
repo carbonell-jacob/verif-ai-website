@@ -8,17 +8,23 @@
   </head>
   <body>
     <nav>
-      <a class="nav-logo" href="../index.html">Verif<span>AI</span></a>
+      <a class="nav-logo" href="../../index.html">Verif<span>AI</span></a>
       <ul class="nav-links">
         <li><a href="../../index.html">Home</a></li>
         <li><a href="../../about/about.html" target="about">About</a></li>
-        <li><a href="../../gallery/gallery.html" target="gallery">Gallery</a></li>
+        <li>
+          <a href="../../gallery/gallery.html" target="gallery">Gallery</a>
+        </li>
         <li><a href="../topics.html" target="topics">Topics</a></li>
-        <li><a href="../../contactUs/contactUs.html" target="contact">Contact</a></li>
+        <li>
+          <a href="../../contactUs/contactUs.html" target="contact">Contact</a>
+        </li>
       </ul>
     </nav>
 
-    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
 
     <section class="article-hero">
       <div class="article-hero-grid"></div>
@@ -50,11 +56,17 @@
       <aside class="sidebar-left">
         <div class="sidebar-heading">In This Article</div>
         <ul class="toc-list">
-          <li><a href="#s1" class="toc-link">1. What Is AI Audio Generation?</a></li>
+          <li>
+            <a href="#s1" class="toc-link">1. What Is AI Audio Generation?</a>
+          </li>
           <li><a href="#s2" class="toc-link">2. How Voice Cloning Works</a></li>
           <li><a href="#s3" class="toc-link">3. How AI Generates Music</a></li>
-          <li><a href="#s4" class="toc-link">4. Text-to-Speech Technology</a></li>
-          <li><a href="#s5" class="toc-link">5. How to Spot AI-Generated Audio</a></li>
+          <li>
+            <a href="#s4" class="toc-link">4. Text-to-Speech Technology</a>
+          </li>
+          <li>
+            <a href="#s5" class="toc-link">5. How to Spot AI-Generated Audio</a>
+          </li>
           <li><a href="#s6" class="toc-link">6. Risks and Misuse</a></li>
           <li><a href="#s7" class="toc-link">7. What We've Learned</a></li>
         </ul>
@@ -62,19 +74,36 @@
 
       <main class="article-body" id="articleBody">
         <p class="article-lead">
-          You may never have seen a deepfake video — but you may have already heard a cloned voice without knowing it. AI audio generation has advanced to the point where a voice can be replicated from just a few seconds of sample audio, and AI music tools can compose entire songs in any style on demand. The implications for trust, identity, and media are profound.
+          You may never have seen a deepfake video — but you may have already
+          heard a cloned voice without knowing it. AI audio generation has
+          advanced to the point where a voice can be replicated from just a few
+          seconds of sample audio, and AI music tools can compose entire songs
+          in any style on demand. The implications for trust, identity, and
+          media are profound.
         </p>
 
         <h2 id="s1">What Is AI Audio Generation?</h2>
         <p>
-          AI audio generation refers to the use of artificial intelligence to create sound — whether that is a human voice, music, sound effects, or ambient audio. Like image and video generation, audio generation relies on deep learning models trained on large datasets of existing audio content. The model learns the patterns, textures, and structures of sound, and uses that knowledge to generate new audio that was never recorded by a real microphone.
+          AI audio generation refers to the use of artificial intelligence to
+          create sound — whether that is a human voice, music, sound effects, or
+          ambient audio. Like image and video generation, audio generation
+          relies on deep learning models trained on large datasets of existing
+          audio content. The model learns the patterns, textures, and structures
+          of sound, and uses that knowledge to generate new audio that was never
+          recorded by a real microphone.
         </p>
         <p>
-          There are three main categories of AI audio generation: voice cloning and synthesis, AI music generation, and general sound design. Each uses slightly different techniques but all share the same foundational principles of deep learning and pattern recognition.
+          There are three main categories of AI audio generation: voice cloning
+          and synthesis, AI music generation, and general sound design. Each
+          uses slightly different techniques but all share the same foundational
+          principles of deep learning and pattern recognition.
         </p>
 
         <div class="article-image">
-          <a href="../../assets/images/content/howAiCreatesMedia/article4-fig1.png" target="image">
+          <a
+            href="../../assets/images/content/howAiCreatesMedia/article4-fig1.png"
+            target="image"
+          >
             <img
               src="../../assets/images/content/howAiCreatesMedia/article4-fig1.png"
               alt="Visual representation of an audio waveform being analyzed and reconstructed by an AI model"
@@ -82,56 +111,100 @@
             />
           </a>
           <div class="article-image-caption">
-            <strong>Figure 1:</strong> AI Audio Analysis and Reconstruction — how an AI model analyzes an audio waveform and learns to reproduce its characteristics.
+            <strong>Figure 1:</strong> AI Audio Analysis and Reconstruction —
+            how an AI model analyzes an audio waveform and learns to reproduce
+            its characteristics.
           </div>
         </div>
 
         <h2 id="s2">How Voice Cloning Works</h2>
         <p>
-          Voice cloning is the process of training an AI model to replicate a specific person's voice — including their accent, tone, speaking rhythm, and emotional inflections. The process typically begins by feeding the model a sample of the target voice. This can be as little as a few seconds of recorded speech, though longer samples produce more accurate results.
+          Voice cloning is the process of training an AI model to replicate a
+          specific person's voice — including their accent, tone, speaking
+          rhythm, and emotional inflections. The process typically begins by
+          feeding the model a sample of the target voice. This can be as little
+          as a few seconds of recorded speech, though longer samples produce
+          more accurate results.
         </p>
         <p>
-          The model analyzes the unique acoustic characteristics of the voice — the frequency patterns, breath sounds, pitch variation, and microphone characteristics — and learns to reproduce them. Once trained, the model can then generate new speech in that voice, saying anything the user inputs as text. This is essentially a combination of voice cloning and text-to-speech technology.
+          The model analyzes the unique acoustic characteristics of the voice —
+          the frequency patterns, breath sounds, pitch variation, and microphone
+          characteristics — and learns to reproduce them. Once trained, the
+          model can then generate new speech in that voice, saying anything the
+          user inputs as text. This is essentially a combination of voice
+          cloning and text-to-speech technology.
         </p>
 
         <div class="clue-grid">
           <div class="clue-card">
             <div class="clue-card-icon">🔉</div>
             <h4>Sample Collection</h4>
-            <p>A short recording of the target voice is captured — this can come from a phone call, video, or public speech.</p>
+            <p>
+              A short recording of the target voice is captured — this can come
+              from a phone call, video, or public speech.
+            </p>
           </div>
           <div class="clue-card">
             <div class="clue-card-icon">📊</div>
             <h4>Feature Extraction</h4>
-            <p>The AI analyzes the voice's unique acoustic features — pitch, rhythm, tone, and breathing patterns.</p>
+            <p>
+              The AI analyzes the voice's unique acoustic features — pitch,
+              rhythm, tone, and breathing patterns.
+            </p>
           </div>
           <div class="clue-card">
             <div class="clue-card-icon">🤖</div>
             <h4>Model Training</h4>
-            <p>A voice model is fine-tuned on the extracted features to learn how to replicate that specific voice.</p>
+            <p>
+              A voice model is fine-tuned on the extracted features to learn how
+              to replicate that specific voice.
+            </p>
           </div>
           <div class="clue-card">
             <div class="clue-card-icon">🗣️</div>
             <h4>Speech Synthesis</h4>
-            <p>The trained model generates new speech in the cloned voice based on any text input by the user.</p>
+            <p>
+              The trained model generates new speech in the cloned voice based
+              on any text input by the user.
+            </p>
           </div>
         </div>
 
         <div class="warning-box">
           <div class="warning-box-label">⚠️ Important</div>
-          <p>Modern voice cloning tools can clone a voice from as little as three seconds of audio. This means any publicly available recording — a voicemail, a social media video, a podcast appearance — could potentially be used to clone someone's voice without their knowledge or consent.</p>
+          <p>
+            Modern voice cloning tools can clone a voice from as little as three
+            seconds of audio. This means any publicly available recording — a
+            voicemail, a social media video, a podcast appearance — could
+            potentially be used to clone someone's voice without their knowledge
+            or consent.
+          </p>
         </div>
 
         <h2 id="s3">How AI Generates Music</h2>
         <p>
-          AI music generation works by training models on vast libraries of music — across genres, instruments, tempos, and structures. The model learns the patterns that make music sound coherent and pleasing: chord progressions, melodic development, rhythmic patterns, and how different instruments interact with one another. Given a prompt — such as "an upbeat jazz piano piece in the style of the 1950s" — the model generates original audio that matches those parameters.
+          AI music generation works by training models on vast libraries of
+          music — across genres, instruments, tempos, and structures. The model
+          learns the patterns that make music sound coherent and pleasing: chord
+          progressions, melodic development, rhythmic patterns, and how
+          different instruments interact with one another. Given a prompt — such
+          as "an upbeat jazz piano piece in the style of the 1950s" — the model
+          generates original audio that matches those parameters.
         </p>
         <p>
-          Tools like Suno, Udio, and Google's MusicLM have made AI music generation accessible to anyone. Users can generate full songs, complete with vocals, instrumentation, and lyrics, simply by describing what they want. The music produced is original — it is not a remix or a copy of an existing song, but a new composition generated by the model from scratch.
+          Tools like Suno, Udio, and Google's MusicLM have made AI music
+          generation accessible to anyone. Users can generate full songs,
+          complete with vocals, instrumentation, and lyrics, simply by
+          describing what they want. The music produced is original — it is not
+          a remix or a copy of an existing song, but a new composition generated
+          by the model from scratch.
         </p>
 
         <div class="article-image">
-          <a href="../../assets/images/content/howAiCreatesMedia/article4-fig2.jpg" target="image">
+          <a
+            href="../../assets/images/content/howAiCreatesMedia/article4-fig2.jpg"
+            target="image"
+          >
             <img
               src="../../assets/images/content/howAiCreatesMedia/article4-fig2.jpg"
               alt="Interface of an AI music generation tool showing text prompt input and generated audio output"
@@ -139,60 +212,119 @@
             />
           </a>
           <div class="article-image-caption">
-            <strong>Figure 2:</strong> AI Music Generation Interface — users can describe the music they want and receive a fully generated audio track in seconds.
+            <strong>Figure 2:</strong> AI Music Generation Interface — users can
+            describe the music they want and receive a fully generated audio
+            track in seconds.
           </div>
         </div>
 
         <h2 id="s4">Text-to-Speech Technology</h2>
         <p>
-          Text-to-speech (TTS) is one of the most widely deployed forms of AI audio generation, and it is already part of everyday life — in virtual assistants, navigation apps, and accessibility tools. Modern AI TTS systems go far beyond robotic-sounding voices. They produce natural, expressive speech that varies in tone, pacing, and emotion based on the content of the text.
+          Text-to-speech (TTS) is one of the most widely deployed forms of AI
+          audio generation, and it is already part of everyday life — in virtual
+          assistants, navigation apps, and accessibility tools. Modern AI TTS
+          systems go far beyond robotic-sounding voices. They produce natural,
+          expressive speech that varies in tone, pacing, and emotion based on
+          the content of the text.
         </p>
         <p>
-          Advanced TTS systems can be fine-tuned on a specific person's voice to produce cloned speech, or they can be used with a neutral synthetic voice. The technology is now so advanced that in many cases, listeners cannot reliably distinguish AI-generated speech from a real human recording.
+          Advanced TTS systems can be fine-tuned on a specific person's voice to
+          produce cloned speech, or they can be used with a neutral synthetic
+          voice. The technology is now so advanced that in many cases, listeners
+          cannot reliably distinguish AI-generated speech from a real human
+          recording.
         </p>
 
         <div class="pull-quote">
-          <p>We are entering an era where hearing a voice is no longer sufficient proof that a real person said something. Audio, like images, can no longer be taken at face value.</p>
+          <p>
+            We are entering an era where hearing a voice is no longer sufficient
+            proof that a real person said something. Audio, like images, can no
+            longer be taken at face value.
+          </p>
           <cite>— Audio Forensics and Media Authentication Research</cite>
         </div>
 
         <h2 id="s5">How to Spot AI-Generated Audio</h2>
         <p>
-          Identifying AI-generated audio is becoming increasingly difficult, but there are still some signs to listen for:
+          Identifying AI-generated audio is becoming increasingly difficult, but
+          there are still some signs to listen for:
         </p>
         <ul>
-          <li>Unnatural pauses or an overly consistent speaking rhythm with no variation</li>
-          <li>Absence of natural background noise, breathing sounds, or ambient audio</li>
-          <li>Slight distortion or a metallic quality in the voice, especially on certain consonants</li>
-          <li>Emotion that sounds flat or slightly mismatched to the content</li>
+          <li>
+            Unnatural pauses or an overly consistent speaking rhythm with no
+            variation
+          </li>
+          <li>
+            Absence of natural background noise, breathing sounds, or ambient
+            audio
+          </li>
+          <li>
+            Slight distortion or a metallic quality in the voice, especially on
+            certain consonants
+          </li>
+          <li>
+            Emotion that sounds flat or slightly mismatched to the content
+          </li>
           <li>Music that lacks the subtle imperfections of live performance</li>
-          <li>Voice that sounds slightly "too perfect" — no hesitation, no verbal fillers</li>
+          <li>
+            Voice that sounds slightly "too perfect" — no hesitation, no verbal
+            fillers
+          </li>
         </ul>
 
         <h2 id="s6">Risks and Misuse</h2>
         <p>
-          The misuse of AI audio generation is already causing real harm. Voice cloning has been used in phone scams where fraudsters impersonate family members in distress to extract money from victims. Cloned voices of political figures have been used to spread false statements. Synthetic audio has been used to fabricate evidence in legal disputes and to create non-consensual recordings.
+          The misuse of AI audio generation is already causing real harm. Voice
+          cloning has been used in phone scams where fraudsters impersonate
+          family members in distress to extract money from victims. Cloned
+          voices of political figures have been used to spread false statements.
+          Synthetic audio has been used to fabricate evidence in legal disputes
+          and to create non-consensual recordings.
         </p>
         <p>
-          In the music industry, AI has been used to clone the voices of famous artists and release unauthorized music in their style or with their cloned voice — raising serious questions about intellectual property, consent, and artistic identity. These issues are being actively debated by musicians, legislators, and AI developers worldwide.
+          In the music industry, AI has been used to clone the voices of famous
+          artists and release unauthorized music in their style or with their
+          cloned voice — raising serious questions about intellectual property,
+          consent, and artistic identity. These issues are being actively
+          debated by musicians, legislators, and AI developers worldwide.
         </p>
 
         <div class="warning-box">
           <div class="warning-box-label">⚠️ Be Aware</div>
-          <p>If you receive an unexpected phone call or voice message from someone you know asking for money or personal information, verify their identity through a different channel before acting. Voice cloning scams are increasingly common and convincing.</p>
+          <p>
+            If you receive an unexpected phone call or voice message from
+            someone you know asking for money or personal information, verify
+            their identity through a different channel before acting. Voice
+            cloning scams are increasingly common and convincing.
+          </p>
         </div>
 
         <h2 id="s7">What We've Learned</h2>
         <p>
-          AI audio generation encompasses voice cloning, music generation, and text-to-speech synthesis. Each relies on deep learning models trained on large audio datasets, and each has legitimate uses as well as serious misuse potential. Voice cloning in particular has advanced to the point where only a few seconds of source audio are needed to replicate a person's voice convincingly.
+          AI audio generation encompasses voice cloning, music generation, and
+          text-to-speech synthesis. Each relies on deep learning models trained
+          on large audio datasets, and each has legitimate uses as well as
+          serious misuse potential. Voice cloning in particular has advanced to
+          the point where only a few seconds of source audio are needed to
+          replicate a person's voice convincingly.
         </p>
         <p>
-          While AI-generated audio still carries identifiable signs — such as unnatural rhythm, absent ambient noise, and flat emotion — these artifacts are becoming rarer and harder to detect. Developing an awareness of these signs, and maintaining a healthy skepticism toward audio content you did not expect, are essential habits in a world where synthetic sound is becoming indistinguishable from the real thing.
+          While AI-generated audio still carries identifiable signs — such as
+          unnatural rhythm, absent ambient noise, and flat emotion — these
+          artifacts are becoming rarer and harder to detect. Developing an
+          awareness of these signs, and maintaining a healthy skepticism toward
+          audio content you did not expect, are essential habits in a world
+          where synthetic sound is becoming indistinguishable from the real
+          thing.
         </p>
 
         <div class="warning-box">
           <div class="warning-box-label">💡 Remember</div>
-          <p>Hearing is no longer believing. AI can replicate any voice from a tiny sample of audio, making it critical to verify the source of any audio content before trusting or sharing it.</p>
+          <p>
+            Hearing is no longer believing. AI can replicate any voice from a
+            tiny sample of audio, making it critical to verify the source of any
+            audio content before trusting or sharing it.
+          </p>
         </div>
       </main>
 
@@ -224,7 +356,9 @@
             <div class="related-thumb">🚧</div>
             <div>
               <div class="related-cat">How AI Creates Media</div>
-              <div class="related-title">Limitations of AI Media Generation</div>
+              <div class="related-title">
+                Limitations of AI Media Generation
+              </div>
             </div>
           </a>
         </div>
@@ -242,66 +376,43 @@
       </a>
     </section>
 
-    <section class="more-articles">
-      <div class="section-header">
-        <span class="section-label">Keep Learning</span>
-        <h2>More from <span>How AI Creates Media</span></h2>
-      </div>
-      <div class="cards-grid">
-        <a class="card" href="article5.html">
-          <div class="card-thumb">✍️</div>
-          <div class="card-body">
-            <div class="card-cat">How AI Creates Media</div>
-            <h3>How AI Generates Text</h3>
-            <p>From autocomplete to full articles — how large language models produce convincing written content.</p>
-            <div class="card-meta"><span>8 min read</span><span>Beginner</span></div>
-          </div>
-        </a>
-        <a class="card" href="article6.html">
-          <div class="card-thumb">👤</div>
-          <div class="card-body">
-            <div class="card-cat">How AI Creates Media</div>
-            <h3>Deepfake Technology Explained</h3>
-            <p>What deepfakes are, how they are made, and why they pose a growing threat to truth and trust online.</p>
-            <div class="card-meta"><span>10 min read</span><span>Intermediate</span></div>
-          </div>
-        </a>
-        <a class="card" href="article3.html">
-          <div class="card-thumb">🎬</div>
-          <div class="card-body">
-            <div class="card-cat">How AI Creates Media</div>
-            <h3>How AI Generates Videos</h3>
-            <p>From frame prediction to full scene generation — how AI produces realistic video content.</p>
-            <div class="card-meta"><span>9 min read</span><span>Intermediate</span></div>
-          </div>
-        </a>
-      </div>
-    </section>
-
     <footer>
       <div class="footer-top">
         <div class="footer-brand">
           <a class="nav-logo" href="../index.html">Verif<span>AI</span></a>
-          <p>Educating the public on how to identify AI-generated media. Stay informed, stay critical, stay real.</p>
+          <p>
+            Educating the public on how to identify AI-generated media. Stay
+            informed, stay critical, stay real.
+          </p>
         </div>
         <div class="footer-links">
           <h4>Navigation</h4>
           <ul>
             <li><a href="../../index.html">Home</a></li>
             <li><a href="../../about/about.html" target="about">About</a></li>
-            <li><a href="../../contactUs/contactUs.html" target="contact">Contact Us</a></li>
+            <li>
+              <a href="../../contactUs/contactUs.html" target="contact"
+                >Contact Us</a
+              >
+            </li>
           </ul>
         </div>
         <div class="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="../../gallery/gallery.html" target="gallery">Gallery</a></li>
+            <li>
+              <a href="../../gallery/gallery.html" target="gallery">Gallery</a>
+            </li>
             <li><a href="../topics.html" target="topics">Topics</a></li>
           </ul>
         </div>
         <div class="footer-links footer-social">
           <h4>Follow Us</h4>
-          <a href="https://www.facebook.com/profile.php?id=61582741020706" target="_blank" rel="noopener">
+          <a
+            href="https://www.facebook.com/profile.php?id=61582741020706"
+            target="_blank"
+            rel="noopener"
+          >
             <span class="fb-icon">f</span> Verif-AI on Facebook
           </a>
         </div>
@@ -311,19 +422,11 @@
         <div class="footer-bottom-links">
           <a href="../../index.html">Home</a>
           <a href="../../about/about.html" target="about">About</a>
-          <a href="../../contactUs/contactUs.html" target="contact">Contact Us</a>
+          <a href="../../contactUs/contactUs.html" target="contact"
+            >Contact Us</a
+          >
         </div>
       </div>
     </footer>
-
-    <script>
-      window.addEventListener("scroll", () => {
-        const doc = document.documentElement;
-        const scrollTop = doc.scrollTop || document.body.scrollTop;
-        const scrollHeight = doc.scrollHeight - doc.clientHeight;
-        const progress = (scrollTop / scrollHeight) * 100;
-        document.getElementById("progressFill").style.width = progress + "%";
-      });
-    </script>
   </body>
 </html>

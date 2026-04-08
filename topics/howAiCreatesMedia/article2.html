@@ -8,17 +8,23 @@
   </head>
   <body>
     <nav>
-      <a class="nav-logo" href="../index.html">Verif<span>AI</span></a>
+      <a class="nav-logo" href="../../index.html">Verif<span>AI</span></a>
       <ul class="nav-links">
         <li><a href="../../index.html">Home</a></li>
         <li><a href="../../about/about.html" target="about">About</a></li>
-        <li><a href="../../gallery/gallery.html" target="gallery">Gallery</a></li>
+        <li>
+          <a href="../../gallery/gallery.html" target="gallery">Gallery</a>
+        </li>
         <li><a href="../topics.html" target="topics">Topics</a></li>
-        <li><a href="../../contactUs/contactUs.html" target="contact">Contact</a></li>
+        <li>
+          <a href="../../contactUs/contactUs.html" target="contact">Contact</a>
+        </li>
       </ul>
     </nav>
 
-    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
 
     <section class="article-hero">
       <div class="article-hero-grid"></div>
@@ -51,31 +57,63 @@
       <aside class="sidebar-left">
         <div class="sidebar-heading">In This Article</div>
         <ul class="toc-list">
-          <li><a href="#s1" class="toc-link">1. The Basics of AI Image Generation</a></li>
-          <li><a href="#s2" class="toc-link">2. Diffusion Models Explained</a></li>
-          <li><a href="#s3" class="toc-link">3. The Role of Text Prompts</a></li>
+          <li>
+            <a href="#s1" class="toc-link"
+              >1. The Basics of AI Image Generation</a
+            >
+          </li>
+          <li>
+            <a href="#s2" class="toc-link">2. Diffusion Models Explained</a>
+          </li>
+          <li>
+            <a href="#s3" class="toc-link">3. The Role of Text Prompts</a>
+          </li>
           <li><a href="#s4" class="toc-link">4. GANs: An Older Approach</a></li>
-          <li><a href="#s5" class="toc-link">5. What AI Images Look Like Up Close</a></li>
-          <li><a href="#s6" class="toc-link">6. Common Uses of AI Image Generation</a></li>
+          <li>
+            <a href="#s5" class="toc-link"
+              >5. What AI Images Look Like Up Close</a
+            >
+          </li>
+          <li>
+            <a href="#s6" class="toc-link"
+              >6. Common Uses of AI Image Generation</a
+            >
+          </li>
           <li><a href="#s7" class="toc-link">7. What We've Learned</a></li>
         </ul>
       </aside>
 
       <main class="article-body" id="articleBody">
         <p class="article-lead">
-          AI-generated images have become so convincing that even trained professionals can struggle to tell them apart from real photographs. But how exactly does an AI turn a few words into a detailed, lifelike image? The answer lies in a fascinating combination of mathematics, neural networks, and massive amounts of training data.
+          AI-generated images have become so convincing that even trained
+          professionals can struggle to tell them apart from real photographs.
+          But how exactly does an AI turn a few words into a detailed, lifelike
+          image? The answer lies in a fascinating combination of mathematics,
+          neural networks, and massive amounts of training data.
         </p>
 
         <h2 id="s1">The Basics of AI Image Generation</h2>
         <p>
-          AI image generation is the process by which an artificial intelligence system creates a visual image — either from a text description, another image, or a combination of inputs. Unlike traditional computer graphics, which rely on human artists to manually draw or model every element, AI image generators create new visuals entirely on their own by drawing on patterns learned during training.
+          AI image generation is the process by which an artificial intelligence
+          system creates a visual image — either from a text description,
+          another image, or a combination of inputs. Unlike traditional computer
+          graphics, which rely on human artists to manually draw or model every
+          element, AI image generators create new visuals entirely on their own
+          by drawing on patterns learned during training.
         </p>
         <p>
-          The most widely used approach today is called a diffusion model. Other techniques, such as Generative Adversarial Networks (GANs), were more common in earlier years and are still used in some applications. Both approaches rely on deep learning, but they work in fundamentally different ways.
+          The most widely used approach today is called a diffusion model. Other
+          techniques, such as Generative Adversarial Networks (GANs), were more
+          common in earlier years and are still used in some applications. Both
+          approaches rely on deep learning, but they work in fundamentally
+          different ways.
         </p>
 
         <div class="article-image">
-          <a href="../../assets/images/content/howAiCreatesMedia/article2-fig1.jpg" target="image">
+          <a
+            href="../../assets/images/content/howAiCreatesMedia/article2-fig1.jpg"
+            target="image"
+          >
             <img
               src="../../assets/images/content/howAiCreatesMedia/article2-fig1.jpg"
               alt="Side-by-side comparison of a real photograph and an AI-generated image showing similar visual quality"
@@ -83,20 +121,36 @@
             />
           </a>
           <div class="article-image-caption">
-            <strong>Figure 1:</strong> Real Photo vs. AI-Generated Image — modern AI image generators can produce results that are nearly indistinguishable from real photographs.
+            <strong>Figure 1:</strong> Real Photo vs. AI-Generated Image —
+            modern AI image generators can produce results that are nearly
+            indistinguishable from real photographs.
           </div>
         </div>
 
         <h2 id="s2">Diffusion Models Explained</h2>
         <p>
-          Diffusion models are currently the dominant technology behind tools like DALL·E, Midjourney, and Stable Diffusion. The process works in two stages: a forward process and a reverse process. During training, the model learns the forward process by taking a real image and gradually adding random noise to it, step by step, until the image becomes pure static. The model then learns to reverse this — starting from noise and slowly removing it to reconstruct a clear image.
+          Diffusion models are currently the dominant technology behind tools
+          like DALL·E, Midjourney, and Stable Diffusion. The process works in
+          two stages: a forward process and a reverse process. During training,
+          the model learns the forward process by taking a real image and
+          gradually adding random noise to it, step by step, until the image
+          becomes pure static. The model then learns to reverse this — starting
+          from noise and slowly removing it to reconstruct a clear image.
         </p>
         <p>
-          Once trained, the model can generate entirely new images by starting with random noise and applying the reverse process. A text prompt is used to guide what the final image should look like, steering the denoising process toward a specific result. This is why a prompt like "a rainy street in Tokyo at night" will produce a coherent, detailed scene rather than random shapes.
+          Once trained, the model can generate entirely new images by starting
+          with random noise and applying the reverse process. A text prompt is
+          used to guide what the final image should look like, steering the
+          denoising process toward a specific result. This is why a prompt like
+          "a rainy street in Tokyo at night" will produce a coherent, detailed
+          scene rather than random shapes.
         </p>
 
         <div class="article-image">
-          <a href="../../assets/images/content/howAiCreatesMedia/article2-fig2.webp" target="image">
+          <a
+            href="../../assets/images/content/howAiCreatesMedia/article2-fig2.webp"
+            target="image"
+          >
             <img
               src="../../assets/images/content/howAiCreatesMedia/article2-fig2.webp"
               alt="Step-by-step diagram showing a diffusion model transforming noise into a clear image"
@@ -104,56 +158,95 @@
             />
           </a>
           <div class="article-image-caption">
-            <strong>Figure 2:</strong> The Diffusion Process — starting from pure noise, the model progressively refines the image until a clear, detailed result emerges.
+            <strong>Figure 2:</strong> The Diffusion Process — starting from
+            pure noise, the model progressively refines the image until a clear,
+            detailed result emerges.
           </div>
         </div>
 
         <div class="warning-box">
           <div class="warning-box-label">Key Point</div>
-          <p>Diffusion models do not copy or paste existing images. Every output they generate is a brand new creation, synthesized from the patterns the model learned during training on millions of real images.</p>
+          <p>
+            Diffusion models do not copy or paste existing images. Every output
+            they generate is a brand new creation, synthesized from the patterns
+            the model learned during training on millions of real images.
+          </p>
         </div>
 
         <h2 id="s3">The Role of Text Prompts</h2>
         <p>
-          The text prompt is the user's main tool for controlling what an AI generates. When you type a description, the AI converts that text into a mathematical representation and uses it to guide the image generation process. The more specific and detailed the prompt, the more control the user has over the final result.
+          The text prompt is the user's main tool for controlling what an AI
+          generates. When you type a description, the AI converts that text into
+          a mathematical representation and uses it to guide the image
+          generation process. The more specific and detailed the prompt, the
+          more control the user has over the final result.
         </p>
         <p>
-          For example, a prompt like "a golden retriever sitting in a field of sunflowers, soft morning light, photorealistic" will produce a very different result from simply typing "a dog." Experienced users learn to craft prompts carefully, specifying not just the subject but also the style, lighting, mood, and perspective they want.
+          For example, a prompt like "a golden retriever sitting in a field of
+          sunflowers, soft morning light, photorealistic" will produce a very
+          different result from simply typing "a dog." Experienced users learn
+          to craft prompts carefully, specifying not just the subject but also
+          the style, lighting, mood, and perspective they want.
         </p>
 
         <div class="clue-grid">
           <div class="clue-card">
             <div class="clue-card-icon">📝</div>
             <h4>Subject</h4>
-            <p>Describe the main object or scene clearly — e.g., "a lighthouse on a rocky cliff."</p>
+            <p>
+              Describe the main object or scene clearly — e.g., "a lighthouse on
+              a rocky cliff."
+            </p>
           </div>
           <div class="clue-card">
             <div class="clue-card-icon">🎨</div>
             <h4>Style</h4>
-            <p>Specify artistic style — e.g., "oil painting," "photorealistic," or "anime."</p>
+            <p>
+              Specify artistic style — e.g., "oil painting," "photorealistic,"
+              or "anime."
+            </p>
           </div>
           <div class="clue-card">
             <div class="clue-card-icon">💡</div>
             <h4>Lighting</h4>
-            <p>Include lighting details — e.g., "golden hour light," "neon glow," or "overcast sky."</p>
+            <p>
+              Include lighting details — e.g., "golden hour light," "neon glow,"
+              or "overcast sky."
+            </p>
           </div>
           <div class="clue-card">
             <div class="clue-card-icon">📐</div>
             <h4>Composition</h4>
-            <p>Guide the camera angle — e.g., "wide shot," "close-up portrait," or "bird's eye view."</p>
+            <p>
+              Guide the camera angle — e.g., "wide shot," "close-up portrait,"
+              or "bird's eye view."
+            </p>
           </div>
         </div>
 
         <h2 id="s4">GANs: An Older Approach</h2>
         <p>
-          Before diffusion models became dominant, Generative Adversarial Networks (GANs) were the leading technology for AI image generation. A GAN consists of two competing neural networks: a generator and a discriminator. The generator creates fake images, while the discriminator tries to determine whether an image is real or fake. Over time, the generator improves by trying to fool the discriminator, and the discriminator improves by becoming better at detecting fakes.
+          Before diffusion models became dominant, Generative Adversarial
+          Networks (GANs) were the leading technology for AI image generation. A
+          GAN consists of two competing neural networks: a generator and a
+          discriminator. The generator creates fake images, while the
+          discriminator tries to determine whether an image is real or fake.
+          Over time, the generator improves by trying to fool the discriminator,
+          and the discriminator improves by becoming better at detecting fakes.
         </p>
         <p>
-          GANs are still used today for specific tasks like face swapping and style transfer. However, they tend to struggle with consistency and can produce distorted results, especially with complex scenes. Diffusion models have largely replaced them for general image generation because they produce higher-quality, more coherent results.
+          GANs are still used today for specific tasks like face swapping and
+          style transfer. However, they tend to struggle with consistency and
+          can produce distorted results, especially with complex scenes.
+          Diffusion models have largely replaced them for general image
+          generation because they produce higher-quality, more coherent results.
         </p>
 
         <div class="article-image">
-          <a href="../../assets/images/content/howAiCreatesMedia/article2-fig3.webp" target="image">
+          <a
+            href="../../assets/images/content/howAiCreatesMedia/article2-fig3.webp"
+            target="image"
+          >
             <img
               src="../../assets/images/content/howAiCreatesMedia/article2-fig3.webp"
               alt="Diagram illustrating the GAN architecture with generator and discriminator networks competing"
@@ -161,48 +254,92 @@
             />
           </a>
           <div class="article-image-caption">
-            <strong>Figure 3:</strong> How a GAN Works — the generator and discriminator compete against each other, driving both to improve over time.
+            <strong>Figure 3:</strong> How a GAN Works — the generator and
+            discriminator compete against each other, driving both to improve
+            over time.
           </div>
         </div>
 
         <h2 id="s5">What AI Images Look Like Up Close</h2>
         <p>
-          Even though AI images can look highly realistic at a glance, they often contain telltale signs of artificial generation when examined closely. Common artifacts include distorted hands with the wrong number of fingers, inconsistent text that appears as gibberish, unnatural skin textures, and lighting that does not match across different parts of the image.
+          Even though AI images can look highly realistic at a glance, they
+          often contain telltale signs of artificial generation when examined
+          closely. Common artifacts include distorted hands with the wrong
+          number of fingers, inconsistent text that appears as gibberish,
+          unnatural skin textures, and lighting that does not match across
+          different parts of the image.
         </p>
 
         <div class="pull-quote">
-          <p>The most common giveaway of an AI-generated portrait is the hands. Count the fingers — AI still struggles to get them right consistently.</p>
+          <p>
+            The most common giveaway of an AI-generated portrait is the hands.
+            Count the fingers — AI still struggles to get them right
+            consistently.
+          </p>
           <cite>— Digital Media Forensics Research</cite>
         </div>
 
         <p>
-          Jewelry and accessories are another weak point — earrings may be asymmetrical, glasses may have frames that merge into the face, and background elements often blur or repeat in unnatural patterns. Learning to spot these details is one of the most effective ways to identify AI-generated images in the wild.
+          Jewelry and accessories are another weak point — earrings may be
+          asymmetrical, glasses may have frames that merge into the face, and
+          background elements often blur or repeat in unnatural patterns.
+          Learning to spot these details is one of the most effective ways to
+          identify AI-generated images in the wild.
         </p>
 
         <h2 id="s6">Common Uses of AI Image Generation</h2>
         <p>
-          AI image generation has many legitimate and creative applications. Designers use it to quickly mock up concepts and visual ideas. Authors and game developers use it to generate character references and concept art. Educators use it to create illustrative visuals. Marketing teams use it to generate promotional imagery quickly and at low cost.
+          AI image generation has many legitimate and creative applications.
+          Designers use it to quickly mock up concepts and visual ideas. Authors
+          and game developers use it to generate character references and
+          concept art. Educators use it to create illustrative visuals.
+          Marketing teams use it to generate promotional imagery quickly and at
+          low cost.
         </p>
         <p>
-          Unfortunately, the same technology is also used to create misleading content — fake news images, fabricated evidence, non-consensual imagery, and visual propaganda. The ease and speed of AI image generation means that harmful images can be produced and spread faster than they can be identified and removed.
+          Unfortunately, the same technology is also used to create misleading
+          content — fake news images, fabricated evidence, non-consensual
+          imagery, and visual propaganda. The ease and speed of AI image
+          generation means that harmful images can be produced and spread faster
+          than they can be identified and removed.
         </p>
 
         <div class="warning-box">
           <div class="warning-box-label">⚠️ Be Aware</div>
-          <p>AI-generated images can be used to fabricate events that never happened. Before sharing or reacting to a striking image online, take a moment to verify its source and look for signs of AI generation, such as distorted hands, unnatural backgrounds, or inconsistent lighting.</p>
+          <p>
+            AI-generated images can be used to fabricate events that never
+            happened. Before sharing or reacting to a striking image online,
+            take a moment to verify its source and look for signs of AI
+            generation, such as distorted hands, unnatural backgrounds, or
+            inconsistent lighting.
+          </p>
         </div>
 
         <h2 id="s7">What We've Learned</h2>
         <p>
-          AI image generation is powered primarily by diffusion models, which learn to create images by reversing a process of adding and removing noise. Text prompts guide this process to produce specific, detailed results. Earlier techniques like GANs helped lay the groundwork, and are still used in some specialized applications today.
+          AI image generation is powered primarily by diffusion models, which
+          learn to create images by reversing a process of adding and removing
+          noise. Text prompts guide this process to produce specific, detailed
+          results. Earlier techniques like GANs helped lay the groundwork, and
+          are still used in some specialized applications today.
         </p>
         <p>
-          While AI-generated images are becoming increasingly convincing, they still carry visual artifacts that can be identified with careful observation — particularly in hands, text, and background details. Understanding how these images are made is the first step toward critically evaluating the visual media we encounter every day, and protecting ourselves from being misled by synthetic content.
+          While AI-generated images are becoming increasingly convincing, they
+          still carry visual artifacts that can be identified with careful
+          observation — particularly in hands, text, and background details.
+          Understanding how these images are made is the first step toward
+          critically evaluating the visual media we encounter every day, and
+          protecting ourselves from being misled by synthetic content.
         </p>
 
         <div class="warning-box">
           <div class="warning-box-label">💡 Remember</div>
-          <p>AI does not copy existing images — it generates entirely new ones based on learned patterns. This makes AI-generated fakes very difficult to trace back to a specific source, which is why critical thinking and visual literacy are more important than ever.</p>
+          <p>
+            AI does not copy existing images — it generates entirely new ones
+            based on learned patterns. This makes AI-generated fakes very
+            difficult to trace back to a specific source, which is why critical
+            thinking and visual literacy are more important than ever.
+          </p>
         </div>
       </main>
 
@@ -213,7 +350,9 @@
             <div class="related-thumb">🧠</div>
             <div>
               <div class="related-cat">How AI Creates Media</div>
-              <div class="related-title">AI Model Training and Data Sources</div>
+              <div class="related-title">
+                AI Model Training and Data Sources
+              </div>
             </div>
           </a>
           <a class="related-card" href="article3.html">
@@ -234,7 +373,9 @@
             <div class="related-thumb">🚧</div>
             <div>
               <div class="related-cat">How AI Creates Media</div>
-              <div class="related-title">Limitations of AI Media Generation</div>
+              <div class="related-title">
+                Limitations of AI Media Generation
+              </div>
             </div>
           </a>
         </div>
@@ -252,66 +393,43 @@
       </a>
     </section>
 
-    <section class="more-articles">
-      <div class="section-header">
-        <span class="section-label">Keep Learning</span>
-        <h2>More from <span>How AI Creates Media</span></h2>
-      </div>
-      <div class="cards-grid">
-        <a class="card" href="article3.html">
-          <div class="card-thumb">🎬</div>
-          <div class="card-body">
-            <div class="card-cat">How AI Creates Media</div>
-            <h3>How AI Generates Videos</h3>
-            <p>From frame prediction to full scene generation — how AI is now capable of producing realistic video content.</p>
-            <div class="card-meta"><span>9 min read</span><span>Intermediate</span></div>
-          </div>
-        </a>
-        <a class="card" href="article4.html">
-          <div class="card-thumb">🎙️</div>
-          <div class="card-body">
-            <div class="card-cat">How AI Creates Media</div>
-            <h3>How AI Generates Audio</h3>
-            <p>Voice cloning, AI music, and synthetic speech — how AI is transforming the world of sound.</p>
-            <div class="card-meta"><span>8 min read</span><span>Beginner</span></div>
-          </div>
-        </a>
-        <a class="card" href="article6.html">
-          <div class="card-thumb">👤</div>
-          <div class="card-body">
-            <div class="card-cat">How AI Creates Media</div>
-            <h3>Deepfake Technology Explained</h3>
-            <p>What deepfakes are, how they are made, and why they pose a growing threat to truth and trust online.</p>
-            <div class="card-meta"><span>10 min read</span><span>Intermediate</span></div>
-          </div>
-        </a>
-      </div>
-    </section>
-
     <footer>
       <div class="footer-top">
         <div class="footer-brand">
           <a class="nav-logo" href="../index.html">Verif<span>AI</span></a>
-          <p>Educating the public on how to identify AI-generated media. Stay informed, stay critical, stay real.</p>
+          <p>
+            Educating the public on how to identify AI-generated media. Stay
+            informed, stay critical, stay real.
+          </p>
         </div>
         <div class="footer-links">
           <h4>Navigation</h4>
           <ul>
             <li><a href="../../index.html">Home</a></li>
             <li><a href="../../about/about.html" target="about">About</a></li>
-            <li><a href="../../contactUs/contactUs.html" target="contact">Contact Us</a></li>
+            <li>
+              <a href="../../contactUs/contactUs.html" target="contact"
+                >Contact Us</a
+              >
+            </li>
           </ul>
         </div>
         <div class="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="../../gallery/gallery.html" target="gallery">Gallery</a></li>
+            <li>
+              <a href="../../gallery/gallery.html" target="gallery">Gallery</a>
+            </li>
             <li><a href="../topics.html" target="topics">Topics</a></li>
           </ul>
         </div>
         <div class="footer-links footer-social">
           <h4>Follow Us</h4>
-          <a href="https://www.facebook.com/profile.php?id=61582741020706" target="_blank" rel="noopener">
+          <a
+            href="https://www.facebook.com/profile.php?id=61582741020706"
+            target="_blank"
+            rel="noopener"
+          >
             <span class="fb-icon">f</span> Verif-AI on Facebook
           </a>
         </div>
@@ -321,19 +439,11 @@
         <div class="footer-bottom-links">
           <a href="../../index.html">Home</a>
           <a href="../../about/about.html" target="about">About</a>
-          <a href="../../contactUs/contactUs.html" target="contact">Contact Us</a>
+          <a href="../../contactUs/contactUs.html" target="contact"
+            >Contact Us</a
+          >
         </div>
       </div>
     </footer>
-
-    <script>
-      window.addEventListener("scroll", () => {
-        const doc = document.documentElement;
-        const scrollTop = doc.scrollTop || document.body.scrollTop;
-        const scrollHeight = doc.scrollHeight - doc.clientHeight;
-        const progress = (scrollTop / scrollHeight) * 100;
-        document.getElementById("progressFill").style.width = progress + "%";
-      });
-    </script>
   </body>
 </html>

@@ -8,17 +8,23 @@
   </head>
   <body>
     <nav>
-      <a class="nav-logo" href="../index.html">Verif<span>AI</span></a>
+      <a class="nav-logo" href="../../index.html">Verif<span>AI</span></a>
       <ul class="nav-links">
         <li><a href="../../index.html">Home</a></li>
         <li><a href="../../about/about.html" target="about">About</a></li>
-        <li><a href="../../gallery/gallery.html" target="gallery">Gallery</a></li>
+        <li>
+          <a href="../../gallery/gallery.html" target="gallery">Gallery</a>
+        </li>
         <li><a href="../topics.html" target="topics">Topics</a></li>
-        <li><a href="../../contactUs/contactUs.html" target="contact">Contact</a></li>
+        <li>
+          <a href="../../contactUs/contactUs.html" target="contact">Contact</a>
+        </li>
       </ul>
     </nav>
 
-    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
 
     <section class="article-hero">
       <div class="article-hero-grid"></div>
@@ -51,12 +57,22 @@
       <aside class="sidebar-left">
         <div class="sidebar-heading">In This Article</div>
         <ul class="toc-list">
-          <li><a href="#s1" class="toc-link">1. What Is AI Model Training?</a></li>
-          <li><a href="#s2" class="toc-link">2. Where Does the Data Come From?</a></li>
-          <li><a href="#s3" class="toc-link">3. How Training Actually Works</a></li>
+          <li>
+            <a href="#s1" class="toc-link">1. What Is AI Model Training?</a>
+          </li>
+          <li>
+            <a href="#s2" class="toc-link">2. Where Does the Data Come From?</a>
+          </li>
+          <li>
+            <a href="#s3" class="toc-link">3. How Training Actually Works</a>
+          </li>
           <li><a href="#s4" class="toc-link">4. Types of Training Data</a></li>
-          <li><a href="#s5" class="toc-link">5. Problems With Training Data</a></li>
-          <li><a href="#s6" class="toc-link">6. Why This Matters for Media</a></li>
+          <li>
+            <a href="#s5" class="toc-link">5. Problems With Training Data</a>
+          </li>
+          <li>
+            <a href="#s6" class="toc-link">6. Why This Matters for Media</a>
+          </li>
           <li><a href="#s7" class="toc-link">7. What We've Learned</a></li>
         </ul>
       </aside>
@@ -64,19 +80,37 @@
       <!-- MAIN ARTICLE -->
       <main class="article-body" id="articleBody">
         <p class="article-lead">
-          Before an AI can generate images, write text, or clone a voice, it must first learn — and that learning process, called training, depends entirely on the quality and quantity of data it consumes. Understanding where that data comes from is the first step to understanding how AI-generated media is made.
+          Before an AI can generate images, write text, or clone a voice, it
+          must first learn — and that learning process, called training, depends
+          entirely on the quality and quantity of data it consumes.
+          Understanding where that data comes from is the first step to
+          understanding how AI-generated media is made.
         </p>
 
         <h2 id="s1">What Is AI Model Training?</h2>
         <p>
-          AI model training is the process by which a machine learning system learns to perform a task by studying large amounts of example data. Think of it like teaching a child to recognize animals: you show them thousands of pictures of cats and dogs, and over time they learn the patterns that make each animal distinct. AI models do the same thing, but at a scale that is almost impossible to imagine — often processing billions of examples over weeks or months using powerful computers.
+          AI model training is the process by which a machine learning system
+          learns to perform a task by studying large amounts of example data.
+          Think of it like teaching a child to recognize animals: you show them
+          thousands of pictures of cats and dogs, and over time they learn the
+          patterns that make each animal distinct. AI models do the same thing,
+          but at a scale that is almost impossible to imagine — often processing
+          billions of examples over weeks or months using powerful computers.
         </p>
         <p>
-          During training, the AI adjusts its internal settings, called parameters or weights, every time it makes a mistake. If the model incorrectly labels a photo or generates a blurry image, its internal values are updated slightly so that it performs better next time. This process is repeated millions or even billions of times until the model reaches an acceptable level of accuracy.
+          During training, the AI adjusts its internal settings, called
+          parameters or weights, every time it makes a mistake. If the model
+          incorrectly labels a photo or generates a blurry image, its internal
+          values are updated slightly so that it performs better next time. This
+          process is repeated millions or even billions of times until the model
+          reaches an acceptable level of accuracy.
         </p>
 
         <div class="article-image">
-          <a href="../../assets/images/content/howAiCreatesMedia/article1-fig1.png" target="image">
+          <a
+            href="../../assets/images/content/howAiCreatesMedia/article1-fig1.png"
+            target="image"
+          >
             <img
               src="../../assets/images/content/howAiCreatesMedia/article1-fig1.png"
               alt="Diagram showing the AI training process from raw data to a finished model"
@@ -84,51 +118,91 @@
             />
           </a>
           <div class="article-image-caption">
-            <strong>Figure 1:</strong> The AI Model Training Pipeline — from raw data collection to a deployable model.
+            <strong>Figure 1:</strong> The AI Model Training Pipeline — from raw
+            data collection to a deployable model.
           </div>
         </div>
 
         <h2 id="s2">Where Does the Data Come From?</h2>
         <p>
-          The data used to train AI models comes from many different sources. For text-based models, common sources include books, news articles, academic papers, websites, forums, social media posts, and even Wikipedia. For image-based models, training data often includes photos scraped from the internet, stock image libraries, and publicly available image datasets. Audio models may be trained on music libraries, podcasts, speeches, and recorded conversations.
+          The data used to train AI models comes from many different sources.
+          For text-based models, common sources include books, news articles,
+          academic papers, websites, forums, social media posts, and even
+          Wikipedia. For image-based models, training data often includes photos
+          scraped from the internet, stock image libraries, and publicly
+          available image datasets. Audio models may be trained on music
+          libraries, podcasts, speeches, and recorded conversations.
         </p>
         <p>
-          Some of this data is collected with permission, such as when companies license datasets from publishers or contributors. However, a significant portion of training data has historically been collected through web scraping — automatically downloading content from websites — without the explicit consent of the original creators. This practice has sparked major ethical and legal debates about copyright and intellectual property.
+          Some of this data is collected with permission, such as when companies
+          license datasets from publishers or contributors. However, a
+          significant portion of training data has historically been collected
+          through web scraping — automatically downloading content from websites
+          — without the explicit consent of the original creators. This practice
+          has sparked major ethical and legal debates about copyright and
+          intellectual property.
         </p>
 
         <div class="clue-grid">
           <div class="clue-card">
             <div class="clue-card-icon">📚</div>
             <h4>Text Data</h4>
-            <p>Books, websites, forums, news articles, and academic papers scraped from the internet.</p>
+            <p>
+              Books, websites, forums, news articles, and academic papers
+              scraped from the internet.
+            </p>
           </div>
           <div class="clue-card">
             <div class="clue-card-icon">🖼️</div>
             <h4>Image Data</h4>
-            <p>Photos from social media, stock libraries, and public image datasets like ImageNet.</p>
+            <p>
+              Photos from social media, stock libraries, and public image
+              datasets like ImageNet.
+            </p>
           </div>
           <div class="clue-card">
             <div class="clue-card-icon">🎵</div>
             <h4>Audio Data</h4>
-            <p>Music, podcasts, recorded speeches, and voice samples from various online platforms.</p>
+            <p>
+              Music, podcasts, recorded speeches, and voice samples from various
+              online platforms.
+            </p>
           </div>
           <div class="clue-card">
             <div class="clue-card-icon">🎬</div>
             <h4>Video Data</h4>
-            <p>Clips from video-sharing platforms, documentaries, and publicly available recordings.</p>
+            <p>
+              Clips from video-sharing platforms, documentaries, and publicly
+              available recordings.
+            </p>
           </div>
         </div>
 
         <h2 id="s3">How Training Actually Works</h2>
         <p>
-          Most modern AI models are trained using a technique called deep learning, which uses structures called neural networks. These networks are loosely inspired by the human brain and consist of many layers of interconnected nodes. Each layer processes the data differently — early layers might detect basic patterns like edges or sounds, while deeper layers recognize more complex concepts like faces or sentences.
+          Most modern AI models are trained using a technique called deep
+          learning, which uses structures called neural networks. These networks
+          are loosely inspired by the human brain and consist of many layers of
+          interconnected nodes. Each layer processes the data differently —
+          early layers might detect basic patterns like edges or sounds, while
+          deeper layers recognize more complex concepts like faces or sentences.
         </p>
         <p>
-          The training process begins by feeding the neural network a batch of data. The model makes a prediction or generates an output, and that result is compared to the correct answer. The difference between the prediction and the correct answer is called the loss. The model then uses a mathematical process called backpropagation to adjust its weights in a way that reduces the loss. After enough repetitions across enough data, the model becomes capable of performing its task reliably.
+          The training process begins by feeding the neural network a batch of
+          data. The model makes a prediction or generates an output, and that
+          result is compared to the correct answer. The difference between the
+          prediction and the correct answer is called the loss. The model then
+          uses a mathematical process called backpropagation to adjust its
+          weights in a way that reduces the loss. After enough repetitions
+          across enough data, the model becomes capable of performing its task
+          reliably.
         </p>
 
         <div class="article-image">
-          <a href="../../assets/images/content/howAiCreatesMedia/article1-fig2.jpg" target="image">
+          <a
+            href="../../assets/images/content/howAiCreatesMedia/article1-fig2.jpg"
+            target="image"
+          >
             <img
               src="../../assets/images/content/howAiCreatesMedia/article1-fig2.jpg"
               alt="Visual diagram of a neural network with multiple layers processing data"
@@ -136,74 +210,127 @@
             />
           </a>
           <div class="article-image-caption">
-            <strong>Figure 2:</strong> A simplified view of how a neural network processes data through multiple layers during training.
+            <strong>Figure 2:</strong> A simplified view of how a neural network
+            processes data through multiple layers during training.
           </div>
         </div>
 
         <h2 id="s4">Types of Training Data</h2>
         <p>
-          Not all training data is the same. Researchers classify it in several important ways depending on how it is labeled and how it will be used by the model.
+          Not all training data is the same. Researchers classify it in several
+          important ways depending on how it is labeled and how it will be used
+          by the model.
         </p>
         <ol class="steps-list">
           <li>
             <div class="step-num">1</div>
             <div class="step-content">
               <h4>Labeled Data</h4>
-              <p>Each example comes with a correct answer or tag. For example, an image labeled "cat" teaches the model what a cat looks like. Labeled data is expensive and time-consuming to produce.</p>
+              <p>
+                Each example comes with a correct answer or tag. For example, an
+                image labeled "cat" teaches the model what a cat looks like.
+                Labeled data is expensive and time-consuming to produce.
+              </p>
             </div>
           </li>
           <li>
             <div class="step-num">2</div>
             <div class="step-content">
               <h4>Unlabeled Data</h4>
-              <p>Raw data with no tags or annotations. Models trained on unlabeled data must find patterns on their own, which is the basis of unsupervised learning.</p>
+              <p>
+                Raw data with no tags or annotations. Models trained on
+                unlabeled data must find patterns on their own, which is the
+                basis of unsupervised learning.
+              </p>
             </div>
           </li>
           <li>
             <div class="step-num">3</div>
             <div class="step-content">
               <h4>Synthetic Data</h4>
-              <p>Artificially generated data created by other AI systems. This is increasingly used when real data is scarce or too sensitive to collect.</p>
+              <p>
+                Artificially generated data created by other AI systems. This is
+                increasingly used when real data is scarce or too sensitive to
+                collect.
+              </p>
             </div>
           </li>
           <li>
             <div class="step-num">4</div>
             <div class="step-content">
               <h4>Human Feedback Data</h4>
-              <p>Ratings and corrections provided by human reviewers who evaluate the model's outputs. This is essential for training conversational and generative AI systems.</p>
+              <p>
+                Ratings and corrections provided by human reviewers who evaluate
+                the model's outputs. This is essential for training
+                conversational and generative AI systems.
+              </p>
             </div>
           </li>
         </ol>
 
         <h2 id="s5">Problems With Training Data</h2>
         <p>
-          The quality and composition of training data directly shapes what an AI model can and cannot do — and what biases it may carry. If the training data contains mostly images of one type of person, the model may struggle to accurately represent others. If it is trained on news articles that favor a particular perspective, its generated text may reflect that bias. These are not hypothetical concerns; they are well-documented problems that AI developers actively work to address.
+          The quality and composition of training data directly shapes what an
+          AI model can and cannot do — and what biases it may carry. If the
+          training data contains mostly images of one type of person, the model
+          may struggle to accurately represent others. If it is trained on news
+          articles that favor a particular perspective, its generated text may
+          reflect that bias. These are not hypothetical concerns; they are
+          well-documented problems that AI developers actively work to address.
         </p>
 
         <div class="pull-quote">
-          <p>An AI model is only as good — and as fair — as the data it was trained on. Garbage in, garbage out is more than a saying; it is a law of machine learning.</p>
+          <p>
+            An AI model is only as good — and as fair — as the data it was
+            trained on. Garbage in, garbage out is more than a saying; it is a
+            law of machine learning.
+          </p>
           <cite>— Principle of Data Quality in Machine Learning</cite>
         </div>
 
         <p>
-          Privacy is another serious issue. Training data collected from the internet may include personal information that people never intended to share with AI companies. Faces, voices, and writing styles can all be captured and used to train models without the knowledge or consent of the individuals involved. This has led to growing calls for stricter regulations around data collection and model training.
+          Privacy is another serious issue. Training data collected from the
+          internet may include personal information that people never intended
+          to share with AI companies. Faces, voices, and writing styles can all
+          be captured and used to train models without the knowledge or consent
+          of the individuals involved. This has led to growing calls for
+          stricter regulations around data collection and model training.
         </p>
 
         <div class="warning-box">
           <div class="warning-box-label">⚠️ Important</div>
-          <p>Many AI models have been trained on data that was collected without the explicit consent of the original creators. This raises serious questions about intellectual property, privacy, and fairness that are still being debated in courts and legislatures worldwide.</p>
+          <p>
+            Many AI models have been trained on data that was collected without
+            the explicit consent of the original creators. This raises serious
+            questions about intellectual property, privacy, and fairness that
+            are still being debated in courts and legislatures worldwide.
+          </p>
         </div>
 
         <h2 id="s6">Why This Matters for Media</h2>
         <p>
-          Understanding how AI models are trained is essential for anyone who wants to critically evaluate AI-generated media. When a model generates a realistic-looking news photo that never happened, or writes a convincing but false news article, it is drawing on patterns it learned from real media — real photos, real writing, real voices. The output may be entirely fabricated, but it is constructed from fragments of the real world.
+          Understanding how AI models are trained is essential for anyone who
+          wants to critically evaluate AI-generated media. When a model
+          generates a realistic-looking news photo that never happened, or
+          writes a convincing but false news article, it is drawing on patterns
+          it learned from real media — real photos, real writing, real voices.
+          The output may be entirely fabricated, but it is constructed from
+          fragments of the real world.
         </p>
         <p>
-          This means that AI-generated media can be extremely convincing precisely because it is modeled on genuine human-made content. The more data a model is trained on, and the higher the quality of that data, the more realistic its outputs will be. Recognizing this connection helps us understand why AI-generated fakes are becoming harder and harder to detect without specialized tools.
+          This means that AI-generated media can be extremely convincing
+          precisely because it is modeled on genuine human-made content. The
+          more data a model is trained on, and the higher the quality of that
+          data, the more realistic its outputs will be. Recognizing this
+          connection helps us understand why AI-generated fakes are becoming
+          harder and harder to detect without specialized tools.
         </p>
 
         <div class="article-image">
-          <a href="../../assets/images/content/howAiCreatesMedia/article1-fig3." target="image">
+          <a
+            href="../../assets/images/content/howAiCreatesMedia/article1-fig3."
+            target="image"
+          >
             <img
               src="../../assets/images/content/howAiCreatesMedia/article1-fig3.jpg"
               alt="Comparison of real versus AI-generated media to show how training data influences output quality"
@@ -211,21 +338,39 @@
             />
           </a>
           <div class="article-image-caption">
-            <strong>Figure 3:</strong> Real vs. AI-Generated Media — how training data quality directly influences how convincing the output appears.
+            <strong>Figure 3:</strong> Real vs. AI-Generated Media — how
+            training data quality directly influences how convincing the output
+            appears.
           </div>
         </div>
 
         <h2 id="s7">What We've Learned</h2>
         <p>
-          AI model training is the foundation of every AI system that generates media. It is a process of learning from vast amounts of data — text, images, audio, and video — collected from across the internet and other sources. Through deep learning and neural networks, models adjust themselves over millions of repetitions until they can generate convincing outputs on their own.
+          AI model training is the foundation of every AI system that generates
+          media. It is a process of learning from vast amounts of data — text,
+          images, audio, and video — collected from across the internet and
+          other sources. Through deep learning and neural networks, models
+          adjust themselves over millions of repetitions until they can generate
+          convincing outputs on their own.
         </p>
         <p>
-          However, this process is not without serious concerns. The data used to train these models may be biased, collected without consent, or include private information. These issues directly affect the fairness and safety of the AI systems built on top of that data. By understanding where training data comes from and how it shapes AI behavior, we become better equipped to recognize AI-generated media and think critically about the technology behind it.
+          However, this process is not without serious concerns. The data used
+          to train these models may be biased, collected without consent, or
+          include private information. These issues directly affect the fairness
+          and safety of the AI systems built on top of that data. By
+          understanding where training data comes from and how it shapes AI
+          behavior, we become better equipped to recognize AI-generated media
+          and think critically about the technology behind it.
         </p>
 
         <div class="warning-box">
           <div class="warning-box-label">💡 Remember</div>
-          <p>Every AI-generated image, video, or piece of text is the product of a training process built on real human-made content. Understanding this connection is the first step to becoming a more informed and critical consumer of media.</p>
+          <p>
+            Every AI-generated image, video, or piece of text is the product of
+            a training process built on real human-made content. Understanding
+            this connection is the first step to becoming a more informed and
+            critical consumer of media.
+          </p>
         </div>
       </main>
 
@@ -254,7 +399,9 @@
           <a class="related-card" href="article7.html">
             <div>
               <div class="related-cat">How AI Creates Media</div>
-              <div class="related-title">Role of Machine Learning in Media Creation</div>
+              <div class="related-title">
+                Role of Machine Learning in Media Creation
+              </div>
             </div>
           </a>
         </div>
@@ -272,66 +419,43 @@
       </a>
     </section>
 
-    <section class="more-articles">
-      <div class="section-header">
-        <span class="section-label">Keep Learning</span>
-        <h2>More from <span>How AI Creates Media</span></h2>
-      </div>
-      <div class="cards-grid">
-        <a class="card" href="article2.html">
-          <div class="card-thumb">🖼️</div>
-          <div class="card-body">
-            <div class="card-cat">How AI Creates Media</div>
-            <h3>How AI Generates Images</h3>
-            <p>Discover how AI transforms a text prompt into a fully-formed image using diffusion models and neural networks.</p>
-            <div class="card-meta"><span>8 min read</span><span>Beginner</span></div>
-          </div>
-        </a>
-        <a class="card" href="article3.html">
-          <div class="card-thumb">🎬</div>
-          <div class="card-body">
-            <div class="card-cat">How AI Creates Media</div>
-            <h3>How AI Generates Videos</h3>
-            <p>From frame prediction to full scene generation — how AI is now capable of producing realistic video content.</p>
-            <div class="card-meta"><span>9 min read</span><span>Intermediate</span></div>
-          </div>
-        </a>
-        <a class="card" href="article6.html">
-          <div class="card-thumb">👤</div>
-          <div class="card-body">
-            <div class="card-cat">How AI Creates Media</div>
-            <h3>Deepfake Technology Explained</h3>
-            <p>What deepfakes are, how they are made, and why they pose a growing threat to truth and trust online.</p>
-            <div class="card-meta"><span>10 min read</span><span>Intermediate</span></div>
-          </div>
-        </a>
-      </div>
-    </section>
-
     <footer>
       <div class="footer-top">
         <div class="footer-brand">
           <a class="nav-logo" href="../index.html">Verif<span>AI</span></a>
-          <p>Educating the public on how to identify AI-generated media. Stay informed, stay critical, stay real.</p>
+          <p>
+            Educating the public on how to identify AI-generated media. Stay
+            informed, stay critical, stay real.
+          </p>
         </div>
         <div class="footer-links">
           <h4>Navigation</h4>
           <ul>
             <li><a href="../../index.html">Home</a></li>
             <li><a href="../../about/about.html" target="about">About</a></li>
-            <li><a href="../../contactUs/contactUs.html" target="contact">Contact Us</a></li>
+            <li>
+              <a href="../../contactUs/contactUs.html" target="contact"
+                >Contact Us</a
+              >
+            </li>
           </ul>
         </div>
         <div class="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="../../gallery/gallery.html" target="gallery">Gallery</a></li>
+            <li>
+              <a href="../../gallery/gallery.html" target="gallery">Gallery</a>
+            </li>
             <li><a href="../topics.html" target="topics">Topics</a></li>
           </ul>
         </div>
         <div class="footer-links footer-social">
           <h4>Follow Us</h4>
-          <a href="https://www.facebook.com/profile.php?id=61582741020706" target="_blank" rel="noopener">
+          <a
+            href="https://www.facebook.com/profile.php?id=61582741020706"
+            target="_blank"
+            rel="noopener"
+          >
             <span class="fb-icon">f</span> Verif-AI on Facebook
           </a>
         </div>
@@ -341,19 +465,11 @@
         <div class="footer-bottom-links">
           <a href="../../index.html">Home</a>
           <a href="../../about/about.html" target="about">About</a>
-          <a href="../../contactUs/contactUs.html" target="contact">Contact Us</a>
+          <a href="../../contactUs/contactUs.html" target="contact"
+            >Contact Us</a
+          >
         </div>
       </div>
     </footer>
-
-    <script>
-      window.addEventListener("scroll", () => {
-        const doc = document.documentElement;
-        const scrollTop = doc.scrollTop || document.body.scrollTop;
-        const scrollHeight = doc.scrollHeight - doc.clientHeight;
-        const progress = (scrollTop / scrollHeight) * 100;
-        document.getElementById("progressFill").style.width = progress + "%";
-      });
-    </script>
   </body>
 </html>

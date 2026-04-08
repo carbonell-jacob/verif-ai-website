@@ -8,17 +8,23 @@
   </head>
   <body>
     <nav>
-      <a class="nav-logo" href="../index.html">Verif<span>AI</span></a>
+      <a class="nav-logo" href="../../index.html">Verif<span>AI</span></a>
       <ul class="nav-links">
         <li><a href="../../index.html">Home</a></li>
         <li><a href="../../about/about.html" target="about">About</a></li>
-        <li><a href="../../gallery/gallery.html" target="gallery">Gallery</a></li>
+        <li>
+          <a href="../../gallery/gallery.html" target="gallery">Gallery</a>
+        </li>
         <li><a href="../topics.html" target="topics">Topics</a></li>
-        <li><a href="../../contactUs/contactUs.html" target="contact">Contact</a></li>
+        <li>
+          <a href="../../contactUs/contactUs.html" target="contact">Contact</a>
+        </li>
       </ul>
     </nav>
 
-    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
 
     <section class="article-hero">
       <div class="article-hero-grid"></div>
@@ -50,11 +56,27 @@
       <aside class="sidebar-left">
         <div class="sidebar-heading">In This Article</div>
         <ul class="toc-list">
-          <li><a href="#s1" class="toc-link">1. What Are Large Language Models?</a></li>
-          <li><a href="#s2" class="toc-link">2. How Text Generation Works</a></li>
-          <li><a href="#s3" class="toc-link">3. The Role of Context and Prompts</a></li>
-          <li><a href="#s4" class="toc-link">4. How AI Writing Differs From Human Writing</a></li>
-          <li><a href="#s5" class="toc-link">5. How to Spot AI-Generated Text</a></li>
+          <li>
+            <a href="#s1" class="toc-link"
+              >1. What Are Large Language Models?</a
+            >
+          </li>
+          <li>
+            <a href="#s2" class="toc-link">2. How Text Generation Works</a>
+          </li>
+          <li>
+            <a href="#s3" class="toc-link"
+              >3. The Role of Context and Prompts</a
+            >
+          </li>
+          <li>
+            <a href="#s4" class="toc-link"
+              >4. How AI Writing Differs From Human Writing</a
+            >
+          </li>
+          <li>
+            <a href="#s5" class="toc-link">5. How to Spot AI-Generated Text</a>
+          </li>
           <li><a href="#s6" class="toc-link">6. Risks and Misuse</a></li>
           <li><a href="#s7" class="toc-link">7. What We've Learned</a></li>
         </ul>
@@ -62,19 +84,35 @@
 
       <main class="article-body" id="articleBody">
         <p class="article-lead">
-          The article you are reading right now could have been written by an AI. That is not a hypothetical scenario — it is a practical reality that millions of people encounter every day without knowing it. Understanding how AI generates text is essential for anyone who reads, shares, or publishes content online.
+          The article you are reading right now could have been written by an
+          AI. That is not a hypothetical scenario — it is a practical reality
+          that millions of people encounter every day without knowing it.
+          Understanding how AI generates text is essential for anyone who reads,
+          shares, or publishes content online.
         </p>
 
         <h2 id="s1">What Are Large Language Models?</h2>
         <p>
-          AI text generation is powered by systems called Large Language Models, or LLMs. These are deep learning models trained on enormous amounts of written text — billions of web pages, books, articles, code repositories, and more — to learn the patterns of human language. The most well-known examples include GPT-4, Claude, Gemini, and Llama.
+          AI text generation is powered by systems called Large Language Models,
+          or LLMs. These are deep learning models trained on enormous amounts of
+          written text — billions of web pages, books, articles, code
+          repositories, and more — to learn the patterns of human language. The
+          most well-known examples include GPT-4, Claude, Gemini, and Llama.
         </p>
         <p>
-          Unlike earlier AI systems that used simple rules or templates to produce text, LLMs are generative — they create entirely new text by predicting what word, phrase, or sentence is most likely to come next, given everything that has come before. This produces output that feels natural, coherent, and contextually appropriate, even though the model has no actual understanding of meaning in the human sense.
+          Unlike earlier AI systems that used simple rules or templates to
+          produce text, LLMs are generative — they create entirely new text by
+          predicting what word, phrase, or sentence is most likely to come next,
+          given everything that has come before. This produces output that feels
+          natural, coherent, and contextually appropriate, even though the model
+          has no actual understanding of meaning in the human sense.
         </p>
 
         <div class="article-image">
-          <a href="../../assets/images/content/howAiCreatesMedia/article5-fig1.webp" target="image">
+          <a
+            href="../../assets/images/content/howAiCreatesMedia/article5-fig1.webp"
+            target="image"
+          >
             <img
               src="../../assets/images/content/howAiCreatesMedia/article5-fig1.webp"
               alt="Diagram showing the scale of a large language model trained on billions of text documents"
@@ -82,51 +120,90 @@
             />
           </a>
           <div class="article-image-caption">
-            <strong>Figure 1:</strong> The Scale of Large Language Models — trained on billions of documents and containing trillions of parameters, LLMs are among the largest AI systems ever built.
+            <strong>Figure 1:</strong> The Scale of Large Language Models —
+            trained on billions of documents and containing trillions of
+            parameters, LLMs are among the largest AI systems ever built.
           </div>
         </div>
 
         <h2 id="s2">How Text Generation Works</h2>
         <p>
-          At its core, text generation is a process of predicting the next token. A token is roughly equivalent to a word or part of a word. Given a sequence of tokens — whether a question, a paragraph, or just a few words — the model calculates the probability of every possible next token and selects one. It then appends that token and repeats the process, building the response one token at a time until it reaches a natural stopping point.
+          At its core, text generation is a process of predicting the next
+          token. A token is roughly equivalent to a word or part of a word.
+          Given a sequence of tokens — whether a question, a paragraph, or just
+          a few words — the model calculates the probability of every possible
+          next token and selects one. It then appends that token and repeats the
+          process, building the response one token at a time until it reaches a
+          natural stopping point.
         </p>
         <p>
-          This process is guided by the billions of parameters the model learned during training. These parameters encode statistical patterns about how words relate to each other across countless contexts — grammar, style, tone, argument structure, factual associations, and more. The result is text that flows naturally and follows the conventions of human writing, even when the underlying content is entirely fabricated.
+          This process is guided by the billions of parameters the model learned
+          during training. These parameters encode statistical patterns about
+          how words relate to each other across countless contexts — grammar,
+          style, tone, argument structure, factual associations, and more. The
+          result is text that flows naturally and follows the conventions of
+          human writing, even when the underlying content is entirely
+          fabricated.
         </p>
 
         <div class="clue-grid">
           <div class="clue-card">
             <div class="clue-card-icon">🔤</div>
             <h4>Tokenization</h4>
-            <p>The input text is broken into tokens — small units of text that the model can process mathematically.</p>
+            <p>
+              The input text is broken into tokens — small units of text that
+              the model can process mathematically.
+            </p>
           </div>
           <div class="clue-card">
             <div class="clue-card-icon">📈</div>
             <h4>Probability Calculation</h4>
-            <p>The model calculates the probability of every possible next token based on the context so far.</p>
+            <p>
+              The model calculates the probability of every possible next token
+              based on the context so far.
+            </p>
           </div>
           <div class="clue-card">
             <div class="clue-card-icon">✅</div>
             <h4>Token Selection</h4>
-            <p>A token is selected — either the most probable one, or a sample from the probability distribution for more varied output.</p>
+            <p>
+              A token is selected — either the most probable one, or a sample
+              from the probability distribution for more varied output.
+            </p>
           </div>
           <div class="clue-card">
             <div class="clue-card-icon">🔁</div>
             <h4>Repetition</h4>
-            <p>The process repeats — each new token is appended, and the model predicts the next one until the response is complete.</p>
+            <p>
+              The process repeats — each new token is appended, and the model
+              predicts the next one until the response is complete.
+            </p>
           </div>
         </div>
 
         <h2 id="s3">The Role of Context and Prompts</h2>
         <p>
-          The quality and direction of AI-generated text depends heavily on the prompt — the input provided by the user. A vague prompt produces generic text. A detailed, well-structured prompt gives the model more context to work with and typically produces more relevant and useful output. This is why experienced users of AI writing tools put considerable thought into how they phrase their instructions.
+          The quality and direction of AI-generated text depends heavily on the
+          prompt — the input provided by the user. A vague prompt produces
+          generic text. A detailed, well-structured prompt gives the model more
+          context to work with and typically produces more relevant and useful
+          output. This is why experienced users of AI writing tools put
+          considerable thought into how they phrase their instructions.
         </p>
         <p>
-          Context is also crucial during generation. Modern LLMs can hold a very large amount of text in their working memory — called the context window — which allows them to maintain consistency across long documents, remember details from earlier in a conversation, and follow complex multi-step instructions. The larger the context window, the more the model can "see" as it generates each new token.
+          Context is also crucial during generation. Modern LLMs can hold a very
+          large amount of text in their working memory — called the context
+          window — which allows them to maintain consistency across long
+          documents, remember details from earlier in a conversation, and follow
+          complex multi-step instructions. The larger the context window, the
+          more the model can "see" as it generates each new token.
         </p>
 
         <div class="article-image">
-          <a href="../../assets/images/content/howAiCreatesMedia/article5-fig2.png" target="image">
+          <a
+            href="../../assets/images/content/howAiCreatesMedia/article5-fig2.png"
+            target="image"
+          >
             <img
               src="../../assets/images/content/howAiCreatesMedia/article5-fig2.png"
               alt="Illustration showing how a text prompt is processed through an LLM to generate a written response"
@@ -134,60 +211,123 @@
             />
           </a>
           <div class="article-image-caption">
-            <strong>Figure 2:</strong> From Prompt to Response — the model processes the user's input and generates text token by token, guided by everything it learned during training.
+            <strong>Figure 2:</strong> From Prompt to Response — the model
+            processes the user's input and generates text token by token, guided
+            by everything it learned during training.
           </div>
         </div>
 
         <h2 id="s4">How AI Writing Differs From Human Writing</h2>
         <p>
-          AI-generated text and human-written text differ in several fundamental ways, even when the surface quality appears similar. Human writing is shaped by lived experience, emotion, personal perspective, and specific memory. AI writing is shaped by statistical patterns in training data, with no personal experience or genuine understanding behind the words.
+          AI-generated text and human-written text differ in several fundamental
+          ways, even when the surface quality appears similar. Human writing is
+          shaped by lived experience, emotion, personal perspective, and
+          specific memory. AI writing is shaped by statistical patterns in
+          training data, with no personal experience or genuine understanding
+          behind the words.
         </p>
         <p>
-          This difference manifests in subtle ways. AI text tends to be smooth and balanced, rarely taking strong positions or expressing genuine uncertainty. It often lacks the specific, idiosyncratic details that make human writing distinctive. It may confidently state incorrect information — a phenomenon called hallucination — because it is generating plausible-sounding text rather than retrieving verified facts.
+          This difference manifests in subtle ways. AI text tends to be smooth
+          and balanced, rarely taking strong positions or expressing genuine
+          uncertainty. It often lacks the specific, idiosyncratic details that
+          make human writing distinctive. It may confidently state incorrect
+          information — a phenomenon called hallucination — because it is
+          generating plausible-sounding text rather than retrieving verified
+          facts.
         </p>
 
         <div class="pull-quote">
-          <p>AI-generated text is statistically correct and stylistically fluent — but it has no stake in whether what it says is true. That distinction matters enormously.</p>
+          <p>
+            AI-generated text is statistically correct and stylistically fluent
+            — but it has no stake in whether what it says is true. That
+            distinction matters enormously.
+          </p>
           <cite>— Digital Literacy and Media Studies Research</cite>
         </div>
 
         <h2 id="s5">How to Spot AI-Generated Text</h2>
         <p>
-          Identifying AI-generated text is becoming harder as models improve, but several patterns are still commonly observed:
+          Identifying AI-generated text is becoming harder as models improve,
+          but several patterns are still commonly observed:
         </p>
         <ul>
-          <li>Overly smooth, consistent prose with little variation in sentence rhythm</li>
-          <li>Balanced, hedged language that avoids strong positions or opinions</li>
-          <li>Confident statements that turn out to be factually wrong upon checking</li>
-          <li>Generic phrasing and a lack of specific, personal, or regional detail</li>
-          <li>Repetitive sentence structures, especially starting with "This," "It is," or "In conclusion"</li>
-          <li>A tendency to summarize and conclude rather than explore or argue</li>
+          <li>
+            Overly smooth, consistent prose with little variation in sentence
+            rhythm
+          </li>
+          <li>
+            Balanced, hedged language that avoids strong positions or opinions
+          </li>
+          <li>
+            Confident statements that turn out to be factually wrong upon
+            checking
+          </li>
+          <li>
+            Generic phrasing and a lack of specific, personal, or regional
+            detail
+          </li>
+          <li>
+            Repetitive sentence structures, especially starting with "This," "It
+            is," or "In conclusion"
+          </li>
+          <li>
+            A tendency to summarize and conclude rather than explore or argue
+          </li>
         </ul>
 
         <h2 id="s6">Risks and Misuse</h2>
         <p>
-          AI text generation enables the rapid production of misinformation at a scale that was previously impossible. A single person with access to an LLM can generate thousands of fake news articles, social media posts, or academic papers in the time it would take to write one by hand. This volume of synthetic content makes it harder to find accurate information and erodes trust in written media generally.
+          AI text generation enables the rapid production of misinformation at a
+          scale that was previously impossible. A single person with access to
+          an LLM can generate thousands of fake news articles, social media
+          posts, or academic papers in the time it would take to write one by
+          hand. This volume of synthetic content makes it harder to find
+          accurate information and erodes trust in written media generally.
         </p>
         <p>
-          Other serious misuses include academic fraud, where students submit AI-generated essays as their own work; phishing and social engineering, where AI generates highly personalized scam messages; and propaganda, where AI produces targeted political content at industrial scale. These threats are not hypothetical — they are documented and growing.
+          Other serious misuses include academic fraud, where students submit
+          AI-generated essays as their own work; phishing and social
+          engineering, where AI generates highly personalized scam messages; and
+          propaganda, where AI produces targeted political content at industrial
+          scale. These threats are not hypothetical — they are documented and
+          growing.
         </p>
 
         <div class="warning-box">
           <div class="warning-box-label">⚠️ Be Aware</div>
-          <p>AI can generate text that sounds confident, knowledgeable, and credible — even when the information it contains is completely fabricated. Always verify important facts through authoritative sources, regardless of how well-written the text appears.</p>
+          <p>
+            AI can generate text that sounds confident, knowledgeable, and
+            credible — even when the information it contains is completely
+            fabricated. Always verify important facts through authoritative
+            sources, regardless of how well-written the text appears.
+          </p>
         </div>
 
         <h2 id="s7">What We've Learned</h2>
         <p>
-          AI generates text through large language models that predict the next token in a sequence, guided by statistical patterns learned from billions of documents. The result can be fluent, coherent, and stylistically convincing — but it carries no guarantee of accuracy and reflects no genuine understanding or personal experience.
+          AI generates text through large language models that predict the next
+          token in a sequence, guided by statistical patterns learned from
+          billions of documents. The result can be fluent, coherent, and
+          stylistically convincing — but it carries no guarantee of accuracy and
+          reflects no genuine understanding or personal experience.
         </p>
         <p>
-          Recognizing AI-generated text requires attention to patterns like excessive smoothness, generic phrasing, and confident inaccuracies. As AI writing tools become more widely used — for legitimate purposes and for harmful ones — critical reading skills and a habit of verification become increasingly essential for every reader and consumer of written content.
+          Recognizing AI-generated text requires attention to patterns like
+          excessive smoothness, generic phrasing, and confident inaccuracies. As
+          AI writing tools become more widely used — for legitimate purposes and
+          for harmful ones — critical reading skills and a habit of verification
+          become increasingly essential for every reader and consumer of written
+          content.
         </p>
 
         <div class="warning-box">
           <div class="warning-box-label">💡 Remember</div>
-          <p>AI-generated text is not a search result — it is a prediction. Just because an AI writes something confidently does not mean it is true. Read critically, verify facts, and never share content you have not checked.</p>
+          <p>
+            AI-generated text is not a search result — it is a prediction. Just
+            because an AI writes something confidently does not mean it is true.
+            Read critically, verify facts, and never share content you have not
+            checked.
+          </p>
         </div>
       </main>
 
@@ -198,7 +338,9 @@
             <div class="related-thumb">🧠</div>
             <div>
               <div class="related-cat">How AI Creates Media</div>
-              <div class="related-title">AI Model Training and Data Sources</div>
+              <div class="related-title">
+                AI Model Training and Data Sources
+              </div>
             </div>
           </a>
           <a class="related-card" href="article4.html">
@@ -212,14 +354,18 @@
             <div class="related-thumb">🤖</div>
             <div>
               <div class="related-cat">How AI Creates Media</div>
-              <div class="related-title">Role of Machine Learning in Media Creation</div>
+              <div class="related-title">
+                Role of Machine Learning in Media Creation
+              </div>
             </div>
           </a>
           <a class="related-card" href="article8.html">
             <div class="related-thumb">🚧</div>
             <div>
               <div class="related-cat">How AI Creates Media</div>
-              <div class="related-title">Limitations of AI Media Generation</div>
+              <div class="related-title">
+                Limitations of AI Media Generation
+              </div>
             </div>
           </a>
         </div>
@@ -237,66 +383,43 @@
       </a>
     </section>
 
-    <section class="more-articles">
-      <div class="section-header">
-        <span class="section-label">Keep Learning</span>
-        <h2>More from <span>How AI Creates Media</span></h2>
-      </div>
-      <div class="cards-grid">
-        <a class="card" href="article6.html">
-          <div class="card-thumb">👤</div>
-          <div class="card-body">
-            <div class="card-cat">How AI Creates Media</div>
-            <h3>Deepfake Technology Explained</h3>
-            <p>What deepfakes are, how they are made, and why they pose a growing threat to truth and trust online.</p>
-            <div class="card-meta"><span>10 min read</span><span>Intermediate</span></div>
-          </div>
-        </a>
-        <a class="card" href="article7.html">
-          <div class="card-thumb">🤖</div>
-          <div class="card-body">
-            <div class="card-cat">How AI Creates Media</div>
-            <h3>Role of Machine Learning in Media Creation</h3>
-            <p>How the principles of machine learning underpin every type of AI-generated media we see today.</p>
-            <div class="card-meta"><span>9 min read</span><span>Intermediate</span></div>
-          </div>
-        </a>
-        <a class="card" href="article1.html">
-          <div class="card-thumb">🧠</div>
-          <div class="card-body">
-            <div class="card-cat">How AI Creates Media</div>
-            <h3>AI Model Training and Data Sources</h3>
-            <p>Where AI gets its knowledge — the data, datasets, and training processes behind every AI media tool.</p>
-            <div class="card-meta"><span>9 min read</span><span>Beginner</span></div>
-          </div>
-        </a>
-      </div>
-    </section>
-
     <footer>
       <div class="footer-top">
         <div class="footer-brand">
           <a class="nav-logo" href="../index.html">Verif<span>AI</span></a>
-          <p>Educating the public on how to identify AI-generated media. Stay informed, stay critical, stay real.</p>
+          <p>
+            Educating the public on how to identify AI-generated media. Stay
+            informed, stay critical, stay real.
+          </p>
         </div>
         <div class="footer-links">
           <h4>Navigation</h4>
           <ul>
             <li><a href="../../index.html">Home</a></li>
             <li><a href="../../about/about.html" target="about">About</a></li>
-            <li><a href="../../contactUs/contactUs.html" target="contact">Contact Us</a></li>
+            <li>
+              <a href="../../contactUs/contactUs.html" target="contact"
+                >Contact Us</a
+              >
+            </li>
           </ul>
         </div>
         <div class="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="../../gallery/gallery.html" target="gallery">Gallery</a></li>
+            <li>
+              <a href="../../gallery/gallery.html" target="gallery">Gallery</a>
+            </li>
             <li><a href="../topics.html" target="topics">Topics</a></li>
           </ul>
         </div>
         <div class="footer-links footer-social">
           <h4>Follow Us</h4>
-          <a href="https://www.facebook.com/profile.php?id=61582741020706" target="_blank" rel="noopener">
+          <a
+            href="https://www.facebook.com/profile.php?id=61582741020706"
+            target="_blank"
+            rel="noopener"
+          >
             <span class="fb-icon">f</span> Verif-AI on Facebook
           </a>
         </div>
@@ -306,19 +429,11 @@
         <div class="footer-bottom-links">
           <a href="../../index.html">Home</a>
           <a href="../../about/about.html" target="about">About</a>
-          <a href="../../contactUs/contactUs.html" target="contact">Contact Us</a>
+          <a href="../../contactUs/contactUs.html" target="contact"
+            >Contact Us</a
+          >
         </div>
       </div>
     </footer>
-
-    <script>
-      window.addEventListener("scroll", () => {
-        const doc = document.documentElement;
-        const scrollTop = doc.scrollTop || document.body.scrollTop;
-        const scrollHeight = doc.scrollHeight - doc.clientHeight;
-        const progress = (scrollTop / scrollHeight) * 100;
-        document.getElementById("progressFill").style.width = progress + "%";
-      });
-    </script>
   </body>
 </html>

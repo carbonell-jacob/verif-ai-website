@@ -8,17 +8,23 @@
   </head>
   <body>
     <nav>
-      <a class="nav-logo" href="../index.html">Verif<span>AI</span></a>
+      <a class="nav-logo" href="../../index.html">Verif<span>AI</span></a>
       <ul class="nav-links">
         <li><a href="../../index.html">Home</a></li>
         <li><a href="../../about/about.html" target="about">About</a></li>
-        <li><a href="../../gallery/gallery.html" target="gallery">Gallery</a></li>
+        <li>
+          <a href="../../gallery/gallery.html" target="gallery">Gallery</a>
+        </li>
         <li><a href="../topics.html" target="topics">Topics</a></li>
-        <li><a href="../../contactUs/contactUs.html" target="contact">Contact</a></li>
+        <li>
+          <a href="../../contactUs/contactUs.html" target="contact">Contact</a>
+        </li>
       </ul>
     </nav>
 
-    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
 
     <section class="article-hero">
       <div class="article-hero-grid"></div>
@@ -50,31 +56,61 @@
       <aside class="sidebar-left">
         <div class="sidebar-heading">In This Article</div>
         <ul class="toc-list">
-          <li><a href="#s1" class="toc-link">1. What Is Machine Learning?</a></li>
-          <li><a href="#s2" class="toc-link">2. How ML Enables Media Generation</a></li>
-          <li><a href="#s3" class="toc-link">3. Key ML Techniques in Media</a></li>
-          <li><a href="#s4" class="toc-link">4. The Training-Inference Loop</a></li>
+          <li>
+            <a href="#s1" class="toc-link">1. What Is Machine Learning?</a>
+          </li>
+          <li>
+            <a href="#s2" class="toc-link"
+              >2. How ML Enables Media Generation</a
+            >
+          </li>
+          <li>
+            <a href="#s3" class="toc-link">3. Key ML Techniques in Media</a>
+          </li>
+          <li>
+            <a href="#s4" class="toc-link">4. The Training-Inference Loop</a>
+          </li>
           <li><a href="#s5" class="toc-link">5. ML Across Media Types</a></li>
-          <li><a href="#s6" class="toc-link">6. Implications for Society</a></li>
+          <li>
+            <a href="#s6" class="toc-link">6. Implications for Society</a>
+          </li>
           <li><a href="#s7" class="toc-link">7. What We've Learned</a></li>
         </ul>
       </aside>
 
       <main class="article-body" id="articleBody">
         <p class="article-lead">
-          Every AI-generated image, video, audio clip, and text article is the product of machine learning. Understanding what machine learning is and how it works is the foundation for understanding all AI-generated media — and why that media is both so impressive and so potentially dangerous.
+          Every AI-generated image, video, audio clip, and text article is the
+          product of machine learning. Understanding what machine learning is
+          and how it works is the foundation for understanding all AI-generated
+          media — and why that media is both so impressive and so potentially
+          dangerous.
         </p>
 
         <h2 id="s1">What Is Machine Learning?</h2>
         <p>
-          Machine learning (ML) is a branch of artificial intelligence in which computer systems learn to perform tasks by studying examples, rather than by following explicit rules written by programmers. Instead of a developer writing code that says "if the image contains a cat, label it 'cat'," a machine learning model is shown thousands of labeled images of cats and learns to recognize them on its own by identifying the visual patterns that distinguish them from other objects.
+          Machine learning (ML) is a branch of artificial intelligence in which
+          computer systems learn to perform tasks by studying examples, rather
+          than by following explicit rules written by programmers. Instead of a
+          developer writing code that says "if the image contains a cat, label
+          it 'cat'," a machine learning model is shown thousands of labeled
+          images of cats and learns to recognize them on its own by identifying
+          the visual patterns that distinguish them from other objects.
         </p>
         <p>
-          This approach — learning from data rather than rules — is what makes machine learning so powerful and so flexible. The same fundamental techniques that allow a model to identify cats in photos can be adapted to generate images, compose music, write articles, clone voices, and create realistic video. Machine learning is the common thread that runs through every form of AI-generated media.
+          This approach — learning from data rather than rules — is what makes
+          machine learning so powerful and so flexible. The same fundamental
+          techniques that allow a model to identify cats in photos can be
+          adapted to generate images, compose music, write articles, clone
+          voices, and create realistic video. Machine learning is the common
+          thread that runs through every form of AI-generated media.
         </p>
 
         <div class="article-image">
-          <a href="../../assets/images/content/howAiCreatesMedia/article7-fig1.ppm" target="image">
+          <a
+            href="../../assets/images/content/howAiCreatesMedia/article7-fig1.ppm"
+            target="image"
+          >
             <img
               src="../../assets/images/content/howAiCreatesMedia/article7-fig1.ppm"
               alt="Diagram comparing traditional rule-based programming with machine learning's data-driven approach"
@@ -82,61 +118,107 @@
             />
           </a>
           <div class="article-image-caption">
-            <strong>Figure 1:</strong> Traditional Programming vs. Machine Learning — instead of writing rules, ML systems learn patterns directly from data.
+            <strong>Figure 1:</strong> Traditional Programming vs. Machine
+            Learning — instead of writing rules, ML systems learn patterns
+            directly from data.
           </div>
         </div>
 
         <h2 id="s2">How ML Enables Media Generation</h2>
         <p>
-          Machine learning enables media generation by allowing models to learn the underlying structure of different types of media and then produce new examples of that media from scratch. An ML model trained on millions of images learns what makes images look real — the distribution of colors, the patterns of light and shadow, the way objects relate spatially to one another. Once it has learned this, it can generate new images that have never existed before but look as though they could be real.
+          Machine learning enables media generation by allowing models to learn
+          the underlying structure of different types of media and then produce
+          new examples of that media from scratch. An ML model trained on
+          millions of images learns what makes images look real — the
+          distribution of colors, the patterns of light and shadow, the way
+          objects relate spatially to one another. Once it has learned this, it
+          can generate new images that have never existed before but look as
+          though they could be real.
         </p>
         <p>
-          The same principle applies to every other media type. A model trained on music learns the patterns of melody, rhythm, and harmony. A model trained on text learns grammar, style, and the structure of arguments. The more data the model is trained on, and the more parameters it has to work with, the more sophisticated its outputs become.
+          The same principle applies to every other media type. A model trained
+          on music learns the patterns of melody, rhythm, and harmony. A model
+          trained on text learns grammar, style, and the structure of arguments.
+          The more data the model is trained on, and the more parameters it has
+          to work with, the more sophisticated its outputs become.
         </p>
 
         <div class="warning-box">
           <div class="warning-box-label">Key Point</div>
-          <p>Machine learning models do not understand media in the way humans do. They learn statistical patterns — which pixels tend to appear together, which words tend to follow each other — and use those patterns to generate plausible-sounding or plausible-looking output.</p>
+          <p>
+            Machine learning models do not understand media in the way humans
+            do. They learn statistical patterns — which pixels tend to appear
+            together, which words tend to follow each other — and use those
+            patterns to generate plausible-sounding or plausible-looking output.
+          </p>
         </div>
 
         <h2 id="s3">Key ML Techniques in Media</h2>
         <p>
-          Several specific machine learning techniques are particularly important in AI media generation:
+          Several specific machine learning techniques are particularly
+          important in AI media generation:
         </p>
 
         <div class="clue-grid">
           <div class="clue-card">
             <div class="clue-card-icon">🧠</div>
             <h4>Deep Learning</h4>
-            <p>Uses neural networks with many layers to learn increasingly abstract features from data — the foundation of all modern media generation.</p>
+            <p>
+              Uses neural networks with many layers to learn increasingly
+              abstract features from data — the foundation of all modern media
+              generation.
+            </p>
           </div>
           <div class="clue-card">
             <div class="clue-card-icon">⚔️</div>
             <h4>GANs</h4>
-            <p>Generative Adversarial Networks use two competing models to improve output quality — widely used in image and video generation.</p>
+            <p>
+              Generative Adversarial Networks use two competing models to
+              improve output quality — widely used in image and video
+              generation.
+            </p>
           </div>
           <div class="clue-card">
             <div class="clue-card-icon">🌊</div>
             <h4>Diffusion Models</h4>
-            <p>Learn to reverse a noise-addition process to generate high-quality images and video — currently the dominant technique.</p>
+            <p>
+              Learn to reverse a noise-addition process to generate high-quality
+              images and video — currently the dominant technique.
+            </p>
           </div>
           <div class="clue-card">
             <div class="clue-card-icon">🔄</div>
             <h4>Transformers</h4>
-            <p>Attention-based architectures that process sequences of data — the backbone of large language models and multimodal AI systems.</p>
+            <p>
+              Attention-based architectures that process sequences of data — the
+              backbone of large language models and multimodal AI systems.
+            </p>
           </div>
         </div>
 
         <h2 id="s4">The Training-Inference Loop</h2>
         <p>
-          Understanding the two phases of machine learning — training and inference — is essential for understanding how AI-generated media works. During the training phase, the model is exposed to enormous datasets and adjusts its parameters over millions of iterations to minimize errors. This phase is extremely computationally expensive and may take weeks on clusters of hundreds of specialized chips.
+          Understanding the two phases of machine learning — training and
+          inference — is essential for understanding how AI-generated media
+          works. During the training phase, the model is exposed to enormous
+          datasets and adjusts its parameters over millions of iterations to
+          minimize errors. This phase is extremely computationally expensive and
+          may take weeks on clusters of hundreds of specialized chips.
         </p>
         <p>
-          During the inference phase — when the model is actually used by someone — it applies everything it learned during training to generate new output. This phase is much faster and less computationally demanding. When you type a prompt into an image generator and receive a result in a few seconds, you are experiencing the inference phase of a model that took weeks and millions of dollars to train.
+          During the inference phase — when the model is actually used by
+          someone — it applies everything it learned during training to generate
+          new output. This phase is much faster and less computationally
+          demanding. When you type a prompt into an image generator and receive
+          a result in a few seconds, you are experiencing the inference phase of
+          a model that took weeks and millions of dollars to train.
         </p>
 
         <div class="article-image">
-          <a href="../../assets/images/content/howAiCreatesMedia/article7-fig2.jpg" target="image">
+          <a
+            href="../../assets/images/content/howAiCreatesMedia/article7-fig2.jpg"
+            target="image"
+          >
             <img
               src="../../assets/images/content/howAiCreatesMedia/article7-fig2.jpg"
               alt="Diagram illustrating the two phases of machine learning: training on large datasets and inference at deployment"
@@ -144,51 +226,113 @@
             />
           </a>
           <div class="article-image-caption">
-            <strong>Figure 2:</strong> The Two Phases of Machine Learning — training is expensive and slow; inference is fast and the phase users actually interact with.
+            <strong>Figure 2:</strong> The Two Phases of Machine Learning —
+            training is expensive and slow; inference is fast and the phase
+            users actually interact with.
           </div>
         </div>
 
         <h2 id="s5">ML Across Media Types</h2>
         <p>
-          Machine learning connects all forms of AI-generated media, even though the specific techniques and architectures differ across types. Here is how ML manifests across the main categories of AI-generated media:
+          Machine learning connects all forms of AI-generated media, even though
+          the specific techniques and architectures differ across types. Here is
+          how ML manifests across the main categories of AI-generated media:
         </p>
         <ul>
-          <li><strong>Images:</strong> Diffusion models and GANs learn visual patterns to generate new images from text prompts or random noise.</li>
-          <li><strong>Video:</strong> Video diffusion models extend image generation across time, learning how scenes and objects move and change.</li>
-          <li><strong>Audio:</strong> Autoregressive models and diffusion models learn the acoustic patterns of speech and music to generate new sound.</li>
-          <li><strong>Text:</strong> Transformer-based language models predict the next token in a sequence to generate coherent, contextually appropriate text.</li>
-          <li><strong>Deepfakes:</strong> Autoencoders and GANs learn a person's specific visual or vocal characteristics to replicate their likeness in new media.</li>
+          <li>
+            <strong>Images:</strong> Diffusion models and GANs learn visual
+            patterns to generate new images from text prompts or random noise.
+          </li>
+          <li>
+            <strong>Video:</strong> Video diffusion models extend image
+            generation across time, learning how scenes and objects move and
+            change.
+          </li>
+          <li>
+            <strong>Audio:</strong> Autoregressive models and diffusion models
+            learn the acoustic patterns of speech and music to generate new
+            sound.
+          </li>
+          <li>
+            <strong>Text:</strong> Transformer-based language models predict the
+            next token in a sequence to generate coherent, contextually
+            appropriate text.
+          </li>
+          <li>
+            <strong>Deepfakes:</strong> Autoencoders and GANs learn a person's
+            specific visual or vocal characteristics to replicate their likeness
+            in new media.
+          </li>
         </ul>
 
         <div class="pull-quote">
-          <p>Machine learning is not one technology — it is an entire philosophy of building systems: let the data teach the machine, rather than the programmer. This philosophy is what makes AI-generated media possible at scale.</p>
+          <p>
+            Machine learning is not one technology — it is an entire philosophy
+            of building systems: let the data teach the machine, rather than the
+            programmer. This philosophy is what makes AI-generated media
+            possible at scale.
+          </p>
           <cite>— Foundations of Machine Learning, Applied Research</cite>
         </div>
 
         <h2 id="s6">Implications for Society</h2>
         <p>
-          The fact that machine learning underlies all AI-generated media has profound implications for how we understand and trust the media we consume. ML models are shaped by their training data, which means they reflect the biases, perspectives, and gaps present in that data. An image model trained primarily on photos from one demographic may struggle to accurately represent others. A language model trained on biased text may reproduce and amplify those biases in its output.
+          The fact that machine learning underlies all AI-generated media has
+          profound implications for how we understand and trust the media we
+          consume. ML models are shaped by their training data, which means they
+          reflect the biases, perspectives, and gaps present in that data. An
+          image model trained primarily on photos from one demographic may
+          struggle to accurately represent others. A language model trained on
+          biased text may reproduce and amplify those biases in its output.
         </p>
         <p>
-          Furthermore, because ML models can now generate highly convincing media in any format, the traditional signals we have relied on to assess the credibility of media — the difficulty of faking a video, the time required to write a convincing article — no longer apply in the same way. The ease and scale of ML-powered media generation fundamentally changes the information landscape, making media literacy a core civic skill rather than a niche interest.
+          Furthermore, because ML models can now generate highly convincing
+          media in any format, the traditional signals we have relied on to
+          assess the credibility of media — the difficulty of faking a video,
+          the time required to write a convincing article — no longer apply in
+          the same way. The ease and scale of ML-powered media generation
+          fundamentally changes the information landscape, making media literacy
+          a core civic skill rather than a niche interest.
         </p>
 
         <div class="warning-box">
           <div class="warning-box-label">⚠️ Important</div>
-          <p>ML models can generate convincing media in seconds, at minimal cost, at virtually unlimited scale. This changes not just what is possible, but what is probable — in terms of both creative content and harmful synthetic media.</p>
+          <p>
+            ML models can generate convincing media in seconds, at minimal cost,
+            at virtually unlimited scale. This changes not just what is
+            possible, but what is probable — in terms of both creative content
+            and harmful synthetic media.
+          </p>
         </div>
 
         <h2 id="s7">What We've Learned</h2>
         <p>
-          Machine learning is the common foundation beneath every type of AI-generated media. By learning statistical patterns from large datasets, ML models acquire the ability to generate new images, video, audio, and text that did not previously exist. Key techniques — deep learning, GANs, diffusion models, and transformers — each play distinct roles across different media types, but all share the same fundamental principle: learn from data, then generate.
+          Machine learning is the common foundation beneath every type of
+          AI-generated media. By learning statistical patterns from large
+          datasets, ML models acquire the ability to generate new images, video,
+          audio, and text that did not previously exist. Key techniques — deep
+          learning, GANs, diffusion models, and transformers — each play
+          distinct roles across different media types, but all share the same
+          fundamental principle: learn from data, then generate.
         </p>
         <p>
-          Understanding this foundation helps us appreciate both the power and the limitations of AI-generated media, as well as the social implications of technology that can produce convincing synthetic content at unprecedented speed and scale. The answer to the challenges this creates lies not only in better detection tools, but in a more media-literate public equipped to evaluate what they see, hear, and read with critical awareness.
+          Understanding this foundation helps us appreciate both the power and
+          the limitations of AI-generated media, as well as the social
+          implications of technology that can produce convincing synthetic
+          content at unprecedented speed and scale. The answer to the challenges
+          this creates lies not only in better detection tools, but in a more
+          media-literate public equipped to evaluate what they see, hear, and
+          read with critical awareness.
         </p>
 
         <div class="warning-box">
           <div class="warning-box-label">💡 Remember</div>
-          <p>Machine learning gave AI the ability to create — but it also gave us new responsibilities as media consumers. Understanding how these systems work is the first step toward navigating the world they are reshaping.</p>
+          <p>
+            Machine learning gave AI the ability to create — but it also gave us
+            new responsibilities as media consumers. Understanding how these
+            systems work is the first step toward navigating the world they are
+            reshaping.
+          </p>
         </div>
       </main>
 
@@ -199,7 +343,9 @@
             <div class="related-thumb">🧠</div>
             <div>
               <div class="related-cat">How AI Creates Media</div>
-              <div class="related-title">AI Model Training and Data Sources</div>
+              <div class="related-title">
+                AI Model Training and Data Sources
+              </div>
             </div>
           </a>
           <a class="related-card" href="article6.html">
@@ -220,7 +366,9 @@
             <div class="related-thumb">🚧</div>
             <div>
               <div class="related-cat">How AI Creates Media</div>
-              <div class="related-title">Limitations of AI Media Generation</div>
+              <div class="related-title">
+                Limitations of AI Media Generation
+              </div>
             </div>
           </a>
         </div>
@@ -238,66 +386,43 @@
       </a>
     </section>
 
-    <section class="more-articles">
-      <div class="section-header">
-        <span class="section-label">Keep Learning</span>
-        <h2>More from <span>How AI Creates Media</span></h2>
-      </div>
-      <div class="cards-grid">
-        <a class="card" href="article1.html">
-          <div class="card-thumb">🧠</div>
-          <div class="card-body">
-            <div class="card-cat">How AI Creates Media</div>
-            <h3>AI Model Training and Data Sources</h3>
-            <p>Where AI gets its knowledge — the data, datasets, and training processes behind every AI media tool.</p>
-            <div class="card-meta"><span>9 min read</span><span>Beginner</span></div>
-          </div>
-        </a>
-        <a class="card" href="article6.html">
-          <div class="card-thumb">👤</div>
-          <div class="card-body">
-            <div class="card-cat">How AI Creates Media</div>
-            <h3>Deepfake Technology Explained</h3>
-            <p>What deepfakes are, how they are made, and why they pose a growing threat to truth and trust online.</p>
-            <div class="card-meta"><span>10 min read</span><span>Intermediate</span></div>
-          </div>
-        </a>
-        <a class="card" href="article8.html">
-          <div class="card-thumb">🚧</div>
-          <div class="card-body">
-            <div class="card-cat">How AI Creates Media</div>
-            <h3>Limitations of AI Media Generation</h3>
-            <p>What AI still cannot do — the current boundaries of synthetic media and why they matter.</p>
-            <div class="card-meta"><span>8 min read</span><span>Beginner</span></div>
-          </div>
-        </a>
-      </div>
-    </section>
-
     <footer>
       <div class="footer-top">
         <div class="footer-brand">
           <a class="nav-logo" href="../index.html">Verif<span>AI</span></a>
-          <p>Educating the public on how to identify AI-generated media. Stay informed, stay critical, stay real.</p>
+          <p>
+            Educating the public on how to identify AI-generated media. Stay
+            informed, stay critical, stay real.
+          </p>
         </div>
         <div class="footer-links">
           <h4>Navigation</h4>
           <ul>
             <li><a href="../../index.html">Home</a></li>
             <li><a href="../../about/about.html" target="about">About</a></li>
-            <li><a href="../../contactUs/contactUs.html" target="contact">Contact Us</a></li>
+            <li>
+              <a href="../../contactUs/contactUs.html" target="contact"
+                >Contact Us</a
+              >
+            </li>
           </ul>
         </div>
         <div class="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="../../gallery/gallery.html" target="gallery">Gallery</a></li>
+            <li>
+              <a href="../../gallery/gallery.html" target="gallery">Gallery</a>
+            </li>
             <li><a href="../topics.html" target="topics">Topics</a></li>
           </ul>
         </div>
         <div class="footer-links footer-social">
           <h4>Follow Us</h4>
-          <a href="https://www.facebook.com/profile.php?id=61582741020706" target="_blank" rel="noopener">
+          <a
+            href="https://www.facebook.com/profile.php?id=61582741020706"
+            target="_blank"
+            rel="noopener"
+          >
             <span class="fb-icon">f</span> Verif-AI on Facebook
           </a>
         </div>
@@ -307,19 +432,11 @@
         <div class="footer-bottom-links">
           <a href="../../index.html">Home</a>
           <a href="../../about/about.html" target="about">About</a>
-          <a href="../../contactUs/contactUs.html" target="contact">Contact Us</a>
+          <a href="../../contactUs/contactUs.html" target="contact"
+            >Contact Us</a
+          >
         </div>
       </div>
     </footer>
-
-    <script>
-      window.addEventListener("scroll", () => {
-        const doc = document.documentElement;
-        const scrollTop = doc.scrollTop || document.body.scrollTop;
-        const scrollHeight = doc.scrollHeight - doc.clientHeight;
-        const progress = (scrollTop / scrollHeight) * 100;
-        document.getElementById("progressFill").style.width = progress + "%";
-      });
-    </script>
   </body>
 </html>

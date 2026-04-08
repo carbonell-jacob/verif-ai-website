@@ -85,24 +85,6 @@ nav {
   width: 100%;
 }
 
-/* READING PROGRESS */
-.progress-bar {
-  position: fixed;
-  top: 70px;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: rgba(12, 112, 206, 0.15);
-  z-index: 99;
-}
-.progress-fill {
-  height: 100%;
-  background: var(--blue);
-  width: 0%;
-  transition: width 0.1s linear;
-  box-shadow: 0 0 8px rgba(12, 112, 206, 0.6);
-}
-
 /* HERO */
 .article-hero {
   min-height: 360px;
@@ -502,7 +484,6 @@ nav {
   border-bottom: none;
 }
 
-/* UL bullet — a small blue square (matches your sharp aesthetic) */
 .article-body ul li::before {
   content: "";
   position: absolute;
@@ -948,51 +929,4 @@ footer {
 }
 .footer-bottom-links a:hover {
   color: var(--blue);
-}
-
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .page-wrap {
-    grid-template-columns: 180px 1fr 180px;
-  }
-  .article-body {
-    padding: 48px 24px;
-  }
-}
-@media (max-width: 800px) {
-  .page-wrap {
-    grid-template-columns: 1fr;
-  }
-  .sidebar-left {
-    order: 2;
-    position: static;
-    padding: 24px 0;
-    border-top: 1px solid rgba(0, 22, 92, 0.1);
-  }
-  .sidebar-right {
-    order: 3;
-    position: static;
-    padding: 24px 0;
-    border-top: 1px solid rgba(0, 22, 92, 0.1);
-  }
-  .article-body {
-    order: 1;
-    border: none;
-    padding: 40px 0;
-  }
-  .clue-grid {
-    grid-template-columns: 1fr;
-  }
-  .article-pagination,
-  .cards-grid {
-    grid-template-columns: 1fr;
-  }
-}
-@media (max-width: 500px) {
-  .nav-links {
-    gap: 1.2rem;
-  }
-  .pull-quote {
-    padding: 2rem 1.5rem;
-  }
 }

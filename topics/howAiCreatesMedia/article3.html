@@ -8,17 +8,23 @@
   </head>
   <body>
     <nav>
-      <a class="nav-logo" href="../index.html">Verif<span>AI</span></a>
+      <a class="nav-logo" href="../../index.html">Verif<span>AI</span></a>
       <ul class="nav-links">
         <li><a href="../../index.html">Home</a></li>
         <li><a href="../../about/about.html" target="about">About</a></li>
-        <li><a href="../../gallery/gallery.html" target="gallery">Gallery</a></li>
+        <li>
+          <a href="../../gallery/gallery.html" target="gallery">Gallery</a>
+        </li>
         <li><a href="../topics.html" target="topics">Topics</a></li>
-        <li><a href="../../contactUs/contactUs.html" target="contact">Contact</a></li>
+        <li>
+          <a href="../../contactUs/contactUs.html" target="contact">Contact</a>
+        </li>
       </ul>
     </nav>
 
-    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
 
     <section class="article-hero">
       <div class="article-hero-grid"></div>
@@ -50,86 +56,162 @@
       <aside class="sidebar-left">
         <div class="sidebar-heading">In This Article</div>
         <ul class="toc-list">
-          <li><a href="#s1" class="toc-link">1. What Is AI Video Generation?</a></li>
-          <li><a href="#s2" class="toc-link">2. How AI Learns to Create Video</a></li>
+          <li>
+            <a href="#s1" class="toc-link">1. What Is AI Video Generation?</a>
+          </li>
+          <li>
+            <a href="#s2" class="toc-link">2. How AI Learns to Create Video</a>
+          </li>
           <li><a href="#s3" class="toc-link">3. Key Techniques Used</a></li>
           <li><a href="#s4" class="toc-link">4. Notable AI Video Tools</a></li>
-          <li><a href="#s5" class="toc-link">5. How to Spot AI-Generated Video</a></li>
-          <li><a href="#s6" class="toc-link">6. The Risks of Synthetic Video</a></li>
+          <li>
+            <a href="#s5" class="toc-link">5. How to Spot AI-Generated Video</a>
+          </li>
+          <li>
+            <a href="#s6" class="toc-link">6. The Risks of Synthetic Video</a>
+          </li>
           <li><a href="#s7" class="toc-link">7. What We've Learned</a></li>
         </ul>
       </aside>
 
       <main class="article-body" id="articleBody">
         <p class="article-lead">
-          Generating a still image is impressive enough — but AI can now produce full video clips, complete with motion, lighting changes, and even realistic human movement. AI video generation is one of the most rapidly advancing areas in artificial intelligence, and it carries enormous implications for how we consume and trust visual media.
+          Generating a still image is impressive enough — but AI can now produce
+          full video clips, complete with motion, lighting changes, and even
+          realistic human movement. AI video generation is one of the most
+          rapidly advancing areas in artificial intelligence, and it carries
+          enormous implications for how we consume and trust visual media.
         </p>
 
         <h2 id="s1">What Is AI Video Generation?</h2>
         <p>
-          AI video generation is the process of creating moving images using artificial intelligence, either from a text prompt, a still image, or an existing video clip. Just as image generators produce static visuals from descriptions, video generators extend this capability across time — producing sequences of frames that, when played together, create the illusion of natural motion.
+          AI video generation is the process of creating moving images using
+          artificial intelligence, either from a text prompt, a still image, or
+          an existing video clip. Just as image generators produce static
+          visuals from descriptions, video generators extend this capability
+          across time — producing sequences of frames that, when played
+          together, create the illusion of natural motion.
         </p>
         <p>
-          This field has advanced dramatically in recent years. Early AI video tools could only produce short, blurry, and inconsistent clips. Today, tools like OpenAI's Sora and Google's Veo can generate high-definition video clips several seconds long from a single text prompt, with convincing motion, realistic lighting, and coherent scenes.
+          This field has advanced dramatically in recent years. Early AI video
+          tools could only produce short, blurry, and inconsistent clips. Today,
+          tools like OpenAI's Sora and Google's Veo can generate high-definition
+          video clips several seconds long from a single text prompt, with
+          convincing motion, realistic lighting, and coherent scenes.
         </p>
 
         <div class="article-image">
-          <iframe width="800" height="400" src="https://www.youtube.com/embed/w81QfBWSh04" title="&quot;Get Ready to Laugh! Top Pinoy A.I. Moments in One Video | Hay Nako A.I.&quot;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe
+            width="800"
+            height="400"
+            src="https://www.youtube.com/embed/w81QfBWSh04"
+            title='"Get Ready to Laugh! Top Pinoy A.I. Moments in One Video | Hay Nako A.I."'
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
           <div class="article-image-caption">
-            <strong>Figure 1:</strong> Example of an AI-Generated Video Clip — modern tools can produce detailed, realistic scenes from simple text descriptions.
+            <strong>Figure 1:</strong> Example of an AI-Generated Video Clip —
+            modern tools can produce detailed, realistic scenes from simple text
+            descriptions.
           </div>
         </div>
 
         <h2 id="s2">How AI Learns to Create Video</h2>
         <p>
-          AI video models are trained on enormous libraries of video footage collected from the internet, films, and licensed datasets. The model learns not just what things look like, but how they move. It learns the physics of water, the way fabric folds as a person walks, how light changes as the sun moves across the sky, and how faces shift expression during speech.
+          AI video models are trained on enormous libraries of video footage
+          collected from the internet, films, and licensed datasets. The model
+          learns not just what things look like, but how they move. It learns
+          the physics of water, the way fabric folds as a person walks, how
+          light changes as the sun moves across the sky, and how faces shift
+          expression during speech.
         </p>
         <p>
-          This learning happens through a process similar to image training, but with an added dimension of time. The model must maintain consistency not just within a single frame, but across hundreds of frames per second of video. This is one of the main reasons video generation is significantly harder than image generation — any inconsistency between frames is immediately noticeable to the human eye.
+          This learning happens through a process similar to image training, but
+          with an added dimension of time. The model must maintain consistency
+          not just within a single frame, but across hundreds of frames per
+          second of video. This is one of the main reasons video generation is
+          significantly harder than image generation — any inconsistency between
+          frames is immediately noticeable to the human eye.
         </p>
 
         <div class="warning-box">
           <div class="warning-box-label">Key Point</div>
-          <p>Video generation is vastly more computationally demanding than image generation. A single second of high-quality AI video may require the equivalent processing power of generating hundreds of individual images.</p>
+          <p>
+            Video generation is vastly more computationally demanding than image
+            generation. A single second of high-quality AI video may require the
+            equivalent processing power of generating hundreds of individual
+            images.
+          </p>
         </div>
 
         <h2 id="s3">Key Techniques Used</h2>
         <p>
-          Several different technical approaches are used in AI video generation, often in combination:
+          Several different technical approaches are used in AI video
+          generation, often in combination:
         </p>
         <ol class="steps-list">
           <li>
             <div class="step-num">1</div>
             <div class="step-content">
               <h4>Video Diffusion Models</h4>
-              <p>An extension of image diffusion models, these generate video by learning to reverse the process of adding noise to video frames over time. They are the foundation of most modern AI video tools.</p>
+              <p>
+                An extension of image diffusion models, these generate video by
+                learning to reverse the process of adding noise to video frames
+                over time. They are the foundation of most modern AI video
+                tools.
+              </p>
             </div>
           </li>
           <li>
             <div class="step-num">2</div>
             <div class="step-content">
               <h4>Frame Interpolation</h4>
-              <p>The AI generates keyframes at intervals and then fills in the frames between them to create smooth motion. This is commonly used to generate slow-motion effects and video transitions.</p>
+              <p>
+                The AI generates keyframes at intervals and then fills in the
+                frames between them to create smooth motion. This is commonly
+                used to generate slow-motion effects and video transitions.
+              </p>
             </div>
           </li>
           <li>
             <div class="step-num">3</div>
             <div class="step-content">
               <h4>Temporal Consistency Models</h4>
-              <p>Specialized models that focus on keeping objects, lighting, and details consistent from one frame to the next, preventing the flickering and morphing that plagued earlier AI video tools.</p>
+              <p>
+                Specialized models that focus on keeping objects, lighting, and
+                details consistent from one frame to the next, preventing the
+                flickering and morphing that plagued earlier AI video tools.
+              </p>
             </div>
           </li>
           <li>
             <div class="step-num">4</div>
             <div class="step-content">
               <h4>Text-to-Video Transformers</h4>
-              <p>Large transformer models that interpret a text prompt and use it to guide the entire video generation process, from overall composition to fine motion details.</p>
+              <p>
+                Large transformer models that interpret a text prompt and use it
+                to guide the entire video generation process, from overall
+                composition to fine motion details.
+              </p>
             </div>
           </li>
         </ol>
 
         <div class="article-image">
-          <a href="../../assets/images/content/howAiCreatesMedia/article3-fig2.avif" target="image">
+          <a
+            href="../../assets/images/content/howAiCreatesMedia/article3-fig2.avif"
+            target="image"
+          >
             <img
               src="../../assets/images/content/howAiCreatesMedia/article3-fig2.avif"
               alt="Diagram showing the AI video generation pipeline from text prompt to final video output"
@@ -137,41 +219,57 @@
             />
           </a>
           <div class="article-image-caption">
-            <strong>Figure 2:</strong> The AI Video Generation Pipeline — from text prompt to rendered video output.
+            <strong>Figure 2:</strong> The AI Video Generation Pipeline — from
+            text prompt to rendered video output.
           </div>
         </div>
 
         <h2 id="s4">Notable AI Video Tools</h2>
         <p>
-          Several tools have emerged as leaders in AI video generation, each with distinct strengths:
+          Several tools have emerged as leaders in AI video generation, each
+          with distinct strengths:
         </p>
 
         <div class="clue-grid">
           <div class="clue-card">
             <div class="clue-card-icon">🌀</div>
             <h4>OpenAI Sora</h4>
-            <p>Capable of generating up to one-minute videos with high visual fidelity and complex scene dynamics from text prompts.</p>
+            <p>
+              Capable of generating up to one-minute videos with high visual
+              fidelity and complex scene dynamics from text prompts.
+            </p>
           </div>
           <div class="clue-card">
             <div class="clue-card-icon">🎞️</div>
             <h4>Google Veo</h4>
-            <p>Google's video generation model that produces high-definition video with strong consistency and cinematic quality.</p>
+            <p>
+              Google's video generation model that produces high-definition
+              video with strong consistency and cinematic quality.
+            </p>
           </div>
           <div class="clue-card">
             <div class="clue-card-icon">🎬</div>
             <h4>Runway Gen-3</h4>
-            <p>A widely used creative tool for filmmakers and designers, offering both text-to-video and image-to-video generation.</p>
+            <p>
+              A widely used creative tool for filmmakers and designers, offering
+              both text-to-video and image-to-video generation.
+            </p>
           </div>
           <div class="clue-card">
             <div class="clue-card-icon">✨</div>
             <h4>Kling AI</h4>
-            <p>A Chinese-developed video generation tool that has gained international attention for its realistic motion and detail.</p>
+            <p>
+              A Chinese-developed video generation tool that has gained
+              international attention for its realistic motion and detail.
+            </p>
           </div>
         </div>
 
         <h2 id="s5">How to Spot AI-Generated Video</h2>
         <p>
-          Despite rapid improvements, AI-generated videos still have telltale signs. Learning to identify these can help you avoid being deceived by synthetic content:
+          Despite rapid improvements, AI-generated videos still have telltale
+          signs. Learning to identify these can help you avoid being deceived by
+          synthetic content:
         </p>
         <ul>
           <li>Hands and fingers that distort or change shape between frames</li>
@@ -184,34 +282,68 @@
         </ul>
 
         <div class="pull-quote">
-          <p>In AI video, the edges of things reveal the truth — look at the border between a person and their background, and inconsistencies become visible that you would never see at first glance.</p>
+          <p>
+            In AI video, the edges of things reveal the truth — look at the
+            border between a person and their background, and inconsistencies
+            become visible that you would never see at first glance.
+          </p>
           <cite>— Visual Media Authentication Research</cite>
         </div>
 
         <h2 id="s6">The Risks of Synthetic Video</h2>
         <p>
-          AI-generated video poses significant risks to public trust and information integrity. A convincing synthetic video of a political leader saying something they never said — sometimes called a deepfake video — can spread rapidly on social media before anyone has time to verify it. The emotional impact of video is far greater than text, making it a particularly powerful vehicle for misinformation.
+          AI-generated video poses significant risks to public trust and
+          information integrity. A convincing synthetic video of a political
+          leader saying something they never said — sometimes called a deepfake
+          video — can spread rapidly on social media before anyone has time to
+          verify it. The emotional impact of video is far greater than text,
+          making it a particularly powerful vehicle for misinformation.
         </p>
         <p>
-          Beyond politics, synthetic video has been used to create non-consensual intimate content, impersonate celebrities and public figures for fraud, and fabricate evidence in legal and professional disputes. As these tools become more accessible, the potential for harm grows, making media literacy and verification skills more critical than ever.
+          Beyond politics, synthetic video has been used to create
+          non-consensual intimate content, impersonate celebrities and public
+          figures for fraud, and fabricate evidence in legal and professional
+          disputes. As these tools become more accessible, the potential for
+          harm grows, making media literacy and verification skills more
+          critical than ever.
         </p>
 
         <div class="warning-box">
           <div class="warning-box-label">⚠️ Be Aware</div>
-          <p>If you see a video online that shows a public figure saying or doing something shocking, do not share it before verifying it through a trusted news source or fact-checking organization. AI-generated video can now be produced in minutes and spread in seconds.</p>
+          <p>
+            If you see a video online that shows a public figure saying or doing
+            something shocking, do not share it before verifying it through a
+            trusted news source or fact-checking organization. AI-generated
+            video can now be produced in minutes and spread in seconds.
+          </p>
         </div>
 
         <h2 id="s7">What We've Learned</h2>
         <p>
-          AI video generation builds on the same principles as image generation, but adds the critical challenge of maintaining consistency across time. Using video diffusion models, frame interpolation, and transformer architectures, modern AI tools can produce remarkably realistic video clips from text prompts alone. Leading tools like Sora, Veo, and Runway Gen-3 have pushed this capability to new heights.
+          AI video generation builds on the same principles as image generation,
+          but adds the critical challenge of maintaining consistency across
+          time. Using video diffusion models, frame interpolation, and
+          transformer architectures, modern AI tools can produce remarkably
+          realistic video clips from text prompts alone. Leading tools like
+          Sora, Veo, and Runway Gen-3 have pushed this capability to new
+          heights.
         </p>
         <p>
-          Despite their impressive quality, AI-generated videos still carry identifiable artifacts — particularly in hands, text, backgrounds, and facial expressions. Recognizing these signs, and developing a habit of verifying video content before sharing it, are essential skills for navigating a world where synthetic video is becoming indistinguishable from reality.
+          Despite their impressive quality, AI-generated videos still carry
+          identifiable artifacts — particularly in hands, text, backgrounds, and
+          facial expressions. Recognizing these signs, and developing a habit of
+          verifying video content before sharing it, are essential skills for
+          navigating a world where synthetic video is becoming indistinguishable
+          from reality.
         </p>
 
         <div class="warning-box">
           <div class="warning-box-label">💡 Remember</div>
-          <p>Video feels more real and trustworthy than text or images, which is exactly what makes AI-generated video so dangerous. Always verify before you believe — and before you share.</p>
+          <p>
+            Video feels more real and trustworthy than text or images, which is
+            exactly what makes AI-generated video so dangerous. Always verify
+            before you believe — and before you share.
+          </p>
         </div>
       </main>
 
@@ -243,7 +375,9 @@
             <div class="related-thumb">🚧</div>
             <div>
               <div class="related-cat">How AI Creates Media</div>
-              <div class="related-title">Limitations of AI Media Generation</div>
+              <div class="related-title">
+                Limitations of AI Media Generation
+              </div>
             </div>
           </a>
         </div>
@@ -261,66 +395,43 @@
       </a>
     </section>
 
-    <section class="more-articles">
-      <div class="section-header">
-        <span class="section-label">Keep Learning</span>
-        <h2>More from <span>How AI Creates Media</span></h2>
-      </div>
-      <div class="cards-grid">
-        <a class="card" href="article4.html">
-          <div class="card-thumb">🎙️</div>
-          <div class="card-body">
-            <div class="card-cat">How AI Creates Media</div>
-            <h3>How AI Generates Audio</h3>
-            <p>Voice cloning, AI music, and synthetic speech — how AI is transforming the world of sound.</p>
-            <div class="card-meta"><span>8 min read</span><span>Beginner</span></div>
-          </div>
-        </a>
-        <a class="card" href="article5.html">
-          <div class="card-thumb">✍️</div>
-          <div class="card-body">
-            <div class="card-cat">How AI Creates Media</div>
-            <h3>How AI Generates Text</h3>
-            <p>From autocomplete to full articles — how large language models produce convincing written content.</p>
-            <div class="card-meta"><span>8 min read</span><span>Beginner</span></div>
-          </div>
-        </a>
-        <a class="card" href="article6.html">
-          <div class="card-thumb">👤</div>
-          <div class="card-body">
-            <div class="card-cat">How AI Creates Media</div>
-            <h3>Deepfake Technology Explained</h3>
-            <p>What deepfakes are, how they are made, and why they pose a growing threat to truth and trust online.</p>
-            <div class="card-meta"><span>10 min read</span><span>Intermediate</span></div>
-          </div>
-        </a>
-      </div>
-    </section>
-
     <footer>
       <div class="footer-top">
         <div class="footer-brand">
           <a class="nav-logo" href="../index.html">Verif<span>AI</span></a>
-          <p>Educating the public on how to identify AI-generated media. Stay informed, stay critical, stay real.</p>
+          <p>
+            Educating the public on how to identify AI-generated media. Stay
+            informed, stay critical, stay real.
+          </p>
         </div>
         <div class="footer-links">
           <h4>Navigation</h4>
           <ul>
             <li><a href="../../index.html">Home</a></li>
             <li><a href="../../about/about.html" target="about">About</a></li>
-            <li><a href="../../contactUs/contactUs.html" target="contact">Contact Us</a></li>
+            <li>
+              <a href="../../contactUs/contactUs.html" target="contact"
+                >Contact Us</a
+              >
+            </li>
           </ul>
         </div>
         <div class="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="../../gallery/gallery.html" target="gallery">Gallery</a></li>
+            <li>
+              <a href="../../gallery/gallery.html" target="gallery">Gallery</a>
+            </li>
             <li><a href="../topics.html" target="topics">Topics</a></li>
           </ul>
         </div>
         <div class="footer-links footer-social">
           <h4>Follow Us</h4>
-          <a href="https://www.facebook.com/profile.php?id=61582741020706" target="_blank" rel="noopener">
+          <a
+            href="https://www.facebook.com/profile.php?id=61582741020706"
+            target="_blank"
+            rel="noopener"
+          >
             <span class="fb-icon">f</span> Verif-AI on Facebook
           </a>
         </div>
@@ -330,19 +441,11 @@
         <div class="footer-bottom-links">
           <a href="../../index.html">Home</a>
           <a href="../../about/about.html" target="about">About</a>
-          <a href="../../contactUs/contactUs.html" target="contact">Contact Us</a>
+          <a href="../../contactUs/contactUs.html" target="contact"
+            >Contact Us</a
+          >
         </div>
       </div>
     </footer>
-
-    <script>
-      window.addEventListener("scroll", () => {
-        const doc = document.documentElement;
-        const scrollTop = doc.scrollTop || document.body.scrollTop;
-        const scrollHeight = doc.scrollHeight - doc.clientHeight;
-        const progress = (scrollTop / scrollHeight) * 100;
-        document.getElementById("progressFill").style.width = progress + "%";
-      });
-    </script>
   </body>
 </html>
