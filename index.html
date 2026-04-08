@@ -41,19 +41,19 @@
 
     <!-- STATS BAND -->
     <div class="stats-band">
-      <div class="stat-item reveal">
+      <div class="stat-item">
         <div class="stat-num">4<span>+</span></div>
         <div class="stat-label">Media Types Covered</div>
       </div>
-      <div class="stat-item reveal">
+      <div class="stat-item">
         <div class="stat-num">50<span>+</span></div>
         <div class="stat-label">Educational Articles</div>
       </div>
-      <div class="stat-item reveal">
+      <div class="stat-item">
         <div class="stat-num">7<span>+</span></div>
         <div class="stat-label">Topics Explored</div>
       </div>
-      <div class="stat-item reveal">
+      <div class="stat-item">
         <div class="stat-num">100<span>%</span></div>
         <div class="stat-label">Free to Access</div>
       </div>
@@ -86,82 +86,63 @@
       </div>
     </section>
 
-    <section id="gallery" class="zz-section">
-      <div class="zz-visual vis-2">
-        <div class="zz-visual-inner">
-          <div class="geo-shape">
-            <div class="hex-grid">
-              <div class="hex"></div>
-              <div class="hex accent"></div>
-              <div class="hex"></div>
-              <div class="hex accent"></div>
-              <div class="hex"></div>
-              <div class="hex accent"></div>
-            </div>
-          </div>
+    <!-- GALLERY + ABOUT SIDE BY SIDE -->
+    <div class="side-by-side-sections">
+      <!-- GALLERY -->
+      <section id="gallery" class="zz-section">
+        <div class="zz-text">
+          <span class="section-label">Gallery</span>
+          <h2>See It to <span>Believe</span> It</h2>
+          <p>
+            Our gallery presents examples of AI-generated images and videos.
+            Seeing real examples is the fastest way to train your eye!
+          </p>
+          <ul>
+            <li>AI-generated image examples</li>
+            <li>Short AI video examples</li>
+          </ul>
+          <a
+            href="gallery/gallery.html"
+            target="gallery"
+            class="btn-primary"
+            style="align-self: flex-start"
+            >View Gallery</a
+          >
         </div>
-      </div>
-      <div class="zz-text reveal">
-        <span class="section-label" id="gallery">Gallery</span>
-        <h2>See It to <span>Believe</span> It</h2>
-        <p>
-          Our gallery presents examples of AI-generated images and videos.
-          Seeing real examples is the fastest way to train your eye!
-        </p>
-        <ul>
-          <li>AI-generated image examples</li>
-          <li>Short AI video examples</li>
-        </ul>
-        <a
-          href="gallery/gallery.html"
-          target="gallery"
-          class="btn-primary"
-          style="align-self: flex-start"
-          >View Gallery</a
-        >
-      </div>
-    </section>
+      </section>
 
-    <!-- ABOUT US -->
-    <section id="about" class="zz-section zz-section-dark">
-      <div class="zz-visual vis-1">
-        <div class="zz-visual-inner">
-          <div class="geo-shape">
-            <div class="circle-ring">
-              <div class="circle-ring-inner"></div>
-            </div>
-          </div>
+      <!-- ABOUT -->
+      <section id="about" class="zz-section">
+        <div class="zz-text">
+          <span class="section-label">About VerifAI</span>
+          <h2>Your Guide to<br /><span>AI Media</span> Literacy</h2>
+          <p>
+            VerifAI is an educational platform dedicated to helping everyday
+            people understand and identify AI-generated media. As deepfakes,
+            fake images, and AI-written videos seen in all platforms become
+            increasingly convincing, we provide the knowledge to tell them apart
+            from the real thing, because we care.
+          </p>
+          <ul>
+            <li>Easy to understand articles about AI-generated content</li>
+            <li>Visual examples of AI generated media</li>
+            <li>Up-to-date coverage of the latest AI media trends</li>
+            <li>Accessible articles for all ages and backgrounds</li>
+          </ul>
+          <a
+            href="about/about.html"
+            target="about"
+            class="btn-primary"
+            style="align-self: flex-start"
+            >Learn More</a
+          >
         </div>
-      </div>
-      <div class="zz-text reveal">
-        <span class="section-label">About VerifAI</span>
-        <h2>Your Guide to<br /><span>AI Media</span> Literacy</h2>
-        <p>
-          VerifAI is an educational platform dedicated to helping everyday
-          people understand and identify AI-generated media. As deepfakes, fake
-          images, and AI-written videos seen in all platforms become
-          increasingly convincing, we provide the knowledge to tell them apart
-          from the real thing, because we care.
-        </p>
-        <ul>
-          <li>Easy to understand articles about AI-generated content</li>
-          <li>Visual examples of AI generated media</li>
-          <li>Up-to-date coverage of the latest AI media trends</li>
-          <li>Accessible articles for all ages and backgrounds</li>
-        </ul>
-        <a
-          href="about/about.html"
-          target="about"
-          class="btn-primary"
-          style="align-self: flex-start"
-          >Learn More</a
-        >
-      </div>
-    </section>
+      </section>
+    </div>
 
     <!-- CTA BANNER -->
     <section class="cta-banner" id="contact">
-      <h2>Ready to sharpen your eye for AI-generated media?</h2>
+      <h2>Contact VerifAI Today</h2>
       <a href="contactUs/contactUs.html" target="contact" class="btn-white"
         >Contact Us Today</a
       >
@@ -177,7 +158,6 @@
             informed, stay critical, stay real.
           </p>
         </div>
-
         <div class="footer-links">
           <h4>Navigation</h4>
           <ul>
@@ -188,7 +168,6 @@
             </li>
           </ul>
         </div>
-
         <div class="footer-links">
           <h4>Quick Links</h4>
           <ul>
@@ -196,13 +175,11 @@
             <li><a href="topics/topics.html" target="topics">Topics</a></li>
           </ul>
         </div>
-
         <div class="footer-links footer-social">
           <h4>Follow Us</h4>
           <a
             href="https://www.facebook.com/profile.php?id=61582741020706"
             target="social"
-            target="_blank"
             rel="noopener"
           >
             <span class="fb-icon">f</span>
@@ -210,7 +187,6 @@
           </a>
         </div>
       </div>
-
       <div class="footer-bottom">
         <p>© 2026 VerifAI. All rights reserved.</p>
         <div class="footer-bottom-links">
