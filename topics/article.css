@@ -930,3 +930,29 @@ footer {
 .footer-bottom-links a:hover {
   color: var(--blue);
 }
+
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: fit-content;
+  height: fit-content;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  background: var(--blue);
+  color: var(--white);
+  font-weight: 700;
+  border-radius: 12px;
+  text-decoration: none;
+  transition:
+    opacity 0.3s ease,
+    transform 0.2s ease,
+    background 0.2s ease;
+  z-index: 999;
+}
+
+.back-to-top:hover {
+  background: #1558b0;
+  transform: translateY(-3px);
+}

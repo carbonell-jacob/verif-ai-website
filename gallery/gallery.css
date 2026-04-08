@@ -97,7 +97,6 @@ nav {
 }
 
 /* ───────────────── PAGE HERO ───────────────── */
-
 .gallery-grid-bg {
   position: absolute;
   inset: 0;
@@ -123,15 +122,6 @@ nav {
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
-}
-
-@keyframes gridDrift {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 50px 50px;
-  }
 }
 
 .page-hero {
@@ -279,17 +269,6 @@ nav {
 @media (max-width: 768px) {
   .gallery-item {
     max-width: 100%;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 
@@ -517,27 +496,4 @@ footer {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* ───────────────── RESPONSIVE ───────────────── */
-@media (max-width: 768px) {
-  .nav-links {
-    gap: 1.5rem;
-  }
-  .page-hero h1 {
-    font-size: 2.2rem;
-  }
-  .grid {
-    grid-template-columns: 1fr;
-  }
-  .cta-banner {
-    flex-direction: column;
-    text-align: center;
-  }
-  .filter-tabs {
-    flex-direction: column;
-  }
-  .filter-btn {
-    width: 100%;
-  }
 }
