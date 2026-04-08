@@ -24,6 +24,10 @@ body {
   overflow-x: hidden;
 }
 
+section {
+  scroll-margin-top: 70px;
+}
+
 nav {
   position: fixed;
   top: 0;
