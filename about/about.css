@@ -757,36 +757,3 @@ footer {
 .lightbox-close:hover {
   background: var(--blue);
 }
-
-/* ───────────────── RESPONSIVE ───────────────── */
-@media (max-width: 768px) {
-  .mission-section {
-    flex-direction: column;
-  }
-  .nav-links {
-    gap: 1.2rem;
-  }
-  .cta-banner {
-    flex-direction: column;
-    text-align: center;
-  }
-  .team-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
-  .values-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-links {
-    gap: 0.8rem;
-  }
-  .nav-links a {
-    font-size: 0.78rem;
-    letter-spacing: 0.8px;
-  }
-  .values-grid {
-    grid-template-columns: 1fr;
-  }
-}
