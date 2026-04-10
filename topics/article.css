@@ -26,10 +26,6 @@ body {
   overflow-x: hidden;
 }
 
-p{
-  text-align: justify;
-}
-
 /* NAVBAR */
 nav {
   position: fixed;
@@ -424,6 +420,7 @@ nav {
   line-height: 1.85;
   color: #2a2a3e;
   margin-bottom: 1.5rem;
+  text-align: justify;
 }
 .article-body h2 {
   font-family: var(--font-head);
