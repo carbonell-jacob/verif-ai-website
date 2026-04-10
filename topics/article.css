@@ -26,6 +26,10 @@ body {
   overflow-x: hidden;
 }
 
+p{
+  text-align: justify;
+}
+
 /* NAVBAR */
 nav {
   position: fixed;
