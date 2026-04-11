@@ -11,6 +11,10 @@
     <nav>
       <a class="nav-logo" href="../index.html">Verif<span>AI</span></a>
 
+      <button class="nav-hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
       <ul class="nav-links">
         <li><a href="../../index.html">Home</a></li>
         <li><a href="../../about/about.html" target="about">About</a></li>
@@ -336,5 +340,15 @@
       </div>
     </footer>
     <a href="#" class="back-to-top" id="backToTop">Go to top ↑</a>
-  </body>
+  
+  <script>
+    const hamburger = document.querySelector(".nav-hamburger");
+    const navLinks = document.querySelector(".nav-links");
+    if (hamburger) {
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+      });
+    }
+  </script>
+</body>
 </html>
