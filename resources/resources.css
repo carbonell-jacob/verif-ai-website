@@ -336,12 +336,3 @@ footer {
   background: #1558b0;
   transform: translateY(-3px);
 }
-
-@media (max-width: 640px) {
-  .nav-links {
-    display: none;
-  }
-  .resources-body {
-    padding: 50px 5%;
-  }
-}
