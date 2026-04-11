@@ -364,4 +364,13 @@
       </div>
     </footer>
   </body>
+  <script>
+    const hamburger = document.querySelector(".nav-hamburger");
+    const navLinks = document.querySelector(".nav-links");
+    if (hamburger) {
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+      });
+    }
+  </script>
 </html>

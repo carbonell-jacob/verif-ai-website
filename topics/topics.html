@@ -10,6 +10,9 @@
     <!-- NAVBAR -->
     <nav>
       <a class="nav-logo" href="../index.html">Verif<span>AI</span></a>
+      <button class="nav-hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
       <ul class="nav-links">
         <li><a href="../index.html">Home</a></li>
         <li><a href="../about/about.html" target="about">About</a></li>
@@ -2433,7 +2436,12 @@
             data-title="Risks of AI in the Future"
           >
             <div class="topic-card-thumb">
-              <img src="../assets/images/content/futureOfAIMedia/risk.jpg" title="Risk" alt="Future AI Risks" loading="lazy" />
+              <img
+                src="../assets/images/content/futureOfAIMedia/risk.jpg"
+                title="Risk"
+                alt="Future AI Risks"
+                loading="lazy"
+              />
             </div>
             <div class="topic-card-body">
               <div class="topic-card-cat">Future Risks</div>
@@ -2456,7 +2464,12 @@
             data-title="AI Regulation Trends"
           >
             <div class="topic-card-thumb">
-              <img src="../assets/images/content/futureOfAIMedia/regulations.jpg" title="Regulation" alt="AI Regulation" loading="lazy" />
+              <img
+                src="../assets/images/content/futureOfAIMedia/regulations.jpg"
+                title="Regulation"
+                alt="AI Regulation"
+                loading="lazy"
+              />
             </div>
             <div class="topic-card-body">
               <div class="topic-card-cat">Policy Law</div>
@@ -2593,4 +2606,13 @@
 
     <a href="#" class="back-to-top visible" id="backToTop">Go to top ↑</a>
   </body>
+  <script>
+    const hamburger = document.querySelector(".nav-hamburger");
+    const navLinks = document.querySelector(".nav-links");
+    if (hamburger) {
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+      });
+    }
+  </script>
 </html>
