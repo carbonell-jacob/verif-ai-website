@@ -999,6 +999,8 @@
       </div>
     </section>
 
+    <a href="#" class="back-to-top" id="backToTop">Go to top ↑</a>
+
     <!-- FOOTER -->
     <footer>
       <div class="footer-top">
@@ -1050,60 +1052,57 @@
         </div>
       </div>
     </footer>
-
-    <a href="#" class="back-to-top" id="backToTop">Go to top ↑</a>
-
-    <script>
-      const hamburger = document.querySelector(".nav-hamburger");
-      const navLinks = document.querySelector(".nav-links");
-      if (hamburger) {
-        hamburger.addEventListener("click", () => {
-          navLinks.classList.toggle("open");
-        });
-      }
-
-      function initializeGalleryFilter() {
-        const filterBtns = document.querySelectorAll(".filter-btn");
-        const galleryItems = document.querySelectorAll(".gallery-item");
-
-        function applyFilter(filterValue) {
-          galleryItems.forEach((item) => {
-            const category = item.getAttribute("data-category");
-            if (filterValue === "all" || category === filterValue) {
-              item.classList.remove("hidden");
-              item.style.display = "";
-              item.style.opacity = "1";
-            } else {
-              item.classList.add("hidden");
-              item.style.display = "none";
-              item.style.opacity = "0";
-            }
-          });
-        }
-
-        // Initialize: show all items on page load
-        applyFilter("all");
-
-        // Attach click listeners to filter buttons
-        filterBtns.forEach((btn) => {
-          btn.addEventListener("click", function () {
-            const filterValue = this.getAttribute("data-filter");
-
-            // Set active button
-            filterBtns.forEach((b) => b.classList.remove("active"));
-            this.classList.add("active");
-
-            applyFilter(filterValue);
-          });
-        });
-      }
-
-      // Run on DOM ready and also immediately as fallback
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", initializeGalleryFilter);
-      } else {
-        initializeGalleryFilter();
-      }
-    </script>
   </body>
+  <script>
+    const hamburger = document.querySelector(".nav-hamburger");
+    const navLinks = document.querySelector(".nav-links");
+    if (hamburger) {
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("open");
+      });
+    }
+
+    function initializeGalleryFilter() {
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      const galleryItems = document.querySelectorAll(".gallery-item");
+
+      function applyFilter(filterValue) {
+        galleryItems.forEach((item) => {
+          const category = item.getAttribute("data-category");
+          if (filterValue === "all" || category === filterValue) {
+            item.classList.remove("hidden");
+            item.style.display = "";
+            item.style.opacity = "1";
+          } else {
+            item.classList.add("hidden");
+            item.style.display = "none";
+            item.style.opacity = "0";
+          }
+        });
+      }
+
+      // Initialize: show all items on page load
+      applyFilter("all");
+
+      // Attach click listeners to filter buttons
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const filterValue = this.getAttribute("data-filter");
+
+          // Set active button
+          filterBtns.forEach((b) => b.classList.remove("active"));
+          this.classList.add("active");
+
+          applyFilter(filterValue);
+        });
+      });
+    }
+
+    // Run on DOM ready and also immediately as fallback
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initializeGalleryFilter);
+    } else {
+      initializeGalleryFilter();
+    }
+  </script>
 </html>

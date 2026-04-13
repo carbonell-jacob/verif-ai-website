@@ -319,8 +319,8 @@ footer {
 
 .back-to-top {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 1rem;
+  right: 1rem;
   padding: 8px 12px;
   background: var(--blue);
   color: var(--white);

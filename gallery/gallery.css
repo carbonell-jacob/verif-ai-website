@@ -520,25 +520,20 @@ footer {
   color: var(--blue);
 }
 
-/* back to top button*/
 .back-to-top {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
+  bottom: 1rem;
+  right: 1rem;
   width: fit-content;
-  max-width: 100px;
   height: fit-content;
-  padding: 6px 10px;
+  padding: 8px 12px;
   display: flex;
   align-items: center;
-  justify-content: center;
   background: var(--blue);
   color: var(--white);
   font-weight: 700;
-  font-size: 0.75rem;
   border-radius: 12px;
   text-decoration: none;
-  white-space: nowrap;
   transition:
     opacity 0.3s ease,
     transform 0.2s ease,
