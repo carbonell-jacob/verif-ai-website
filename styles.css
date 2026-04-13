@@ -133,8 +133,8 @@ nav {
   font-weight: 700;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: var(--blue);
-  border: 1px solid var(--blue);
+  color: var(--white);
+  border: 1px solid var(--white);
   padding: 6px 18px;
   border-radius: 2px;
   margin-bottom: 2rem;
@@ -676,5 +676,15 @@ footer {
   }
   .nav-hamburger {
     display: flex;
+  }
+
+  /* Inside the existing @media (max-width: 767px) block */
+  .side-by-side-sections {
+    grid-template-columns: 1fr;
+  }
+
+  .side-by-side-sections .zz-section:first-child {
+    border-right: none;
+    border-bottom: 3px solid var(--blue);
   }
 }
