@@ -323,9 +323,7 @@ nav {
 
 .team-last-row {
   grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 28px;
+  display: contents;
 }
 
 a.member-card {
