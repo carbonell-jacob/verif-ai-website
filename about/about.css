@@ -328,6 +328,12 @@ nav {
   gap: 28px;
 }
 
+a.member-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
 .member-card {
   background: var(--white);
   border-radius: 4px;
