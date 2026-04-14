@@ -400,6 +400,7 @@ nav {
 .resources-band {
   background: var(--light);
   border-bottom: 4px solid var(--blue);
+  border-top: 4px solid var(--blue);
   padding: 36px 8%;
   display: flex;
   align-items: center;
