@@ -6,7 +6,6 @@
     <title>Gallery – VerifAI</title>
     <link rel="stylesheet" href="gallery.css" />
     <style>
-      /* ── Lightbox Overlay ── */
       #lightbox {
         display: none;
         position: fixed;
@@ -25,7 +24,6 @@
         display: flex;
       }
 
-      /* Image container */
       #lightbox-img-wrap {
         position: relative;
         display: flex;
@@ -44,7 +42,6 @@
         display: block;
       }
 
-      /* Caption */
       #lightbox-caption {
         color: rgba(255, 255, 255, 0.75);
         font-size: 0.9rem;
@@ -52,7 +49,6 @@
         text-align: center;
       }
 
-      /* Close button */
       #lightbox-close {
         position: fixed;
         top: 1.25rem;
@@ -71,7 +67,6 @@
         opacity: 1;
       }
 
-      /* Prev / Next arrows */
       .lb-arrow {
         position: fixed;
         top: 50%;
@@ -101,7 +96,6 @@
         right: 1rem;
       }
 
-      /* Counter */
       #lightbox-counter {
         position: fixed;
         bottom: 1.25rem;
@@ -112,7 +106,6 @@
         letter-spacing: 0.06em;
       }
 
-      /* Make gallery image thumbnails look clickable */
       .gallery-item-image img {
         cursor: zoom-in;
       }
@@ -1101,7 +1094,6 @@
           <ul>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#topics">Topics</a></li>
-            <li><a href="#">Privacy Policy</a></li>
           </ul>
         </div>
 
@@ -1150,7 +1142,6 @@
     </div>
   </body>
   <script>
-    /* ── Hamburger ── */
     const hamburger = document.querySelector(".nav-hamburger");
     const navLinks = document.querySelector(".nav-links");
     if (hamburger) {
@@ -1159,7 +1150,6 @@
       });
     }
 
-    /* ── Gallery Filter ── */
     function initializeGalleryFilter() {
       const filterBtns = document.querySelectorAll(".filter-btn");
       const galleryItems = document.querySelectorAll(".gallery-item");
@@ -1199,7 +1189,6 @@
       initializeGalleryFilter();
     }
 
-    /* ── Lightbox ── */
     const lightbox = document.getElementById("lightbox");
     const lbImg = document.getElementById("lightbox-img");
     const lbCaption = document.getElementById("lightbox-caption");

@@ -26,7 +26,6 @@ body {
   overflow-x: hidden;
 }
 
-/* NAVBAR */
 nav {
   position: fixed;
   top: 0;
@@ -85,7 +84,6 @@ nav {
   width: 100%;
 }
 
-/* HERO */
 .article-hero {
   min-height: 360px;
   background: var(--navy);
@@ -201,7 +199,6 @@ nav {
   font-weight: 600;
 }
 
-/* THREE-COLUMN LAYOUT */
 .page-wrap {
   display: grid;
   grid-template-columns: 220px 1fr 220px;
@@ -211,7 +208,6 @@ nav {
   align-items: start;
 }
 
-/* SIDEBARS */
 .sidebar-left {
   padding: 48px 20px 48px 0;
   position: sticky;
@@ -237,7 +233,6 @@ nav {
   margin-bottom: 2rem;
 }
 
-/* TOC */
 .toc-list {
   list-style: none;
 }
@@ -275,7 +270,6 @@ nav {
   background: var(--blue);
 }
 
-/* STAT CARDS */
 .key-stat {
   background: var(--navy);
   border-radius: 3px;
@@ -300,7 +294,6 @@ nav {
   line-height: 1.4;
 }
 
-/* RELATED */
 .related-card {
   display: flex;
   gap: 0.8rem;
@@ -339,7 +332,6 @@ nav {
   line-height: 1.3;
 }
 
-/* NEWSLETTER */
 .newsletter-box {
   background: var(--light);
   border: 1.5px solid rgba(0, 22, 92, 0.1);
@@ -385,7 +377,6 @@ nav {
   background: var(--navy);
 }
 
-/* MAIN ARTICLE */
 .article-body {
   padding: 48px 40px;
   border-left: 1px solid rgba(0, 22, 92, 0.08);
@@ -448,7 +439,6 @@ nav {
   scroll-margin-top: 7rem;
 }
 
-/* UNORDERED */
 .article-body ul {
   margin: 1.2rem 0 1.8rem 0;
   padding-left: 1.6rem;
@@ -485,7 +475,6 @@ nav {
   flex-shrink: 0;
 }
 
-/* Nested lists */
 .article-body ul ul,
 .article-body ol ul {
   margin: 0.4rem 0 0.2rem 1.2rem;
@@ -499,7 +488,6 @@ nav {
   border-radius: 50%;
 }
 
-/* CLUE CARDS */
 .clue-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -537,7 +525,6 @@ nav {
   margin-bottom: 0;
 }
 
-/* PULL QUOTE */
 .pull-quote {
   background: var(--navy);
   margin: 2.5rem 0;
@@ -575,7 +562,6 @@ nav {
   font-style: normal;
 }
 
-/* STEPS */
 .steps-list {
   list-style: none;
   margin: 1.5rem 0 2rem;
@@ -617,7 +603,6 @@ nav {
   line-height: 1.55;
 }
 
-/* WARNING BOX */
 .warning-box {
   background: rgba(12, 112, 206, 0.05);
   border: 1.5px solid rgba(12, 112, 206, 0.25);
@@ -641,7 +626,6 @@ nav {
   margin-bottom: 0;
 }
 
-/* IMAGE */
 .article-image {
   width: 100%;
   border: 1px solid rgba(0, 22, 92, 0.1);
@@ -664,7 +648,6 @@ nav {
   line-height: 1.5;
 }
 
-/* PAGINATION */
 .hidden {
   pointer-events: none;
   visibility: hidden;
@@ -817,7 +800,6 @@ nav {
   border-top: 1px solid rgba(0, 22, 92, 0.06);
 }
 
-/* FOOTER */
 footer {
   background: var(--navy);
   border-top: 4px solid var(--blue);
@@ -963,9 +945,7 @@ iframe {
   transition: opacity 0.2s;
 }
 
-/* ── Tablet: 768px – 1023px ─────────────────────────────── */
 @media (max-width: 1023px) {
-  /* Collapse three-col to one-col; sidebars drop below */
   .page-wrap {
     grid-template-columns: 1fr;
     padding: 0 4%;
@@ -973,11 +953,10 @@ iframe {
 
   .sidebar-left,
   .sidebar-right {
-    position: static; /* unstick */
+    position: static;
     padding: 24px 0;
   }
 
-  /* Put both sidebars side-by-side below the article */
   .sidebar-left {
     order: 2;
     border-top: 1px solid rgba(0, 22, 92, 0.08);
@@ -993,11 +972,10 @@ iframe {
     padding: 40px 0;
   }
 
-  /* Show sidebars in a 2-col row */
   .page-wrap {
     grid-template-columns: 1fr;
   }
-  /* Use a separate row for the two sidebars */
+
   .sidebar-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1009,9 +987,7 @@ iframe {
   }
 }
 
-/* ── Mobile: ≤767px ─────────────────────────────────────── */
 @media (max-width: 767px) {
-  /* Navbar */
   nav {
     padding: 0 5%;
     height: 60px;
@@ -1046,7 +1022,6 @@ iframe {
     display: flex;
   }
 
-  /* Hero */
   .article-hero {
     min-height: auto;
     padding: 90px 5% 40px;
@@ -1059,32 +1034,27 @@ iframe {
   }
 
   .article-body p {
-    text-align: left; /* easier to read on narrow screens */
+    text-align: left;
   }
 
-  /* Sidebars: stack vertically, no side-by-side */
   .sidebar-left,
   .sidebar-right {
     padding: 20px 0;
   }
 
-  /* Clue grid: 1 col */
   .clue-grid {
     grid-template-columns: 1fr;
   }
 
-  /* Cards grid: 1 col */
   .cards-grid {
     grid-template-columns: 1fr;
   }
 
-  /* Pagination: stack */
   .article-pagination {
     grid-template-columns: 1fr;
     padding: 40px 5%;
   }
 
-  /* Pull quote: tighter padding */
   .pull-quote {
     padding: 1.5rem 1.5rem 1.5rem 2.2rem;
   }
@@ -1092,7 +1062,6 @@ iframe {
     font-size: 5rem;
   }
 
-  /* Footer */
   footer {
     padding: 40px 5% 24px;
   }
@@ -1110,7 +1079,6 @@ iframe {
   }
 }
 
-/* ── Small mobile: ≤480px ───────────────────────────────── */
 @media (max-width: 480px) {
   .article-hero h1 {
     font-size: 1.7rem;

@@ -26,7 +26,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ───────────────── NAVBAR ───────────────── */
 nav {
   position: fixed;
   top: 0;
@@ -95,8 +94,6 @@ nav {
 .nav-links a:hover::after {
   width: 100%;
 }
-
-/* ───────────────── PAGE HERO ───────────────── */
 
 .gallery-grid-bg {
   position: absolute;
@@ -178,7 +175,6 @@ nav {
   z-index: 2;
 }
 
-/* ───────────────── FILTER TABS ───────────────── */
 .gallery-controls {
   background: var(--light);
   padding: 50px 8%;
@@ -224,7 +220,6 @@ nav {
   border-color: var(--blue);
 }
 
-/* ───────────────── GALLERY GRID ───────────────── */
 .gallery-grid {
   padding: 70px 8%;
   background: var(--white);
@@ -298,13 +293,11 @@ nav {
   object-position: center;
 }
 
-/* Full-body image positioning */
 .gallery-item-image.full-body img {
   object-position: center top;
   height: 350px;
 }
 
-/* Hover overlay effect */
 .gallery-item-image::before {
   content: "";
   position: absolute;
@@ -335,7 +328,6 @@ nav {
   object-position: center;
 }
 
-/* Video container - same styling as image */
 .gallery-item-video {
   position: relative;
   width: 100%;
@@ -395,7 +387,6 @@ nav {
   line-height: 1.5;
 }
 
-/* ───────────────── FOOTER ───────────────── */
 footer {
   background: var(--navy);
   border-top: 4px solid var(--blue);
@@ -534,7 +525,6 @@ footer {
   transform: translateY(-3px);
 }
 
-/* ───────────────── RESPONSIVE ───────────────── */
 @media (max-width: 768px) {
   .nav-links {
     gap: 1.5rem;
@@ -572,9 +562,7 @@ footer {
   transition: opacity 0.2s;
 }
 
-/* ── Mobile: ≤767px ─────────────────────────────────────── */
 @media (max-width: 767px) {
-  /* Navbar */
   nav {
     padding: 0 5%;
     height: 60px;

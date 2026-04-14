@@ -26,7 +26,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ── NAVBAR ── */
 nav {
   position: fixed;
   top: 0;
@@ -91,7 +90,6 @@ nav {
   width: 100%;
 }
 
-/* ── PAGE HERO ── */
 .page-hero {
   min-height: 340px;
   background: var(--navy);
@@ -178,7 +176,6 @@ nav {
   color: rgba(236, 236, 236, 0.75);
 }
 
-/* ── CONTACT SECTION ── */
 .contact-section {
   display: flex;
   align-items: center;
@@ -187,12 +184,10 @@ nav {
   padding: 80px 8% 90px;
 }
 
-/* ── LOGO ── */
 .contact-logo img {
   display: block;
 }
 
-/* ── SOCIALS ── */
 .contact-socials {
   display: flex;
   flex-direction: column;
@@ -261,7 +256,6 @@ nav {
   color: var(--muted);
 }
 
-/* ── FOOTER ── */
 footer {
   background: var(--navy);
   border-top: 4px solid var(--blue);
@@ -359,7 +353,6 @@ footer {
   color: var(--blue);
 }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 700px) {
   .contact-section {
     flex-direction: column;
@@ -406,9 +399,7 @@ footer {
   transition: opacity 0.2s;
 }
 
-/* ── Mobile: ≤767px ─────────────────────────────────────── */
 @media (max-width: 767px) {
-  /* Navbar */
   nav {
     padding: 0 5%;
     height: 60px;

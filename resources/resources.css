@@ -356,9 +356,7 @@ footer {
   transition: opacity 0.2s;
 }
 
-/* ── Mobile: ≤767px ─────────────────────────────────────── */
 @media (max-width: 767px) {
-  /* Navbar */
   nav {
     padding: 0 5%;
     height: 60px;

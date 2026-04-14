@@ -251,7 +251,6 @@ nav {
   margin-bottom: 0.8rem;
 }
 
-/* ── SIDE-BY-SIDE WRAPPER ── */
 .side-by-side-sections {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -334,7 +333,6 @@ nav {
   margin: 0 auto;
 }
 
-/* divider between the two panels */
 .side-by-side-sections .zz-section:first-child {
   border-right: 3px solid var(--blue);
 }
@@ -578,9 +576,7 @@ footer {
   transition: opacity 0.2s;
 }
 
-/* ── Tablet: 768px – 1023px ─────────────────────────────── */
 @media (max-width: 1023px) {
-  /* Collapse three-col to one-col; sidebars drop below */
   .page-wrap {
     grid-template-columns: 1fr;
     padding: 0 4%;
@@ -588,11 +584,10 @@ footer {
 
   .sidebar-left,
   .sidebar-right {
-    position: static; /* unstick */
+    position: static;
     padding: 24px 0;
   }
 
-  /* Put both sidebars side-by-side below the article */
   .sidebar-left {
     order: 2;
     border-top: 1px solid rgba(0, 22, 92, 0.08);
@@ -608,11 +603,10 @@ footer {
     padding: 40px 0;
   }
 
-  /* Show sidebars in a 2-col row */
   .page-wrap {
     grid-template-columns: 1fr;
   }
-  /* Use a separate row for the two sidebars */
+
   .sidebar-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -642,9 +636,7 @@ footer {
   transition: opacity 0.2s;
 }
 
-/* ── Mobile: ≤767px ─────────────────────────────────────── */
 @media (max-width: 767px) {
-  /* Navbar */
   nav {
     padding: 0 5%;
     height: 60px;
@@ -679,7 +671,6 @@ footer {
     display: flex;
   }
 
-  /* Inside the existing @media (max-width: 767px) block */
   .side-by-side-sections {
     grid-template-columns: 1fr;
   }
