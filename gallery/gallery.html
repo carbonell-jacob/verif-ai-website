@@ -5,6 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gallery – VerifAI</title>
     <link rel="stylesheet" href="gallery.css" />
+    <style>
+      /* ── Lightbox Overlay ── */
+      #lightbox {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: rgba(0, 0, 0, 0.92);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem;
+      }
+      #lightbox.open {
+        display: flex;
+      }
+
+      /* Image container */
+      #lightbox-img-wrap {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 90vw;
+        max-height: 80vh;
+      }
+      #lightbox-img {
+        max-width: 88vw;
+        max-height: 78vh;
+        object-fit: contain;
+        border-radius: 6px;
+        box-shadow: 0 8px 48px rgba(0, 0, 0, 0.6);
+        user-select: none;
+        display: block;
+      }
+
+      /* Caption */
+      #lightbox-caption {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.9rem;
+        letter-spacing: 0.04em;
+        text-align: center;
+      }
+
+      /* Close button */
+      #lightbox-close {
+        position: fixed;
+        top: 1.25rem;
+        right: 1.5rem;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 2rem;
+        line-height: 1;
+        cursor: pointer;
+        opacity: 0.7;
+        transition: opacity 0.2s;
+        z-index: 10000;
+      }
+      #lightbox-close:hover {
+        opacity: 1;
+      }
+
+      /* Prev / Next arrows */
+      .lb-arrow {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #fff;
+        font-size: 1.6rem;
+        line-height: 1;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
+        z-index: 10000;
+      }
+      .lb-arrow:hover {
+        background: rgba(255, 255, 255, 0.25);
+      }
+      #lightbox-prev {
+        left: 1rem;
+      }
+      #lightbox-next {
+        right: 1rem;
+      }
+
+      /* Counter */
+      #lightbox-counter {
+        position: fixed;
+        bottom: 1.25rem;
+        left: 50%;
+        transform: translateX(-50%);
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.8rem;
+        letter-spacing: 0.06em;
+      }
+
+      /* Make gallery image thumbnails look clickable */
+      .gallery-item-image img {
+        cursor: zoom-in;
+      }
+    </style>
   </head>
   <body>
     <!-- NAVBAR -->
@@ -56,18 +168,15 @@
     <!-- GALLERY GRID -->
     <section class="gallery-grid">
       <div class="grid">
-        <!-- Gallery Images -->
-
         <!-- Gallery Item 1 - Images -->
         <div class="gallery-item" data-category="images">
           <div class="gallery-item-image" data-title="Wildlife in Nature">
-            <a
-              href="../assets/images/aiGeneratedImages/ai_bear_in_river.png"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_bear_in_river.png"
-                alt="AI Generated Bear in River"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_bear_in_river.png"
+              alt="AI Generated Bear in River"
+              data-lightbox
+              data-caption="Wildlife in Nature"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Wildlife in Nature</h3>
@@ -81,13 +190,12 @@
         <!-- Gallery Item 2 - Images -->
         <div class="gallery-item" data-category="images">
           <div class="gallery-item-image" data-title="AI Scene Generation">
-            <a
-              href="../assets/images/aiGeneratedImages/ai_beautiful_grass_nature.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_beautiful_grass_nature.jpg"
-                alt="AI Generated Nature Scene"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_beautiful_grass_nature.jpg"
+              alt="AI Generated Nature Scene"
+              data-lightbox
+              data-caption="AI Scene Generation"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>AI Scene Generation</h3>
@@ -101,13 +209,12 @@
         <!-- Gallery Item 3 - Images -->
         <div class="gallery-item" data-category="images">
           <div class="gallery-item-image" data-title="Water & Nature Flow">
-            <a
-              href="../assets/images/aiGeneratedImages/ai_beautiful_nature_river_flow.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_beautiful_nature_river_flow.jpg"
-                alt="AI Nature River Flow"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_beautiful_nature_river_flow.jpg"
+              alt="AI Nature River Flow"
+              data-lightbox
+              data-caption="Water & Nature Flow"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Water & Nature Flow</h3>
@@ -122,13 +229,12 @@
         <!-- Gallery Item 4 - Images -->
         <div class="gallery-item" data-category="images">
           <div class="gallery-item-image" data-title="Wildlife AI Generation">
-            <a
-              href="../assets/images/aiGeneratedImages/ai_beautiful_nature.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_beautiful_nature.jpg"
-                alt="AI Generated Nature"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_beautiful_nature.jpg"
+              alt="AI Generated Nature"
+              data-lightbox
+              data-caption="Wildlife AI Generation"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Wildlife AI Generation</h3>
@@ -142,13 +248,12 @@
         <!-- Gallery Item 5 - Images -->
         <div class="gallery-item" data-category="images">
           <div class="gallery-item-image" data-title="Child Portrait Analysis">
-            <a
-              href="../assets/images/aiGeneratedImages/ai_child_portrait.webp"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_child_portrait.webp"
-                alt="AI Generated Child Portrait"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_child_portrait.webp"
+              alt="AI Generated Child Portrait"
+              data-lightbox
+              data-caption="Child Portrait Analysis"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Child Portrait Analysis</h3>
@@ -163,13 +268,12 @@
         <!-- Gallery Item 6 - Images -->
         <div class="gallery-item" data-category="images">
           <div class="gallery-item-image" data-title="Forest & Nature Details">
-            <a
-              href="../assets/images/aiGeneratedImages/ai_deep_forest.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_deep_forest.jpg"
-                alt="AI Generated Deep Forest"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_deep_forest.jpg"
+              alt="AI Generated Deep Forest"
+              data-lightbox
+              data-caption="Forest & Nature Details"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Forest & Nature Details</h3>
@@ -183,13 +287,12 @@
         <!-- Gallery Item 7 - Images -->
         <div class="gallery-item" data-category="images">
           <div class="gallery-item-image" data-title="AI Human Portrait">
-            <a
-              href="../assets/images/aiGeneratedImages/ai_female_face_portrait.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_female_face_portrait.jpg"
-                alt="AI Generated Female Portrait"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_female_face_portrait.jpg"
+              alt="AI Generated Female Portrait"
+              data-lightbox
+              data-caption="AI Human Portrait"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>AI Human Portrait</h3>
@@ -206,13 +309,12 @@
             class="gallery-item-image"
             data-title="AI Female Portrait Analysis"
           >
-            <a
-              href="../assets/images/aiGeneratedImages/ai_female_portrait_indiana.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_female_portrait_indiana.jpg"
-                alt="AI Generated Female Portrait"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_female_portrait_indiana.jpg"
+              alt="AI Generated Female Portrait"
+              data-lightbox
+              data-caption="AI Female Portrait Analysis"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>AI Female Portrait Analysis</h3>
@@ -226,13 +328,12 @@
         <!-- Gallery Item 9 - Images -->
         <div class="gallery-item" data-category="images">
           <div class="gallery-item-image" data-title="Female Selfie Analysis">
-            <a
-              href="../assets/images/aiGeneratedImages/ai_female_portrait_selfie.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_female_portrait_selfie.jpg"
-                alt="AI Generated Female Portrait Selfie"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_female_portrait_selfie.jpg"
+              alt="AI Generated Female Portrait Selfie"
+              data-lightbox
+              data-caption="Female Selfie Analysis"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Female Selfie Analysis</h3>
@@ -250,13 +351,12 @@
             class="gallery-item-image"
             data-title="Sunset & Landscape Lighting"
           >
-            <a
-              href="../assets/images/aiGeneratedImages/ai_green_grass_sunset_light.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_green_grass_sunset_light.jpg"
-                alt="AI Generated Green Grass Sunset"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_green_grass_sunset_light.jpg"
+              alt="AI Generated Green Grass Sunset"
+              data-lightbox
+              data-caption="Sunset & Landscape Lighting"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Sunset & Landscape Lighting</h3>
@@ -271,13 +371,12 @@
         <!-- Gallery Item 11 - Images -->
         <div class="gallery-item" data-category="images">
           <div class="gallery-item-image" data-title="Female Portrait Analysis">
-            <a
-              href="../assets/images/aiGeneratedImages/ai_indian_female_adult.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_indian_female_adult.jpg"
-                alt="AI Generated Female Portrait"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_indian_female_adult.jpg"
+              alt="AI Generated Female Portrait"
+              data-lightbox
+              data-caption="Female Portrait Analysis"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Female Portrait Analysis</h3>
@@ -291,13 +390,12 @@
         <!-- Gallery Item 12 - Images -->
         <div class="gallery-item" data-category="images">
           <div class="gallery-item-image" data-title="Period Costume & Setting">
-            <a
-              href="../assets/images/aiGeneratedImages/ai_kid_lives_ancient_greece.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_kid_lives_ancient_greece.jpg"
-                alt="AI Generated Kid in Ancient Greece"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_kid_lives_ancient_greece.jpg"
+              alt="AI Generated Kid in Ancient Greece"
+              data-lightbox
+              data-caption="Period Costume & Setting"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Period Costume & Setting</h3>
@@ -311,13 +409,12 @@
         <!-- Gallery Item 13 - Images -->
         <div class="gallery-item" data-category="images">
           <div class="gallery-item-image" data-title="Landscape View Analysis">
-            <a
-              href="../assets/images/aiGeneratedImages/ai_landscape_view.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_landscape_view.jpg"
-                alt="AI Generated Landscape View"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_landscape_view.jpg"
+              alt="AI Generated Landscape View"
+              data-lightbox
+              data-caption="Landscape View Analysis"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Landscape View Analysis</h3>
@@ -331,13 +428,12 @@
         <!-- Gallery Item 14 - Images -->
         <div class="gallery-item" data-category="images">
           <div class="gallery-item-image" data-title="Male Portrait Analysis">
-            <a
-              href="../assets/images/aiGeneratedImages/ai_man_casual_standing_wall.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_man_casual_standing_wall.jpg"
-                alt="AI Generated Male Standing Portrait"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_man_casual_standing_wall.jpg"
+              alt="AI Generated Male Standing Portrait"
+              data-lightbox
+              data-caption="Male Portrait Analysis"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Male Portrait Analysis</h3>
@@ -351,13 +447,12 @@
         <!-- Gallery Item 15 - Images -->
         <div class="gallery-item" data-category="images">
           <div class="gallery-item-image" data-title="Male Portrait Analysis">
-            <a
-              href="../assets/images/aiGeneratedImages/ai_man_portrait_wearing_white_shirt.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_man_portrait_wearing_white_shirt.jpg"
-                alt="AI Generated Male Portrait"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_man_portrait_wearing_white_shirt.jpg"
+              alt="AI Generated Male Portrait"
+              data-lightbox
+              data-caption="Male Portrait Analysis"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Male Portrait Analysis</h3>
@@ -371,13 +466,12 @@
         <!-- Gallery Item 16 - Images -->
         <div class="gallery-item" data-category="images">
           <div class="gallery-item-image" data-title="Male Portrait Analysis">
-            <a
-              href="../assets/images/aiGeneratedImages/ai_man_portrait.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_man_portrait.jpg"
-                alt="AI Generated Male Portrait"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_man_portrait.jpg"
+              alt="AI Generated Male Portrait"
+              data-lightbox
+              data-caption="Male Portrait Analysis"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Male Portrait Analysis</h3>
@@ -391,13 +485,12 @@
         <!-- Gallery Item 17 - Images -->
         <div class="gallery-item" data-category="images">
           <div class="gallery-item-image" data-title="Animal-Human Interaction">
-            <a
-              href="../assets/images/aiGeneratedImages/ai_man_selfie_with_lion.png"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_man_selfie_with_lion.png"
-                alt="AI Generated Male Selfie with Lion"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_man_selfie_with_lion.png"
+              alt="AI Generated Male Selfie with Lion"
+              data-lightbox
+              data-caption="Animal-Human Interaction"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Animal-Human Interaction</h3>
@@ -415,13 +508,12 @@
             class="gallery-item-image full-body"
             data-title="Full Body Posture"
           >
-            <a
-              href="../assets/images/aiGeneratedImages/ai_man_standing_in_brown_suit.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_man_standing_in_brown_suit.jpg"
-                alt="AI Generated Male Portrait"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_man_standing_in_brown_suit.jpg"
+              alt="AI Generated Male Portrait"
+              data-lightbox
+              data-caption="Full Body Posture Analysis"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Full Body Posture Analysis</h3>
@@ -438,13 +530,12 @@
             class="gallery-item-image full-body"
             data-title="Clothing Artifacts"
           >
-            <a
-              href="../assets/images/aiGeneratedImages/ai_man_standing_wearing_light_pink_tshirt.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_man_standing_wearing_light_pink_tshirt.jpg"
-                alt="AI Generated Male Portrait"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_man_standing_wearing_light_pink_tshirt.jpg"
+              alt="AI Generated Male Portrait"
+              data-lightbox
+              data-caption="Clothing & Fabric Artifacts"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Clothing & Fabric Artifacts</h3>
@@ -461,13 +552,12 @@
             class="gallery-item-image full-body"
             data-title="Background Integration"
           >
-            <a
-              href="../assets/images/aiGeneratedImages/ai_man_wearing_black_shirt_standing_white_bg.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_man_wearing_black_shirt_standing_white_bg.jpg"
-                alt="AI Generated Male Portrait"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_man_wearing_black_shirt_standing_white_bg.jpg"
+              alt="AI Generated Male Portrait"
+              data-lightbox
+              data-caption="Background-Figure Integration"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Background-Figure Integration</h3>
@@ -484,13 +574,12 @@
             class="gallery-item-image full-body"
             data-title="Hand & Finger Analysis"
           >
-            <a
-              href="../assets/images/aiGeneratedImages/ai_man_wearing_blue_shirt_standing_portrait.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_man_wearing_blue_shirt_standing_portrait.jpg"
-                alt="AI Generated Male Portrait"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_man_wearing_blue_shirt_standing_portrait.jpg"
+              alt="AI Generated Male Portrait"
+              data-lightbox
+              data-caption="Hand & Finger Analysis"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Hand & Finger Analysis</h3>
@@ -507,13 +596,12 @@
             class="gallery-item-image full-body"
             data-title="Professional Attire"
           >
-            <a
-              href="../assets/images/aiGeneratedImages/ai_man_wearing_white_shirt_with_tie_portrait.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_man_wearing_white_shirt_with_tie_portrait.jpg"
-                alt="AI Generated Male Portrait"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_man_wearing_white_shirt_with_tie_portrait.jpg"
+              alt="AI Generated Male Portrait"
+              data-lightbox
+              data-caption="Professional Attire Analysis"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Professional Attire Analysis</h3>
@@ -527,13 +615,12 @@
         <!-- Gallery Item 23 - Images -->
         <div class="gallery-item" data-category="images">
           <div class="gallery-item-image" data-title="Male Portrait Analysis">
-            <a
-              href="../assets/images/aiGeneratedImages/ai_man_with_style_portrait.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_man_with_style_portrait.jpg"
-                alt="AI Generated Male with Style Portrait"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_man_with_style_portrait.jpg"
+              alt="AI Generated Male with Style Portrait"
+              data-lightbox
+              data-caption="Male Portrait Analysis"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Male Portrait Analysis</h3>
@@ -550,13 +637,12 @@
             class="gallery-item-image full-body"
             data-title="Body Pose Analysis"
           >
-            <a
-              href="../assets/images/aiGeneratedImages/ai_man_worshipping_god.webp"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_man_worshipping_god.webp"
-                alt="AI Generated Male Worshipping God"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_man_worshipping_god.webp"
+              alt="AI Generated Male Worshipping God"
+              data-lightbox
+              data-caption="Body Pose & Composition"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Body Pose & Composition</h3>
@@ -570,13 +656,12 @@
         <!-- Gallery Item 25 - Images -->
         <div class="gallery-item" data-category="images">
           <div class="gallery-item-image full-body" data-title="Medical Attire">
-            <a
-              href="../assets/images/aiGeneratedImages/ai_medical_male_scrubs_hospital.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_medical_male_scrubs_hospital.jpg"
-                alt="AI Generated Male Scrubs in Hospital"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_medical_male_scrubs_hospital.jpg"
+              alt="AI Generated Male Scrubs in Hospital"
+              data-lightbox
+              data-caption="Medical & Workplace Attire"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Medical & Workplace Attire</h3>
@@ -593,13 +678,12 @@
             class="gallery-item-image full-body"
             data-title="Outfit Consistency"
           >
-            <a
-              href="../assets/images/aiGeneratedImages/ai_men_standing_wearing_red_outfit.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_men_standing_wearing_red_outfit.jpg"
-                alt="AI Generated Male Portrait"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_men_standing_wearing_red_outfit.jpg"
+              alt="AI Generated Male Portrait"
+              data-lightbox
+              data-caption="Color & Texture Consistency"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Color & Texture Consistency</h3>
@@ -616,13 +700,12 @@
             class="gallery-item-image full-body"
             data-title="Body Proportions"
           >
-            <a
-              href="../assets/images/aiGeneratedImages/ai_muscular_man_standing_wearing_pink_hoodie.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_muscular_man_standing_wearing_pink_hoodie.jpg"
-                alt="AI Generated Muscular Man"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_muscular_man_standing_wearing_pink_hoodie.jpg"
+              alt="AI Generated Muscular Man"
+              data-lightbox
+              data-caption="Body Proportion & Musculature"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Body Proportion & Musculature</h3>
@@ -639,13 +722,12 @@
             class="gallery-item-image full-body"
             data-title="Age-Related Features"
           >
-            <a
-              href="../assets/images/aiGeneratedImages/ai_old_lady_in_white_clothes_standing.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_old_lady_in_white_clothes_standing.jpg"
-                alt="AI Generated Old Lady"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_old_lady_in_white_clothes_standing.jpg"
+              alt="AI Generated Old Lady"
+              data-lightbox
+              data-caption="Age-Related AI Features"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Age-Related AI Features</h3>
@@ -662,13 +744,12 @@
             class="gallery-item-image full-body"
             data-title="Casual Clothing"
           >
-            <a
-              href="../assets/images/aiGeneratedImages/ai_old_lady_wearing_pajamas.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_old_lady_wearing_pajamas.jpg"
-                alt="AI Generated Old Lady"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_old_lady_wearing_pajamas.jpg"
+              alt="AI Generated Old Lady"
+              data-lightbox
+              data-caption="Casual Clothing Inconsistencies"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Casual Clothing Inconsistencies</h3>
@@ -685,13 +766,12 @@
             class="gallery-item-image full-body"
             data-title="Wildlife Generation"
           >
-            <a
-              href="../assets/images/aiGeneratedImages/ai_spotted_hyena-in_the_savannah.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_spotted_hyena-in_the_savannah.jpg"
-                alt="AI Generated Spotted Hyena"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_spotted_hyena-in_the_savannah.jpg"
+              alt="AI Generated Spotted Hyena"
+              data-lightbox
+              data-caption="Wildlife & Animal Generation"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Wildlife & Animal Generation</h3>
@@ -705,13 +785,12 @@
         <!-- Gallery Item 31 - Images -->
         <div class="gallery-item" data-category="images">
           <div class="gallery-item-image" data-title="Landscape Artifacts">
-            <a
-              href="../assets/images/aiGeneratedImages/ai_view_grass_field_with_green_trees_background.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_view_grass_field_with_green_trees_background.jpg"
-                alt="Gallery Item 31"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_view_grass_field_with_green_trees_background.jpg"
+              alt="Gallery Item 31"
+              data-lightbox
+              data-caption="Landscape & Nature Artifacts"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Landscape & Nature Artifacts</h3>
@@ -726,13 +805,12 @@
         <!-- Gallery Item 32 - Images -->
         <div class="gallery-item" data-category="images">
           <div class="gallery-item-image" data-title="Small Animal Generation">
-            <a
-              href="../assets/images/aiGeneratedImages/ai_wildlife_bunny.jpg"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_wildlife_bunny.jpg"
-                alt="Gallery Item 32"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_wildlife_bunny.jpg"
+              alt="Gallery Item 32"
+              data-lightbox
+              data-caption="Small Animal Generation"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Small Animal Generation</h3>
@@ -750,13 +828,12 @@
             class="gallery-item-image"
             data-title="Bird & Environment Integration"
           >
-            <a
-              href="../assets/images/aiGeneratedImages/ai_wildlife_eagle_river_landing.png"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_wildlife_eagle_river_landing.png"
-                alt="Gallery Item 33"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_wildlife_eagle_river_landing.png"
+              alt="Gallery Item 33"
+              data-lightbox
+              data-caption="Bird & Environment Integration"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Bird & Environment Integration</h3>
@@ -774,13 +851,12 @@
             class="gallery-item-image"
             data-title="Female Portrait Artifacts"
           >
-            <a
-              href="../assets/images/aiGeneratedImages/ai_women_portrait.webp"
-              target="image"
-              ><img
-                src="../assets/images/aiGeneratedImages/ai_women_portrait.webp"
-                alt="Gallery Item 34"
-            /></a>
+            <img
+              src="../assets/images/aiGeneratedImages/ai_women_portrait.webp"
+              alt="Gallery Item 34"
+              data-lightbox
+              data-caption="Female Portrait Artifacts"
+            />
           </div>
           <div class="gallery-item-content">
             <h3>Female Portrait Artifacts</h3>
@@ -1051,8 +1127,30 @@
         </div>
       </div>
     </footer>
+
+    <!-- ── LIGHTBOX ── -->
+    <div
+      id="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image viewer"
+    >
+      <button id="lightbox-close" aria-label="Close lightbox">×</button>
+      <button class="lb-arrow" id="lightbox-prev" aria-label="Previous image">
+        &#8249;
+      </button>
+      <div id="lightbox-img-wrap">
+        <img id="lightbox-img" src="" alt="" />
+      </div>
+      <p id="lightbox-caption"></p>
+      <button class="lb-arrow" id="lightbox-next" aria-label="Next image">
+        &#8250;
+      </button>
+      <span id="lightbox-counter"></span>
+    </div>
   </body>
   <script>
+    /* ── Hamburger ── */
     const hamburger = document.querySelector(".nav-hamburger");
     const navLinks = document.querySelector(".nav-links");
     if (hamburger) {
@@ -1061,6 +1159,7 @@
       });
     }
 
+    /* ── Gallery Filter ── */
     function initializeGalleryFilter() {
       const filterBtns = document.querySelectorAll(".filter-btn");
       const galleryItems = document.querySelectorAll(".gallery-item");
@@ -1078,30 +1177,110 @@
             item.style.opacity = "0";
           }
         });
+        // Rebuild lightbox image list after filter changes
+        buildImageList();
       }
 
-      // Initialize: show all items on page load
       applyFilter("all");
 
-      // Attach click listeners to filter buttons
       filterBtns.forEach((btn) => {
         btn.addEventListener("click", function () {
           const filterValue = this.getAttribute("data-filter");
-
-          // Set active button
           filterBtns.forEach((b) => b.classList.remove("active"));
           this.classList.add("active");
-
           applyFilter(filterValue);
         });
       });
     }
 
-    // Run on DOM ready and also immediately as fallback
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", initializeGalleryFilter);
     } else {
       initializeGalleryFilter();
     }
+
+    /* ── Lightbox ── */
+    const lightbox = document.getElementById("lightbox");
+    const lbImg = document.getElementById("lightbox-img");
+    const lbCaption = document.getElementById("lightbox-caption");
+    const lbCounter = document.getElementById("lightbox-counter");
+    const lbClose = document.getElementById("lightbox-close");
+    const lbPrev = document.getElementById("lightbox-prev");
+    const lbNext = document.getElementById("lightbox-next");
+
+    let imageList = []; // [{src, alt, caption}] for visible images only
+    let currentIndex = 0;
+
+    function buildImageList() {
+      imageList = [];
+      document
+        .querySelectorAll(
+          ".gallery-item:not([style*='display: none']) img[data-lightbox]",
+        )
+        .forEach((img) => {
+          imageList.push({
+            src: img.src,
+            alt: img.alt,
+            caption: img.dataset.caption || img.alt,
+          });
+        });
+    }
+
+    function openLightbox(index) {
+      currentIndex = index;
+      showImage(currentIndex);
+      lightbox.classList.add("open");
+      document.body.style.overflow = "hidden";
+      lbClose.focus();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    function showImage(index) {
+      const item = imageList[index];
+      lbImg.src = item.src;
+      lbImg.alt = item.alt;
+      lbCaption.textContent = item.caption;
+      lbCounter.textContent = `${index + 1} / ${imageList.length}`;
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + imageList.length) % imageList.length;
+      showImage(currentIndex);
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % imageList.length;
+      showImage(currentIndex);
+    }
+
+    // Attach click to every lightbox-enabled image
+    document.addEventListener("click", (e) => {
+      const img = e.target.closest("img[data-lightbox]");
+      if (!img) return;
+      buildImageList();
+      const idx = imageList.findIndex((item) => item.src === img.src);
+      if (idx !== -1) openLightbox(idx);
+    });
+
+    lbClose.addEventListener("click", closeLightbox);
+    lbPrev.addEventListener("click", prevImage);
+    lbNext.addEventListener("click", nextImage);
+
+    // Click on dark backdrop closes lightbox
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    // Keyboard navigation
+    document.addEventListener("keydown", (e) => {
+      if (!lightbox.classList.contains("open")) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") prevImage();
+      if (e.key === "ArrowRight") nextImage();
+    });
   </script>
 </html>
