@@ -576,3 +576,117 @@ footer {
     display: flex;
   }
 }
+
+/* TABLET */
+@media (max-width: 991px) {
+  .profile-section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .profile-sidebar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-photo-wrap {
+    max-width: 260px;
+  }
+
+  .profile-meta {
+    width: 100%;
+  }
+
+  .profile-section,
+  .articles-section,
+  .page-hero {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+/* MOBILE NAV + FOOTER */
+@media (max-width: 767px) {
+  nav {
+    height: 60px;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: var(--navy);
+    flex-direction: column;
+    gap: 0;
+    border-top: 2px solid var(--blue);
+    z-index: 99;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 14px 5%;
+    font-size: 0.85rem;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 575px) {
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+
+  .profile-bio p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  .bio-header h2,
+  .articles-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .article-card {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .article-card-title {
+    font-size: 0.9rem;
+  }
+
+  .article-card-num {
+    font-size: 1.2rem;
+    width: 30px;
+  }
+
+  .profile-section,
+  .articles-section,
+  .page-hero {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+}
